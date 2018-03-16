@@ -1,0 +1,280 @@
+ERROR - 2018-02-18 04:18:20 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:18:20 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:19:32 --> Query error: Unknown column 'id_penjualans' in 'field list' - Invalid query: UPDATE `ak_data_penjualan` SET `id_penjualans` = 'TR18021800001', `id_user` = 'USR00001', `pembulatan` = 0, `subtotal` = 0
+WHERE `id_penjualan` = 'TR18021800001'
+ERROR - 2018-02-18 04:20:39 --> Query error: Unknown column 'id_penjualans' in 'field list' - Invalid query: UPDATE `ak_data_penjualan` SET `id_penjualans` = 'TR18021800001', `id_user` = 'USR00001', `pembulatan` = 0, `subtotal` = 0
+WHERE `id_penjualan` = 'TR18021800001'
+ERROR - 2018-02-18 04:20:49 --> Severity: Parsing Error --> syntax error, unexpected ')' D:\Projects\master-apotek\application\models\MPenjualan.php 326
+ERROR - 2018-02-18 04:20:52 --> Query error: Unknown column 'id_penjualans' in 'field list' - Invalid query: UPDATE `ak_data_penjualan` SET `id_penjualans` = NULL, `id_user` = 'USR00001', `pembulatan` = 0, `subtotal` = 0
+WHERE `id_penjualan` IS NULL
+ERROR - 2018-02-18 04:21:07 --> Query error: Unknown column 'id_penjualans' in 'field list' - Invalid query: INSERT INTO `ak_data_penjualan` (`id_penjualans`, `id_user`, `pembulatan`, `subtotal`) VALUES (NULL, 'USR00001', 0, 0)
+ERROR - 2018-02-18 04:21:13 --> Query error: Unknown column 'id_penjualans' in 'field list' - Invalid query: INSERT INTO `ak_data_penjualan` (`id_penjualans`, `id_user`, `pembulatan`, `subtotal`) VALUES (NULL, 'USR00001', 0, 0)
+ERROR - 2018-02-18 04:21:18 --> Query error: Unknown column 'id_penjualans' in 'field list' - Invalid query: INSERT INTO `ak_data_penjualan` (`id_penjualans`, `id_user`, `pembulatan`, `subtotal`) VALUES (NULL, 'USR00001', 0, 0)
+ERROR - 2018-02-18 04:21:22 --> Query error: Unknown column 'id_penjualans' in 'field list' - Invalid query: UPDATE `ak_data_penjualan` SET `id_penjualans` = NULL, `id_user` = 'USR00001', `pembulatan` = 0, `subtotal` = 0
+WHERE `id_penjualan` IS NULL
+ERROR - 2018-02-18 04:21:34 --> Query error: Unknown column 'id_penjualans' in 'field list' - Invalid query: UPDATE `ak_data_penjualan` SET `id_penjualans` = NULL, `id_user` = 'USR00001', `pembulatan` = 0, `subtotal` = 0
+WHERE `id_penjualan` IS NULL
+ERROR - 2018-02-18 04:21:48 --> Query error: Unknown column 'id_penjualans' in 'field list' - Invalid query: UPDATE `ak_data_penjualan` SET `id_penjualans` = NULL, `id_user` = 'USR00001', `pembulatan` = 0, `subtotal` = 0
+WHERE `id_penjualan` IS NULL
+ERROR - 2018-02-18 04:21:55 --> Query error: Unknown column 'id_penjualans' in 'field list' - Invalid query: INSERT INTO `ak_data_penjualan` (`id_penjualans`, `id_user`, `pembulatan`, `subtotal`) VALUES (NULL, 'USR00001', 0, 0)
+ERROR - 2018-02-18 04:22:06 --> Query error: Unknown column 'id_penjualans' in 'field list' - Invalid query: INSERT INTO `ak_data_penjualan` (`id_penjualans`, `id_user`, `pembulatan`, `subtotal`) VALUES (NULL, 'USR00001', 0, 0)
+ERROR - 2018-02-18 04:22:12 --> Query error: Unknown column 'id_penjualans' in 'field list' - Invalid query: UPDATE `ak_data_penjualan` SET `id_penjualans` = NULL, `id_user` = 'USR00001', `pembulatan` = 0, `subtotal` = 0
+WHERE `id_penjualan` IS NULL
+ERROR - 2018-02-18 04:22:15 --> Query error: Unknown column 'id_penjualans' in 'field list' - Invalid query: UPDATE `ak_data_penjualan` SET `id_penjualans` = NULL, `id_user` = 'USR00001', `pembulatan` = 0, `subtotal` = 0
+WHERE `id_penjualan` IS NULL
+ERROR - 2018-02-18 04:22:19 --> Query error: Unknown column 'id_penjualans' in 'field list' - Invalid query: UPDATE `ak_data_penjualan` SET `id_penjualans` = NULL, `id_user` = 'USR00001', `pembulatan` = 0, `subtotal` = 0
+WHERE `id_penjualan` IS NULL
+ERROR - 2018-02-18 04:22:21 --> Query error: Unknown column 'id_penjualans' in 'field list' - Invalid query: UPDATE `ak_data_penjualan` SET `id_penjualans` = NULL, `id_user` = 'USR00001', `pembulatan` = 0, `subtotal` = 0
+WHERE `id_penjualan` IS NULL
+ERROR - 2018-02-18 04:22:25 --> Query error: Unknown column 'id_penjualans' in 'field list' - Invalid query: INSERT INTO `ak_data_penjualan` (`id_penjualans`, `id_user`, `pembulatan`, `subtotal`) VALUES (NULL, 'USR00001', 0, 0)
+ERROR - 2018-02-18 04:22:26 --> Query error: Unknown column 'id_penjualans' in 'field list' - Invalid query: INSERT INTO `ak_data_penjualan` (`id_penjualans`, `id_user`, `pembulatan`, `subtotal`) VALUES (NULL, 'USR00001', 0, 0)
+ERROR - 2018-02-18 04:22:39 --> Query error: Unknown column 'id_penjualans' in 'field list' - Invalid query: INSERT INTO `ak_data_penjualan` (`id_penjualans`, `id_user`, `pembulatan`, `subtotal`) VALUES (NULL, 'USR00001', 0, 0)
+ERROR - 2018-02-18 04:22:45 --> Query error: Unknown column 'id_penjualans' in 'field list' - Invalid query: INSERT INTO `ak_data_penjualan` (`id_penjualans`, `id_user`, `pembulatan`, `subtotal`) VALUES (NULL, 'USR00001', 0, 0)
+ERROR - 2018-02-18 04:23:00 --> Query error: Unknown column 'id_penjualans' in 'field list' - Invalid query: INSERT INTO `ak_data_penjualan` (`id_penjualans`, `id_user`, `pembulatan`, `subtotal`) VALUES (NULL, 'USR00001', 0, 0)
+ERROR - 2018-02-18 04:23:22 --> Query error: Unknown column 'id_penjualans' in 'field list' - Invalid query: INSERT INTO `ak_data_penjualan` (`id_penjualans`, `id_user`, `pembulatan`, `subtotal`) VALUES (NULL, 'USR00001', 0, 0)
+ERROR - 2018-02-18 04:23:53 --> Query error: Unknown column 'id_penjualans' in 'field list' - Invalid query: INSERT INTO `ak_data_penjualan` (`id_penjualans`, `id_user`, `pembulatan`, `subtotal`) VALUES (NULL, 'USR00001', 0, 0)
+ERROR - 2018-02-18 04:24:01 --> Query error: Unknown column 'id_penjualans' in 'field list' - Invalid query: INSERT INTO `ak_data_penjualan` (`id_penjualans`, `id_user`, `pembulatan`, `subtotal`) VALUES (NULL, 'USR00001', 0, 0)
+ERROR - 2018-02-18 04:24:05 --> Query error: Unknown column 'id_penjualans' in 'field list' - Invalid query: INSERT INTO `ak_data_penjualan` (`id_penjualans`, `id_user`, `pembulatan`, `subtotal`) VALUES (NULL, 'USR00001', 0, 0)
+ERROR - 2018-02-18 04:24:07 --> Query error: Unknown column 'id_penjualans' in 'field list' - Invalid query: INSERT INTO `ak_data_penjualan` (`id_penjualans`, `id_user`, `pembulatan`, `subtotal`) VALUES (NULL, 'USR00001', 0, 0)
+ERROR - 2018-02-18 04:24:13 --> Query error: Unknown column 'id_penjualans' in 'field list' - Invalid query: INSERT INTO `ak_data_penjualan` (`id_penjualans`, `id_user`, `pembulatan`, `subtotal`) VALUES (NULL, 'USR00001', 0, 0)
+ERROR - 2018-02-18 04:24:19 --> Query error: Unknown column 'id_penjualans' in 'field list' - Invalid query: INSERT INTO `ak_data_penjualan` (`id_penjualans`, `id_user`, `pembulatan`, `subtotal`) VALUES (NULL, 'USR00001', 0, 0)
+ERROR - 2018-02-18 04:24:30 --> Query error: Unknown column 'id_penjualans' in 'field list' - Invalid query: INSERT INTO `ak_data_penjualan` (`id_penjualans`, `id_user`, `pembulatan`, `subtotal`) VALUES (NULL, 'USR00001', 0, 0)
+ERROR - 2018-02-18 04:24:42 --> Query error: Unknown column 'id_penjualans' in 'field list' - Invalid query: UPDATE `ak_data_penjualan` SET `id_penjualans` = NULL, `id_user` = 'USR00001', `pembulatan` = 0, `subtotal` = 0
+WHERE `id_penjualan` IS NULL
+ERROR - 2018-02-18 04:24:52 --> Query error: Unknown column 'id_penjualans' in 'field list' - Invalid query: INSERT INTO `ak_data_penjualan` (`id_penjualans`, `id_user`, `pembulatan`, `subtotal`) VALUES (NULL, 'USR00001', 0, 0)
+ERROR - 2018-02-18 04:25:10 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:25:10 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:25:26 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:25:26 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:25:41 --> Query error: Unknown column 'id_penjualans' in 'field list' - Invalid query: UPDATE `ak_data_penjualan` SET `id_penjualans` = 'TR18021800001', `id_user` = 'USR00001', `pembulatan` = 0, `subtotal` = 0
+WHERE `id_penjualan` = 'TR18021800001'
+ERROR - 2018-02-18 04:25:58 --> Query error: Unknown column 'id_penjualans' in 'field list' - Invalid query: INSERT INTO `ak_data_penjualan` (`id_penjualans`, `id_user`, `pembulatan`, `subtotal`) VALUES ('TR18021800001', 'USR00001', 0, 0)
+ERROR - 2018-02-18 04:26:05 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:26:05 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:26:15 --> Query error: Duplicate entry 'TR18021800001' for key 'PRIMARY' - Invalid query: INSERT INTO `ak_data_penjualan` (`id_penjualan`, `id_user`, `pembulatan`, `subtotal`) VALUES ('TR18021800001', 'USR00001', 0, 0)
+ERROR - 2018-02-18 04:27:52 --> Query error: Duplicate entry 'TR18021800001' for key 'PRIMARY' - Invalid query: INSERT INTO `ak_data_penjualan` (`id_penjualan`, `id_user`, `pembulatan`, `subtotal`) VALUES ('TR18021800001', 'USR00001', 0, 0)
+ERROR - 2018-02-18 04:28:15 --> Query error: Duplicate entry 'TR18021800001' for key 'PRIMARY' - Invalid query: INSERT INTO `ak_data_penjualan` (`id_penjualan`, `id_user`, `pembulatan`, `subtotal`) VALUES ('TR18021800001', 'USR00001', 0, 0)
+ERROR - 2018-02-18 04:28:23 --> Query error: Duplicate entry 'TR18021800001' for key 'PRIMARY' - Invalid query: INSERT INTO `ak_data_penjualan` (`id_penjualan`, `id_user`, `pembulatan`, `subtotal`) VALUES ('TR18021800001', 'USR00001', 0, 0)
+ERROR - 2018-02-18 04:28:28 --> Query error: Duplicate entry 'TR18021800001' for key 'PRIMARY' - Invalid query: INSERT INTO `ak_data_penjualan` (`id_penjualan`, `id_user`, `pembulatan`, `subtotal`) VALUES ('TR18021800001', 'USR00001', 0, 0)
+ERROR - 2018-02-18 04:28:33 --> Query error: Duplicate entry 'TR18021800001' for key 'PRIMARY' - Invalid query: INSERT INTO `ak_data_penjualan` (`id_penjualan`, `id_user`, `pembulatan`, `subtotal`) VALUES ('TR18021800001', 'USR00001', 0, 0)
+ERROR - 2018-02-18 04:28:46 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:28:46 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:29:00 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:29:00 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:29:07 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:29:07 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:29:14 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:29:14 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:29:21 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:29:22 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:29:55 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:29:55 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:30:01 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:30:07 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:30:07 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:30:12 --> Query error: Duplicate entry 'TR18021800001' for key 'PRIMARY' - Invalid query: INSERT INTO `ak_data_penjualan` (`id_penjualan`, `id_user`, `pembulatan`, `subtotal`) VALUES ('TR18021800001', 'USR00001', 0, 0)
+ERROR - 2018-02-18 04:31:18 --> Query error: Duplicate entry 'TR18021800001' for key 'PRIMARY' - Invalid query: INSERT INTO `ak_data_penjualan` (`id_penjualan`, `id_user`, `pembulatan`, `subtotal`) VALUES ('TR18021800001', 'USR00001', 0, 0)
+ERROR - 2018-02-18 04:31:35 --> Severity: Error --> Call to undefined method CI_DB_mysqli_result::rows() D:\Projects\master-apotek\application\models\MPenjualan.php 325
+ERROR - 2018-02-18 04:32:04 --> Query error: Column 'id_penjualan' cannot be null - Invalid query: INSERT INTO `ak_data_penjualan` (`id_penjualan`, `id_user`, `pembulatan`, `subtotal`) VALUES (NULL, 'USR00001', 0, 0)
+ERROR - 2018-02-18 04:33:52 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:33:52 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:35:12 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:35:12 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:35:18 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:35:18 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:35:37 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:35:37 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:36:25 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:36:25 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:36:35 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:36:36 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:36:42 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:36:43 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:36:51 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:36:51 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:36:55 --> Severity: Parsing Error --> syntax error, unexpected ')' D:\Projects\master-apotek\application\views\Farmasi\V_Penjualan_Obat.php 153
+ERROR - 2018-02-18 04:36:55 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:36:55 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:37:05 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:37:05 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:37:10 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:37:11 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:37:39 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:37:39 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:37:46 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:37:46 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:37:52 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:37:52 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:38:01 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:38:02 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:40:06 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:40:06 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:40:13 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:40:13 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:40:34 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:40:34 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:40:42 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:40:42 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:42:48 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:43:04 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:43:05 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:43:50 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:43:50 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:45:16 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:45:16 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:51:40 --> Severity: Parsing Error --> syntax error, unexpected 'if' (T_IF) D:\Projects\master-apotek\application\models\MPenjualan.php 200
+ERROR - 2018-02-18 04:51:55 --> Severity: Parsing Error --> syntax error, unexpected 'if' (T_IF) D:\Projects\master-apotek\application\models\MPenjualan.php 200
+ERROR - 2018-02-18 04:52:08 --> Query error: Unknown column 'id_penjualans' in 'field list' - Invalid query: INSERT INTO `ak_data_penjualan` (`id_penjualans`, `id_user`, `pembulatan`, `subtotal`) VALUES ('TR18021800001', 'USR00001', 0, 0)
+ERROR - 2018-02-18 04:52:22 --> Query error: Duplicate entry 'TR18021800001' for key 'PRIMARY' - Invalid query: INSERT INTO `ak_data_penjualan` (`id_penjualan`, `id_user`, `pembulatan`, `subtotal`) VALUES ('TR18021800001', 'USR00001', 0, 0)
+ERROR - 2018-02-18 04:53:17 --> Query error: Duplicate entry 'TR18021800001' for key 'PRIMARY' - Invalid query: INSERT INTO `ak_data_penjualan` (`id_penjualan`, `id_user`, `pembulatan`, `subtotal`) VALUES ('TR18021800001', 'USR00001', -0.70000000000073, 16804)
+ERROR - 2018-02-18 04:53:29 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:53:29 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:53:48 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:53:49 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:55:22 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:55:22 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:56:13 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:56:13 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:57:02 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:57:02 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:57:14 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:57:15 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:57:39 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:57:39 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:57:48 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:57:48 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:58:12 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:58:12 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:58:28 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:58:28 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:58:43 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:58:43 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:58:59 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:59:00 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:59:08 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 04:59:08 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:00:45 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:00:46 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:00:48 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:00:48 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:00:51 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:00:51 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:00:58 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:00:58 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:01:01 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:01:01 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:01:05 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:01:05 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:01:15 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:01:16 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:01:21 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:01:22 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:02:44 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:02:44 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:06:04 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:06:05 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:06:09 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:06:10 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:06:44 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:06:45 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:06:53 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:06:54 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:07:01 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:07:01 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:07:07 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:07:07 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:07:18 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:07:19 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:07:25 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:07:26 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:07:37 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:07:38 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:09:12 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:09:13 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:09:20 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:09:21 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:09:26 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:09:27 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:09:40 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:09:41 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:15:55 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:15:56 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:16:03 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:16:04 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:16:39 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:16:44 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:16:45 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:16:49 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-18 05:17:33 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:17:34 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:17:38 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-18 05:23:12 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:23:13 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:23:17 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-18 05:26:41 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:26:43 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:26:46 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-18 05:27:52 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:27:53 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:27:56 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-18 05:28:48 --> Severity: Parsing Error --> syntax error, unexpected '?>' D:\Projects\master-apotek\application\views\Farmasi\V_Penjualan_Obat.php 275
+ERROR - 2018-02-18 05:28:49 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:28:51 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:28:54 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-18 05:29:29 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:29:30 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:29:33 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-18 05:29:52 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:29:53 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:29:57 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-18 05:31:32 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:31:33 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:31:37 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-18 05:32:30 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:32:32 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:32:38 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-18 05:32:59 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:33:01 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:33:07 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-18 05:35:26 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:35:27 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:35:33 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-18 05:36:26 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:36:27 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:36:29 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-18 05:37:03 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:37:04 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:37:05 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-18 05:40:16 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:40:17 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:40:19 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-18 05:42:17 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:42:17 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:42:18 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-18 05:42:43 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:42:43 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:42:44 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-18 05:43:54 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:43:55 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:43:56 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-18 05:45:53 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:45:54 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:45:55 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-18 05:47:59 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:47:59 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:48:00 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-18 05:48:15 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:48:16 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:48:17 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-18 05:49:42 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:49:42 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:49:43 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-18 05:49:46 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:49:47 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:49:48 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-18 05:50:21 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:50:22 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:50:23 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-18 05:50:58 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:50:58 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-18 05:50:59 --> 404 Page Not Found: Assets/DataTables

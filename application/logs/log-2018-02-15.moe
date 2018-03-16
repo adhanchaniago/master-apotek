@@ -1,0 +1,388 @@
+ERROR - 2018-02-15 00:04:33 --> Query error: Unknown column 'id_penjualan' in 'field list' - Invalid query: INSERT INTO `ak_data_resep_detail` (`id_resep`, `id_penjualan`, `nm_pasien`, `nm_dokter`, `alamat`, `kontak_pasien`, `biaya_resep`) VALUES ('R00001', 'TR18021400001', 'tes', 'tes', 'Jl. Banjaran', '089123123123', 10)
+ERROR - 2018-02-15 00:18:09 --> Severity: Parsing Error --> syntax error, unexpected ';', expecting ')' D:\Projects\master-apotek\application\models\MPenjualan.php 90
+ERROR - 2018-02-15 00:18:17 --> Severity: Parsing Error --> syntax error, unexpected ';', expecting ')' D:\Projects\master-apotek\application\models\MPenjualan.php 90
+ERROR - 2018-02-15 00:18:27 --> Severity: Parsing Error --> syntax error, unexpected ';', expecting ')' D:\Projects\master-apotek\application\models\MPenjualan.php 90
+ERROR - 2018-02-15 00:18:28 --> Severity: Parsing Error --> syntax error, unexpected ';', expecting ')' D:\Projects\master-apotek\application\models\MPenjualan.php 90
+ERROR - 2018-02-15 00:18:29 --> Severity: Parsing Error --> syntax error, unexpected ';', expecting ')' D:\Projects\master-apotek\application\models\MPenjualan.php 90
+ERROR - 2018-02-15 00:18:31 --> Severity: Parsing Error --> syntax error, unexpected ';', expecting ')' D:\Projects\master-apotek\application\models\MPenjualan.php 90
+ERROR - 2018-02-15 00:18:39 --> Severity: Parsing Error --> syntax error, unexpected ';', expecting ')' D:\Projects\master-apotek\application\models\MPenjualan.php 90
+ERROR - 2018-02-15 00:19:52 --> Severity: Parsing Error --> syntax error, unexpected '->' (T_OBJECT_OPERATOR) D:\Projects\master-apotek\application\models\MPenjualan.php 31
+ERROR - 2018-02-15 00:20:23 --> Query error: Unknown column 'ak_data_resep_detail.id_penjualan' in 'group statement' - Invalid query: SELECT *
+FROM `ak_data_penjualan`
+JOIN `ak_data_resep` ON `ak_data_resep`.`id_penjualan`=`ak_data_penjualan`.`id_penjualan`
+JOIN `ak_data_resep_detail` ON `ak_data_resep_detail`.`id_resep`=`ak_data_resep`.`id_resep`
+JOIN `ak_data_barang_detail` ON `ak_data_barang_detail`.`id_barang_detail`=`ak_data_resep_detail`.`id_barang_detail`
+JOIN `ak_data_barang` ON `ak_data_barang`.`id_barang`=`ak_data_barang_detail`.`id_barang`
+JOIN `ak_data_satuan` ON `ak_data_satuan`.`id_satuan`=`ak_data_barang`.`kemasan_terkecil`
+WHERE `ak_data_penjualan`.`id_penjualan` = 'TR18021400001'
+GROUP BY `ak_data_resep_detail`.`id_penjualan`
+ERROR - 2018-02-15 00:20:52 --> Query error: Unknown column 'ak_data_barang_detail.id_resep' in 'group statement' - Invalid query: SELECT *
+FROM `ak_data_penjualan`
+JOIN `ak_data_resep` ON `ak_data_resep`.`id_penjualan`=`ak_data_penjualan`.`id_penjualan`
+JOIN `ak_data_resep_detail` ON `ak_data_resep_detail`.`id_resep`=`ak_data_resep`.`id_resep`
+JOIN `ak_data_barang_detail` ON `ak_data_barang_detail`.`id_barang_detail`=`ak_data_resep_detail`.`id_barang_detail`
+JOIN `ak_data_barang` ON `ak_data_barang`.`id_barang`=`ak_data_barang_detail`.`id_barang`
+JOIN `ak_data_satuan` ON `ak_data_satuan`.`id_satuan`=`ak_data_barang`.`kemasan_terkecil`
+WHERE `ak_data_penjualan`.`id_penjualan` = 'TR18021400001'
+GROUP BY `ak_data_barang_detail`.`id_resep`
+ERROR - 2018-02-15 00:22:32 --> Query error: Unknown column 'ak_data_barang.id_resep' in 'group statement' - Invalid query: SELECT *
+FROM `ak_data_penjualan`
+JOIN `ak_data_resep` ON `ak_data_resep`.`id_penjualan`=`ak_data_penjualan`.`id_penjualan`
+JOIN `ak_data_resep_detail` ON `ak_data_resep_detail`.`id_resep`=`ak_data_resep`.`id_resep`
+JOIN `ak_data_barang_detail` ON `ak_data_barang_detail`.`id_barang_detail`=`ak_data_resep_detail`.`id_barang_detail`
+JOIN `ak_data_barang` ON `ak_data_barang`.`id_barang`=`ak_data_barang_detail`.`id_barang`
+JOIN `ak_data_satuan` ON `ak_data_satuan`.`id_satuan`=`ak_data_barang`.`kemasan_terkecil`
+WHERE `ak_data_penjualan`.`id_penjualan` = 'TR18021400001'
+GROUP BY `ak_data_barang`.`id_resep`
+ERROR - 2018-02-15 00:45:54 --> Severity: Error --> Maximum execution time of 30 seconds exceeded D:\Projects\master-apotek\application\hooks\compress.php 28
+ERROR - 2018-02-15 00:51:57 --> Severity: Error --> Maximum execution time of 30 seconds exceeded D:\Projects\master-apotek\application\hooks\compress.php 28
+ERROR - 2018-02-15 00:54:57 --> Severity: Error --> Maximum execution time of 30 seconds exceeded D:\Projects\master-apotek\application\hooks\compress.php 28
+ERROR - 2018-02-15 01:00:38 --> Query error: Unknown column 'ak_data_barang_detail.sid_barang_detail' in 'on clause' - Invalid query: SELECT *
+FROM `ak_data_penjualan`
+JOIN `ak_data_resep` ON `ak_data_resep`.`id_penjualan`=`ak_data_penjualan`.`id_penjualan`
+JOIN `ak_data_resep_detail` ON `ak_data_resep_detail`.`id_resep`=`ak_data_resep`.`id_resep`
+JOIN `ak_data_barang_detail` ON `ak_data_barang_detail`.`sid_barang_detail`=`ak_data_resep_detail`.`id_barang_detail`
+JOIN `ak_data_barang` ON `ak_data_barang`.`id_barang`=`ak_data_barang_detail`.`id_barang`
+JOIN `ak_data_satuan` ON `ak_data_satuan`.`id_satuan`=`ak_data_barang`.`kemasan_terkecil`
+WHERE `ak_data_penjualan`.`id_penjualan` = 'TR18021400001'
+GROUP BY `ak_data_barang`.`id_barang`
+ERROR - 2018-02-15 01:10:00 --> Query error: Unknown column 'TR18021400001' in 'field list' - Invalid query: CALL sp_show_data_penjualan(TR18021400001)
+ERROR - 2018-02-15 01:12:12 --> Query error: Commands out of sync; you can't run this command now - Invalid query: SELECT *
+FROM `ak_data_resep`
+JOIN `ak_data_resep_detail` ON `ak_data_resep_detail`.`id_resep`=`ak_data_resep`.`id_resep`
+WHERE `id_penjualan` = 'TR18021400001'
+ERROR - 2018-02-15 01:12:12 --> Query error: Commands out of sync; you can't run this command now - Invalid query: UPDATE `ak_data_log` SET `timestamp` = 1518631932
+WHERE `id` = 'gpm57j16l4hof75b61du4vald3nbsqmv'
+AND `ip_address` = '::1'
+ERROR - 2018-02-15 01:12:12 --> Query error: Commands out of sync; you can't run this command now - Invalid query: SELECT RELEASE_LOCK('14280ff0de28a199d399fe3ea53d9684') AS ci_session_lock
+ERROR - 2018-02-15 01:12:12 --> Severity: Warning --> Cannot modify header information - headers already sent D:\Projects\master-apotek\system\core\Common.php 570
+ERROR - 2018-02-15 01:12:46 --> Query error: Commands out of sync; you can't run this command now - Invalid query: SELECT *
+FROM `ak_data_resep`
+JOIN `ak_data_resep_detail` ON `ak_data_resep_detail`.`id_resep`=`ak_data_resep`.`id_resep`
+WHERE `id_penjualan` = 'TR18021400001'
+ERROR - 2018-02-15 01:12:46 --> Query error: Commands out of sync; you can't run this command now - Invalid query: UPDATE `ak_data_log` SET `timestamp` = 1518631966
+WHERE `id` = 'gpm57j16l4hof75b61du4vald3nbsqmv'
+AND `ip_address` = '::1'
+ERROR - 2018-02-15 01:12:46 --> Query error: Commands out of sync; you can't run this command now - Invalid query: SELECT RELEASE_LOCK('14280ff0de28a199d399fe3ea53d9684') AS ci_session_lock
+ERROR - 2018-02-15 01:12:46 --> Severity: Warning --> Cannot modify header information - headers already sent D:\Projects\master-apotek\system\core\Common.php 570
+ERROR - 2018-02-15 01:14:14 --> Query error: Incorrect number of arguments for PROCEDURE simkes_apotek.sp_show_data_penjualan; expected 1, got 0 - Invalid query: CALL sp_show_data_penjualan()
+ERROR - 2018-02-15 01:14:31 --> Query error: Unknown column 'id' in 'field list' - Invalid query: CALL sp_show_data_penjualan(id)
+ERROR - 2018-02-15 01:16:29 --> Severity: Parsing Error --> syntax error, unexpected 'return' (T_RETURN) D:\Projects\master-apotek\application\models\MPenjualan.php 15
+ERROR - 2018-02-15 01:17:05 --> Severity: Parsing Error --> syntax error, unexpected 'return' (T_RETURN) D:\Projects\master-apotek\application\models\MPenjualan.php 15
+ERROR - 2018-02-15 01:17:33 --> Query error: Commands out of sync; you can't run this command now - Invalid query: SELECT *
+FROM `ak_data_resep`
+JOIN `ak_data_resep_detail` ON `ak_data_resep_detail`.`id_resep`=`ak_data_resep`.`id_resep`
+WHERE `id_penjualan` = 'TR18021400001'
+ERROR - 2018-02-15 01:17:33 --> Query error: Commands out of sync; you can't run this command now - Invalid query: UPDATE `ak_data_log` SET `timestamp` = 1518632253
+WHERE `id` = 'gpm57j16l4hof75b61du4vald3nbsqmv'
+AND `ip_address` = '::1'
+ERROR - 2018-02-15 01:17:33 --> Query error: Commands out of sync; you can't run this command now - Invalid query: SELECT RELEASE_LOCK('14280ff0de28a199d399fe3ea53d9684') AS ci_session_lock
+ERROR - 2018-02-15 01:17:33 --> Severity: Warning --> Cannot modify header information - headers already sent D:\Projects\master-apotek\system\core\Common.php 570
+ERROR - 2018-02-15 01:18:54 --> Query error: Commands out of sync; you can't run this command now - Invalid query: SELECT *
+FROM `ak_data_resep`
+JOIN `ak_data_resep_detail` ON `ak_data_resep_detail`.`id_resep`=`ak_data_resep`.`id_resep`
+WHERE `id_penjualan` = 'TR18021400001'
+ERROR - 2018-02-15 01:18:54 --> Query error: Commands out of sync; you can't run this command now - Invalid query: UPDATE `ak_data_log` SET `timestamp` = 1518632334
+WHERE `id` = 'gpm57j16l4hof75b61du4vald3nbsqmv'
+AND `ip_address` = '::1'
+ERROR - 2018-02-15 01:18:54 --> Query error: Commands out of sync; you can't run this command now - Invalid query: SELECT RELEASE_LOCK('14280ff0de28a199d399fe3ea53d9684') AS ci_session_lock
+ERROR - 2018-02-15 01:18:54 --> Severity: Warning --> Cannot modify header information - headers already sent D:\Projects\master-apotek\system\core\Common.php 570
+ERROR - 2018-02-15 01:20:37 --> Severity: Error --> Maximum execution time of 30 seconds exceeded D:\Projects\master-apotek\application\hooks\compress.php 28
+ERROR - 2018-02-15 01:21:16 --> Severity: Error --> Maximum execution time of 30 seconds exceeded D:\Projects\master-apotek\application\hooks\compress.php 28
+ERROR - 2018-02-15 01:24:52 --> Severity: Error --> Maximum execution time of 30 seconds exceeded D:\Projects\master-apotek\application\hooks\compress.php 28
+ERROR - 2018-02-15 01:26:38 --> Query error: Not unique table/alias: 'ak_data_resep' - Invalid query: SELECT *
+FROM `ak_data_resep`
+JOIN `ak_data_resep` ON `ak_data_resep`.`id_penjualan`=`ak_data_penjualan`.`id_penjualan`
+JOIN `ak_data_resep_detail` ON `ak_data_resep_detail`.`id_resep`=`ak_data_resep`.`id_resep`
+JOIN `ak_data_barang_detail` ON `ak_data_barang_detail`.`id_barang_detail`=`ak_data_resep_detail`.`id_barang_detail`
+JOIN `ak_data_barang` ON `ak_data_barang`.`id_barang`=`ak_data_barang_detail`.`id_barang`
+JOIN `ak_data_satuan` ON `ak_data_satuan`.`id_satuan`=`ak_data_barang`.`kemasan_terkecil`
+WHERE `ak_data_penjualan`.`id_penjualan` = 'TR18021400001'
+GROUP BY `ak_data_barang`.`id_barang`
+ERROR - 2018-02-15 01:28:59 --> Query error: Unknown column 'ak_data_barang_detail.id_barang' in 'on clause' - Invalid query: SELECT *
+FROM `ak_data_penjualan`
+JOIN `ak_data_resep` ON `ak_data_resep`.`id_penjualan`=`ak_data_penjualan`.`id_penjualan`
+JOIN `ak_data_resep_detail` ON `ak_data_resep_detail`.`id_resep`=`ak_data_resep`.`id_resep`
+JOIN `ak_data_barang` ON `ak_data_barang`.`id_barang`=`ak_data_barang_detail`.`id_barang`
+JOIN `ak_data_satuan` ON `ak_data_satuan`.`id_satuan`=`ak_data_barang`.`kemasan_terkecil`
+WHERE `ak_data_penjualan`.`id_penjualan` = 'TR18021400001'
+GROUP BY `ak_data_barang`.`id_barang`
+ERROR - 2018-02-15 01:29:27 --> Query error: Unknown column 'ak_data_resep_detail.id_barang' in 'on clause' - Invalid query: SELECT *
+FROM `ak_data_penjualan`
+JOIN `ak_data_resep` ON `ak_data_resep`.`id_penjualan`=`ak_data_penjualan`.`id_penjualan`
+JOIN `ak_data_resep_detail` ON `ak_data_resep_detail`.`id_resep`=`ak_data_resep`.`id_resep`
+JOIN `ak_data_barang` ON `ak_data_barang`.`id_barang`=`ak_data_resep_detail`.`id_barang`
+JOIN `ak_data_satuan` ON `ak_data_satuan`.`id_satuan`=`ak_data_barang`.`kemasan_terkecil`
+WHERE `ak_data_penjualan`.`id_penjualan` = 'TR18021400001'
+GROUP BY `ak_data_barang`.`id_barang`
+ERROR - 2018-02-15 21:23:17 --> Severity: Parsing Error --> syntax error, unexpected '=>' (T_DOUBLE_ARROW) D:\Projects\master-apotek\application\models\MPenjualan.php 33
+ERROR - 2018-02-15 21:26:55 --> Severity: Parsing Error --> syntax error, unexpected ')' D:\Projects\master-apotek\application\models\MPenjualan.php 32
+ERROR - 2018-02-15 21:29:30 --> Severity: Error --> Call to undefined method MPenjualan::TotalTransaksi() D:\Projects\master-apotek\application\controllers\Penjualan.php 18
+ERROR - 2018-02-15 21:29:30 --> Severity: Error --> Call to undefined method MPenjualan::TotalTransaksi() D:\Projects\master-apotek\application\controllers\Penjualan.php 18
+ERROR - 2018-02-15 21:31:25 --> Severity: Error --> Call to undefined method MPenjualan::TotalTransaksi() D:\Projects\master-apotek\application\controllers\Penjualan.php 18
+ERROR - 2018-02-15 21:31:52 --> Severity: Error --> Call to undefined method MPenjualan::GetSubTotal() D:\Projects\master-apotek\application\controllers\Penjualan.php 21
+ERROR - 2018-02-15 21:32:19 --> Severity: Error --> Call to a member function row() on null D:\Projects\master-apotek\application\views\Farmasi\V_Penjualan_Obat.php 59
+ERROR - 2018-02-15 21:35:47 --> Severity: Error --> Maximum execution time of 30 seconds exceeded D:\Projects\master-apotek\application\hooks\compress.php 28
+ERROR - 2018-02-15 21:38:55 --> Severity: Error --> Maximum execution time of 30 seconds exceeded D:\Projects\master-apotek\application\hooks\compress.php 28
+ERROR - 2018-02-15 21:53:52 --> Severity: Error --> Maximum execution time of 30 seconds exceeded D:\Projects\master-apotek\application\hooks\compress.php 28
+ERROR - 2018-02-15 21:58:09 --> Severity: Error --> Call to undefined method MPenjualan::GetData() D:\Projects\master-apotek\application\controllers\Penjualan.php 76
+ERROR - 2018-02-15 22:03:38 --> Severity: Error --> Call to undefined method MPenjualan::TotalTransaksi() D:\Projects\master-apotek\application\controllers\Penjualan.php 18
+ERROR - 2018-02-15 22:03:40 --> Severity: Error --> Call to undefined method MPenjualan::TotalTransaksi() D:\Projects\master-apotek\application\controllers\Penjualan.php 18
+ERROR - 2018-02-15 22:05:02 --> Severity: Error --> Maximum execution time of 30 seconds exceeded D:\Projects\master-apotek\application\hooks\compress.php 28
+ERROR - 2018-02-15 22:18:34 --> Severity: Parsing Error --> syntax error, unexpected '}', expecting ',' or ';' D:\Projects\master-apotek\application\controllers\Penjualan.php 25
+ERROR - 2018-02-15 22:24:25 --> Severity: Parsing Error --> syntax error, unexpected '}' D:\Projects\master-apotek\application\controllers\Penjualan.php 27
+ERROR - 2018-02-15 22:24:47 --> Severity: Parsing Error --> syntax error, unexpected 'echo' (T_ECHO) D:\Projects\master-apotek\application\controllers\Penjualan.php 18
+ERROR - 2018-02-15 22:24:53 --> Severity: Parsing Error --> syntax error, unexpected 'echo' (T_ECHO) D:\Projects\master-apotek\application\controllers\Penjualan.php 18
+ERROR - 2018-02-15 22:30:30 --> Severity: Parsing Error --> syntax error, unexpected '}' D:\Projects\master-apotek\application\controllers\Penjualan.php 27
+ERROR - 2018-02-15 22:32:02 --> 404 Page Not Found: Penjualan/pj_barang
+ERROR - 2018-02-15 22:58:27 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 22:58:27 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 22:58:28 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 22:58:28 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:00:25 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:00:25 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:00:26 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:00:26 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:01:14 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:01:14 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:01:15 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:01:15 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:01:34 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:01:34 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:01:34 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:01:35 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:01:52 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:01:52 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:01:53 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:01:53 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:01:59 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:01:59 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:02:00 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:02:00 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:02:27 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:02:27 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:02:28 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:02:28 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:03:01 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:03:01 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:03:03 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:03:03 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:04:55 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:04:55 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:04:56 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:04:56 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:05:01 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:05:01 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:05:02 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:05:02 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:05:09 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:05:09 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:05:10 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:05:10 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:05:26 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:05:26 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:05:26 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:05:26 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:05:42 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:05:42 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:05:43 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:05:43 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:06:29 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:06:29 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:06:30 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:06:30 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:06:46 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:06:46 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:06:47 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:06:47 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:07:18 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:07:18 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:07:19 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:07:19 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:07:39 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:07:39 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:07:40 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:07:40 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:07:47 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:07:47 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:07:48 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:07:48 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:07:59 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:07:59 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:07:59 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:07:59 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:08:33 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:08:33 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:08:34 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:08:34 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:09:18 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:09:18 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:09:19 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:09:19 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:17:31 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:17:31 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:17:32 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:17:32 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:18:15 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:18:15 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:18:16 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:18:16 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:19:36 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:19:36 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:19:37 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:19:37 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:20:26 --> Severity: Warning --> Invalid argument supplied for foreach() D:\Projects\master-apotek\application\views\Farmasi\V_Penjualan_Obat.php 103
+ERROR - 2018-02-15 23:20:27 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:20:27 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:20:27 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:20:27 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:20:42 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:20:42 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:20:42 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:20:42 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:20:51 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:20:51 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:20:51 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:20:51 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:21:28 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:21:28 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:21:29 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:21:29 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:21:45 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:21:45 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:21:45 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:21:45 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:22:33 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:22:34 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:22:34 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:22:34 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:22:44 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:22:44 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:22:44 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:22:44 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:23:10 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:23:10 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:23:11 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:23:11 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:23:28 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:23:28 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:23:29 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:23:29 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:23:49 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:23:49 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:23:50 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:23:50 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:24:28 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:24:28 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:24:29 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:24:29 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:25:03 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:25:03 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:25:04 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:25:04 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:25:13 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:25:13 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:25:14 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:25:14 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:25:20 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:25:20 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:25:20 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:25:20 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:25:28 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:25:28 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:25:29 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:25:29 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:25:32 --> Severity: Error --> Call to undefined method MPenjualan::SaveData() D:\Projects\master-apotek\application\controllers\Penjualan.php 84
+ERROR - 2018-02-15 23:25:43 --> Severity: Error --> Call to undefined method MPenjualan::SaveData() D:\Projects\master-apotek\application\controllers\Penjualan.php 84
+ERROR - 2018-02-15 23:27:23 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:27:24 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:27:24 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:27:25 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:27:30 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:27:30 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:27:31 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:27:31 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:27:49 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:27:49 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:27:50 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:27:50 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:28:07 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:28:07 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:28:08 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:28:08 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:28:37 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:28:37 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:28:37 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:28:37 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:28:47 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:28:47 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:28:47 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:28:47 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:29:52 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:29:52 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:29:52 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:29:53 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:29:59 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:29:59 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:29:59 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:29:59 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:30:10 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:30:10 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:30:10 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:30:11 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:30:19 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:30:19 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:30:19 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:30:20 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:31:17 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:31:17 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:31:18 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:31:18 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:31:31 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:31:31 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:31:32 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:31:32 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:31:48 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:31:48 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:31:49 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:31:49 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:31:57 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:31:57 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:31:58 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:31:58 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:32:17 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:32:17 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:32:18 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:32:18 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:32:56 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:32:56 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:32:57 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:32:57 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:35:57 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:35:57 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:35:58 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:35:58 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:44:36 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:44:36 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:44:37 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:44:37 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:57:21 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:57:21 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:57:22 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:57:23 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:57:29 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:57:29 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:57:30 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:57:30 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:57:36 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:57:36 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:57:37 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:57:37 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:57:45 --> Query error: Column 'id_resep' cannot be null - Invalid query: INSERT INTO `ak_data_resep_detail` (`id_resep`, `id_barang_detail`, `etiket`, `qty`, `total`) VALUES (NULL, '1', NULL, '1', 15277)
+ERROR - 2018-02-15 23:58:01 --> Query error: Column 'id_resep' cannot be null - Invalid query: INSERT INTO `ak_data_resep_detail` (`id_resep`, `id_barang_detail`, `etiket`, `qty`, `total`) VALUES (NULL, '1', NULL, '1', 15277)
+ERROR - 2018-02-15 23:58:13 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:58:13 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:58:14 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:58:14 --> 404 Page Not Found: Assets/datatables.net_bs
+ERROR - 2018-02-15 23:58:47 --> Query error: Column 'id_resep' cannot be null - Invalid query: INSERT INTO `ak_data_resep_detail` (`id_resep`, `id_barang_detail`, `etiket`, `qty`, `total`) VALUES (NULL, '5', NULL, '1', 1479)
+ERROR - 2018-02-15 23:59:51 --> Query error: Column 'id_resep' cannot be null - Invalid query: INSERT INTO `ak_data_resep_detail` (`id_resep`, `id_barang_detail`, `etiket`, `qty`, `total`) VALUES (NULL, '5', NULL, '1', 1479)

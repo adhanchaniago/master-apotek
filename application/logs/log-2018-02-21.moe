@@ -1,0 +1,279 @@
+ERROR - 2018-02-21 01:42:22 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 01:42:23 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 01:42:55 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 01:42:55 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 01:44:32 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 01:44:33 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 01:55:13 --> Severity: Parsing Error --> syntax error, unexpected ')' D:\Projects\master-apotek\application\models\MGudang.php 35
+ERROR - 2018-02-21 01:56:53 --> Severity: Parsing Error --> syntax error, unexpected ';' D:\Projects\master-apotek\application\controllers\Barang.php 26
+ERROR - 2018-02-21 01:59:18 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 01:59:19 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:04:18 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:04:19 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:04:22 --> Query error: Unknown column 'ak_data_barang.id_barang' in 'on clause' - Invalid query: SELECT *
+FROM `ak_data_pbf`
+JOIN `ak_data_barang_stok` ON `ak_data_barang_stok`.`id_barang`=`ak_data_barang`.`id_barang`
+JOIN `ak_data_jenis_obat` ON `ak_data_jenis_obat`.`id_jenis`=`ak_data_barang`.`id_jenis`
+JOIN `ak_data_kemasan` ON `ak_data_kemasan`.`id_kemasan`=`ak_data_barang`.`id_kemasan`
+JOIN `ak_data_satuan` ON `ak_data_satuan`.`id_satuan`=`ak_data_barang`.`id_satuan`
+JOIN `ak_data_pabrik` ON `ak_data_pabrik`.`id_pabrik`=`ak_data_barang`.`id_pabrik`
+WHERE `ak_data_pbf`.`deleted` =0
+ LIMIT 10
+ERROR - 2018-02-21 02:04:30 --> Query error: Unknown column 'ak_data_barang.id_barang' in 'on clause' - Invalid query: SELECT *
+FROM `ak_data_pbf`
+JOIN `ak_data_barang_stok` ON `ak_data_barang_stok`.`id_barang`=`ak_data_barang`.`id_barang`
+JOIN `ak_data_jenis_obat` ON `ak_data_jenis_obat`.`id_jenis`=`ak_data_barang`.`id_jenis`
+JOIN `ak_data_kemasan` ON `ak_data_kemasan`.`id_kemasan`=`ak_data_barang`.`id_kemasan`
+JOIN `ak_data_satuan` ON `ak_data_satuan`.`id_satuan`=`ak_data_barang`.`id_satuan`
+JOIN `ak_data_pabrik` ON `ak_data_pabrik`.`id_pabrik`=`ak_data_barang`.`id_pabrik`
+WHERE `ak_data_pbf`.`deleted` =0
+ LIMIT 10
+ERROR - 2018-02-21 02:05:39 --> Query error: Unknown column 'ak_data_pbf.id_barang' in 'on clause' - Invalid query: SELECT *
+FROM `ak_data_pbf`
+JOIN `ak_data_barang_stok` ON `ak_data_barang_stok`.`id_barang`=`ak_data_pbf`.`id_barang`
+JOIN `ak_data_jenis_obat` ON `ak_data_jenis_obat`.`id_jenis`=`ak_data_pbf`.`id_jenis`
+JOIN `ak_data_kemasan` ON `ak_data_kemasan`.`id_kemasan`=`ak_data_pbf`.`id_kemasan`
+JOIN `ak_data_satuan` ON `ak_data_satuan`.`id_satuan`=`ak_data_pbf`.`id_satuan`
+JOIN `ak_data_pabrik` ON `ak_data_pabrik`.`id_pabrik`=`ak_data_pbf`.`id_pabrik`
+WHERE `ak_data_pbf`.`deleted` =0
+ LIMIT 10
+ERROR - 2018-02-21 02:07:45 --> Query error: Unknown column 'ak_data_barang.id_barang,ak_data_jenis_obat' in 'on clause' - Invalid query: SELECT *
+FROM `ak_data_barang`
+JOIN `ak_data_barang_stok` ON `ak_data_barang_stok`.`id_barang`=`ak_data_barang`.`id_barang,ak_data_jenis_obat`
+JOIN `ak_data_kemasan` ON `ak_data_kemasan`.`id_kemasan`=`ak_data_barang`.`id_kemasan`
+JOIN `ak_data_satuan` ON `ak_data_satuan`.`id_satuan`=`ak_data_barang`.`id_satuan`
+JOIN `ak_data_pabrik` ON `ak_data_pabrik`.`id_pabrik`=`ak_data_barang`.`id_pabrik`
+WHERE `ak_data_barang`.`deleted` =0
+ LIMIT 10
+ERROR - 2018-02-21 02:13:16 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:13:17 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:14:03 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:14:05 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:17:15 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:17:16 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:17:49 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 02:18:49 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:18:51 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:18:54 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 02:21:32 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:21:34 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:21:39 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 02:24:03 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:24:05 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:24:11 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 02:25:00 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:25:02 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:25:06 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 02:27:38 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:27:39 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:27:40 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 02:31:42 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:31:42 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:31:43 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 02:32:07 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:32:07 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:32:08 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 02:32:25 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:32:25 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:32:26 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 02:34:21 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:34:22 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:34:23 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 02:34:35 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:34:36 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:34:37 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 02:34:42 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:34:42 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:34:43 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 02:35:43 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:35:45 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:35:51 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 02:37:24 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:37:26 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:37:29 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 02:38:01 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:38:03 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:38:07 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 02:40:46 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:40:48 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:40:52 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 02:41:22 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:41:24 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:41:28 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 02:41:38 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:41:40 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:41:42 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:41:46 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 02:42:51 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:42:55 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:42:59 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 02:43:00 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:43:02 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:43:06 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 02:49:54 --> Severity: Parsing Error --> syntax error, unexpected '$data' (T_VARIABLE) D:\Projects\master-apotek\application\controllers\Barang.php 42
+ERROR - 2018-02-21 02:50:18 --> Severity: Error --> Call to a member function count_all() on null D:\Projects\master-apotek\application\controllers\Barang.php 47
+ERROR - 2018-02-21 02:50:55 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:50:57 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:51:00 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 02:51:40 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:51:41 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:51:44 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 02:54:33 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:54:35 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:54:36 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 02:54:36 --> 404 Page Not Found: Customers/ajax_list
+ERROR - 2018-02-21 02:54:43 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:54:44 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:54:45 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 02:55:40 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:55:40 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:55:41 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 02:56:38 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:56:38 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:56:39 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 02:56:57 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:56:57 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:56:58 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 02:57:14 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:57:14 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:57:15 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 02:58:27 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:58:27 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:58:28 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 02:58:44 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:58:44 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:58:45 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 02:58:53 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:58:53 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:58:54 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 02:59:18 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:59:19 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:59:20 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 02:59:28 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:59:29 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:59:30 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 02:59:37 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:59:37 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:59:38 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 02:59:48 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:59:49 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 02:59:50 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 03:00:40 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:00:40 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:00:41 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 03:02:03 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:02:04 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:02:05 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 03:02:31 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:02:31 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:02:32 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 03:03:19 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:03:20 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:03:21 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 03:03:30 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:03:30 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:03:31 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 03:03:56 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:03:56 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:03:57 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 03:04:16 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:04:16 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:04:17 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 03:04:32 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:04:32 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:04:33 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 03:04:52 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:04:52 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:04:53 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 03:05:04 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:05:05 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:05:06 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 03:05:33 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:05:34 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:05:35 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 03:06:09 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:06:09 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:06:10 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 03:06:31 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:06:31 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:06:32 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 03:08:06 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:08:06 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:08:07 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 03:10:14 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:10:14 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:10:15 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 03:10:56 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:10:56 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:10:57 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 03:11:04 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:11:04 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:11:05 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 03:15:39 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:15:39 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:15:40 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 03:20:35 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:20:35 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:20:36 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 03:20:46 --> 404 Page Not Found: Barang/get_single_data
+ERROR - 2018-02-21 03:25:24 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:25:24 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:25:25 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 03:25:40 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:25:41 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:25:42 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 03:29:27 --> 404 Page Not Found: Barang/get_single_data
+ERROR - 2018-02-21 03:29:41 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:29:41 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:29:42 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 03:30:11 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:30:11 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:30:12 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 03:30:16 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:30:16 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:30:17 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 03:33:31 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:33:31 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:33:32 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 03:33:40 --> 404 Page Not Found: Barang/get_single_data
+ERROR - 2018-02-21 03:34:11 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:34:12 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:34:12 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 03:34:24 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:34:25 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:34:25 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 03:34:59 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:35:00 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:35:01 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 03:35:15 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:35:16 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:35:17 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 03:36:57 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:36:57 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:36:58 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 03:38:17 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:38:18 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:38:50 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:38:50 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:39:11 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:39:11 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:39:22 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:39:22 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:40:15 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:40:15 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:40:42 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 03:40:52 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:40:52 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:40:53 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-02-21 03:45:23 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:45:23 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:46:20 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:46:21 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:49:37 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:49:38 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:49:49 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:49:49 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:49:58 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:49:58 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:50:29 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-02-21 03:50:30 --> 404 Page Not Found: Assets/input_mask

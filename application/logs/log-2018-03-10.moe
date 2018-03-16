@@ -1,0 +1,177 @@
+ERROR - 2018-03-10 16:02:50 --> 404 Page Not Found: Assets/adminLTE
+ERROR - 2018-03-10 21:46:36 --> 404 Page Not Found: Assets/adminLTE
+ERROR - 2018-03-10 21:46:45 --> Query error: Table 'simkes_apotek.ak_data_resep' doesn't exist - Invalid query: SELECT *
+FROM `ak_data_resep`
+WHERE `ak_data_resep`.`id_penjualan` IS NULL
+ERROR - 2018-03-10 21:49:13 --> Query error: Unknown column 'ak_data_penjualan_resep_detail.deleted' in 'where clause' - Invalid query: SELECT *
+FROM `ak_data_penjualan`
+JOIN `ak_data_penjualan_resep` ON `ak_data_penjualan_resep`.`id_penjualan`=`ak_data_penjualan`.`id_penjualan`
+JOIN `ak_data_penjualan_resep_detail` ON `ak_data_penjualan_resep_detail`.`id_resep`=`ak_data_penjualan_resep`.`id_resep`
+JOIN `ak_data_barang_detail` ON `ak_data_barang_detail`.`id_barang_detail`=`ak_data_penjualan_resep_detail`.`id_barang_detail`
+JOIN `ak_data_barang` ON `ak_data_barang`.`id_barang`=`ak_data_barang_detail`.`id_barang`
+JOIN `ak_data_satuan` ON `ak_data_satuan`.`id_satuan`=`ak_data_barang`.`id_satuan`
+WHERE `ak_data_penjualan`.`id_penjualan` = 'TR18031000003'
+AND `ak_data_penjualan_resep_detail`.`deleted` =0
+ERROR - 2018-03-10 21:49:26 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-03-10 21:49:46 --> Query error: Unknown column 'ak_data_penjualan_resep_detail.deleted' in 'where clause' - Invalid query: SELECT *
+FROM `ak_data_penjualan`
+JOIN `ak_data_penjualan_resep` ON `ak_data_penjualan_resep`.`id_penjualan`=`ak_data_penjualan`.`id_penjualan`
+JOIN `ak_data_penjualan_resep_detail` ON `ak_data_penjualan_resep_detail`.`id_resep`=`ak_data_penjualan_resep`.`id_resep`
+JOIN `ak_data_barang_detail` ON `ak_data_barang_detail`.`id_barang_detail`=`ak_data_penjualan_resep_detail`.`id_barang_detail`
+JOIN `ak_data_barang` ON `ak_data_barang`.`id_barang`=`ak_data_barang_detail`.`id_barang`
+JOIN `ak_data_satuan` ON `ak_data_satuan`.`id_satuan`=`ak_data_barang`.`id_satuan`
+WHERE `ak_data_penjualan`.`id_penjualan` IS NULL
+AND `ak_data_penjualan_resep_detail`.`deleted` =0
+ERROR - 2018-03-10 22:37:58 --> Query error: Unknown column 'ak_data_penjualan_resep_detail.deleted' in 'where clause' - Invalid query: SELECT *
+FROM `ak_data_penjualan`
+JOIN `ak_data_penjualan_resep` ON `ak_data_penjualan_resep`.`id_penjualan`=`ak_data_penjualan`.`id_penjualan`
+JOIN `ak_data_penjualan_resep_detail` ON `ak_data_penjualan_resep_detail`.`id_resep`=`ak_data_penjualan_resep`.`id_resep`
+JOIN `ak_data_barang_detail` ON `ak_data_barang_detail`.`id_barang_detail`=`ak_data_penjualan_resep_detail`.`id_barang_detail`
+JOIN `ak_data_barang` ON `ak_data_barang`.`id_barang`=`ak_data_barang_detail`.`id_barang`
+JOIN `ak_data_satuan` ON `ak_data_satuan`.`id_satuan`=`ak_data_barang`.`id_satuan`
+WHERE `ak_data_penjualan`.`id_penjualan` = 'TR18031000003'
+AND `ak_data_penjualan_resep_detail`.`deleted` =0
+ERROR - 2018-03-10 22:38:04 --> Query error: Unknown column 'ak_data_penjualan_resep_detail.deleted' in 'where clause' - Invalid query: SELECT *
+FROM `ak_data_penjualan`
+JOIN `ak_data_penjualan_resep` ON `ak_data_penjualan_resep`.`id_penjualan`=`ak_data_penjualan`.`id_penjualan`
+JOIN `ak_data_penjualan_resep_detail` ON `ak_data_penjualan_resep_detail`.`id_resep`=`ak_data_penjualan_resep`.`id_resep`
+JOIN `ak_data_barang_detail` ON `ak_data_barang_detail`.`id_barang_detail`=`ak_data_penjualan_resep_detail`.`id_barang_detail`
+JOIN `ak_data_barang` ON `ak_data_barang`.`id_barang`=`ak_data_barang_detail`.`id_barang`
+JOIN `ak_data_satuan` ON `ak_data_satuan`.`id_satuan`=`ak_data_barang`.`id_satuan`
+WHERE `ak_data_penjualan`.`id_penjualan` IS NULL
+AND `ak_data_penjualan_resep_detail`.`deleted` =0
+ERROR - 2018-03-10 22:39:31 --> Query error: Table 'simkes_apotek.ak_data_penjualan_barang_detail' doesn't exist - Invalid query: SELECT SUM(`total`) AS `total`
+FROM `ak_data_penjualan_barang_detail`
+WHERE `id_penjualan` IS NULL
+AND `ak_data_penjualan_barang_detail`.`deleted` =0
+ERROR - 2018-03-10 22:39:56 --> Query error: Unknown column 'total' in 'field list' - Invalid query: SELECT SUM(`total`) AS `total`
+FROM `ak_data_penjualan_bebas_detail`
+WHERE `id_penjualan` IS NULL
+AND `ak_data_penjualan_bebas_detail`.`deleted` =0
+ERROR - 2018-03-10 22:40:31 --> Query error: Unknown column 'total' in 'field list' - Invalid query: SELECT SUM(`total`) AS `total`
+FROM `ak_data_penjualan_bebas_detail`
+WHERE `id_penjualan` IS NULL
+AND `ak_data_penjualan_bebas_detail`.`deleted` =0
+ERROR - 2018-03-10 22:40:47 --> Query error: Unknown column 'total' in 'field list' - Invalid query: SELECT SUM(`total`) AS `total`
+FROM `ak_data_penjualan_bebas_detail`
+WHERE `id_penjualan` IS NULL
+AND `ak_data_penjualan_bebas_detail`.`deleted` =0
+ERROR - 2018-03-10 22:41:06 --> Query error: Unknown column 'total' in 'field list' - Invalid query: SELECT SUM(`total`) AS `total`
+FROM `ak_data_penjualan_bebas_detail`
+WHERE `id_penjualan` IS NULL
+AND `ak_data_penjualan_bebas_detail`.`deleted` =0
+ERROR - 2018-03-10 22:41:19 --> Query error: Unknown column 'id_penjualan' in 'where clause' - Invalid query: SELECT SUM(`total_penjualan_bebas`) AS `total_penjualan_bebas`
+FROM `ak_data_penjualan_bebas_detail`
+WHERE `id_penjualan` IS NULL
+AND `ak_data_penjualan_bebas_detail`.`deleted` =0
+ERROR - 2018-03-10 22:41:37 --> Query error: Unknown column 'ak_data_penjualan_bebas_detail.deleted' in 'where clause' - Invalid query: SELECT SUM(`total_penjualan_bebas`) AS `total_penjualan_bebas`
+FROM `ak_data_penjualan_bebas_detail`
+WHERE `id_penjualan_bebas` IS NULL
+AND `ak_data_penjualan_bebas_detail`.`deleted` =0
+ERROR - 2018-03-10 22:41:54 --> Query error: Unknown column 'ak_data_penjualan_bebas_detail.deleted' in 'where clause' - Invalid query: SELECT *
+FROM `ak_data_penjualan`
+JOIN `ak_data_penjualan_bebas_detail` ON `ak_data_penjualan_bebas_detail`.`id_penjualan`=`ak_data_penjualan`.`id_penjualan`
+JOIN `ak_data_barang_detail` ON `ak_data_barang_detail`.`id_barang_detail`=`ak_data_penjualan_bebas_detail`.`id_barang_detail`
+JOIN `ak_data_barang` ON `ak_data_barang`.`id_barang`=`ak_data_barang_detail`.`id_barang`
+JOIN `ak_data_satuan` ON `ak_data_satuan`.`id_satuan`=`ak_data_barang`.`id_satuan`
+WHERE `ak_data_penjualan`.`id_penjualan` = 'TR18031000003'
+AND `ak_data_penjualan_bebas_detail`.`deleted` =0
+ERROR - 2018-03-10 22:43:25 --> Query error: PROCEDURE simkes_apotek.ubah_penerbit does not exist - Invalid query: call ubah_penerbit('1')
+ERROR - 2018-03-10 22:43:40 --> Query error: PROCEDURE simkes_apotek.ubah_penerbit does not exist - Invalid query: call ubah_penerbit('1')
+ERROR - 2018-03-10 22:43:47 --> 404 Page Not Found: Penjualandata_pj_non_resep/index
+ERROR - 2018-03-10 22:43:51 --> Query error: PROCEDURE simkes_apotek.ubah_penerbit does not exist - Invalid query: call ubah_penerbit('1')
+ERROR - 2018-03-10 22:44:12 --> Severity: Error --> Call to a member function result() on null D:\Projects\master-apotek\application\controllers\Penjualan.php 110
+ERROR - 2018-03-10 22:44:12 --> Query error: Commands out of sync; you can't run this command now - Invalid query: UPDATE `ak_data_log` SET `timestamp` = 1520696652
+WHERE `id` = 'rn0ohae7h00aejadne3dbbet3799vmmm'
+AND `ip_address` = '::1'
+ERROR - 2018-03-10 22:44:12 --> Query error: Commands out of sync; you can't run this command now - Invalid query: SELECT RELEASE_LOCK('997f32c6347cc404ff362b220d0536d3') AS ci_session_lock
+ERROR - 2018-03-10 22:44:12 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at D:\Projects\master-apotek\system\database\DB_driver.php:1782) D:\Projects\master-apotek\system\core\Common.php 570
+ERROR - 2018-03-10 22:44:44 --> Severity: Error --> Call to a member function result() on null D:\Projects\master-apotek\application\controllers\Penjualan.php 110
+ERROR - 2018-03-10 22:44:44 --> Query error: Commands out of sync; you can't run this command now - Invalid query: UPDATE `ak_data_log` SET `timestamp` = 1520696684
+WHERE `id` = 'rn0ohae7h00aejadne3dbbet3799vmmm'
+AND `ip_address` = '::1'
+ERROR - 2018-03-10 22:44:44 --> Query error: Commands out of sync; you can't run this command now - Invalid query: SELECT RELEASE_LOCK('997f32c6347cc404ff362b220d0536d3') AS ci_session_lock
+ERROR - 2018-03-10 22:44:44 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at D:\Projects\master-apotek\system\database\DB_driver.php:1782) D:\Projects\master-apotek\system\core\Common.php 570
+ERROR - 2018-03-10 22:44:47 --> Severity: Error --> Call to a member function result() on null D:\Projects\master-apotek\application\controllers\Penjualan.php 110
+ERROR - 2018-03-10 22:44:47 --> Query error: Commands out of sync; you can't run this command now - Invalid query: UPDATE `ak_data_log` SET `timestamp` = 1520696687
+WHERE `id` = 'rn0ohae7h00aejadne3dbbet3799vmmm'
+AND `ip_address` = '::1'
+ERROR - 2018-03-10 22:44:47 --> Query error: Commands out of sync; you can't run this command now - Invalid query: SELECT RELEASE_LOCK('997f32c6347cc404ff362b220d0536d3') AS ci_session_lock
+ERROR - 2018-03-10 22:44:47 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at D:\Projects\master-apotek\system\database\DB_driver.php:1782) D:\Projects\master-apotek\system\core\Common.php 570
+ERROR - 2018-03-10 22:44:48 --> Severity: Error --> Call to a member function result() on null D:\Projects\master-apotek\application\controllers\Penjualan.php 110
+ERROR - 2018-03-10 22:44:48 --> Query error: Commands out of sync; you can't run this command now - Invalid query: UPDATE `ak_data_log` SET `timestamp` = 1520696688
+WHERE `id` = 'rn0ohae7h00aejadne3dbbet3799vmmm'
+AND `ip_address` = '::1'
+ERROR - 2018-03-10 22:44:48 --> Query error: Commands out of sync; you can't run this command now - Invalid query: SELECT RELEASE_LOCK('997f32c6347cc404ff362b220d0536d3') AS ci_session_lock
+ERROR - 2018-03-10 22:44:48 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at D:\Projects\master-apotek\system\database\DB_driver.php:1782) D:\Projects\master-apotek\system\core\Common.php 570
+ERROR - 2018-03-10 22:44:49 --> Severity: Error --> Call to a member function result() on null D:\Projects\master-apotek\application\controllers\Penjualan.php 110
+ERROR - 2018-03-10 22:44:49 --> Query error: Commands out of sync; you can't run this command now - Invalid query: UPDATE `ak_data_log` SET `timestamp` = 1520696689
+WHERE `id` = 'rn0ohae7h00aejadne3dbbet3799vmmm'
+AND `ip_address` = '::1'
+ERROR - 2018-03-10 22:44:49 --> Query error: Commands out of sync; you can't run this command now - Invalid query: SELECT RELEASE_LOCK('997f32c6347cc404ff362b220d0536d3') AS ci_session_lock
+ERROR - 2018-03-10 22:44:49 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at D:\Projects\master-apotek\system\database\DB_driver.php:1782) D:\Projects\master-apotek\system\core\Common.php 570
+ERROR - 2018-03-10 22:44:51 --> Severity: Error --> Call to a member function result() on null D:\Projects\master-apotek\application\controllers\Penjualan.php 110
+ERROR - 2018-03-10 22:44:51 --> Query error: Commands out of sync; you can't run this command now - Invalid query: UPDATE `ak_data_log` SET `timestamp` = 1520696691
+WHERE `id` = 'rn0ohae7h00aejadne3dbbet3799vmmm'
+AND `ip_address` = '::1'
+ERROR - 2018-03-10 22:44:51 --> Query error: Commands out of sync; you can't run this command now - Invalid query: SELECT RELEASE_LOCK('997f32c6347cc404ff362b220d0536d3') AS ci_session_lock
+ERROR - 2018-03-10 22:44:51 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at D:\Projects\master-apotek\system\database\DB_driver.php:1782) D:\Projects\master-apotek\system\core\Common.php 570
+ERROR - 2018-03-10 22:46:38 --> Severity: Error --> Call to undefined method CI_DB_mysqli_result::next_result() D:\Projects\master-apotek\application\models\MPenjualan.php 79
+ERROR - 2018-03-10 22:46:38 --> Query error: Commands out of sync; you can't run this command now - Invalid query: UPDATE `ak_data_log` SET `timestamp` = 1520696798
+WHERE `id` = 'rn0ohae7h00aejadne3dbbet3799vmmm'
+AND `ip_address` = '::1'
+ERROR - 2018-03-10 22:46:38 --> Query error: Commands out of sync; you can't run this command now - Invalid query: SELECT RELEASE_LOCK('997f32c6347cc404ff362b220d0536d3') AS ci_session_lock
+ERROR - 2018-03-10 22:46:38 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at D:\Projects\master-apotek\system\database\DB_driver.php:1782) D:\Projects\master-apotek\system\core\Common.php 570
+ERROR - 2018-03-10 22:46:40 --> Query error: Unknown column 'ak_data_penjualan_resep_detail.deleted' in 'where clause' - Invalid query: SELECT *
+FROM `ak_data_penjualan`
+JOIN `ak_data_penjualan_resep` ON `ak_data_penjualan_resep`.`id_penjualan`=`ak_data_penjualan`.`id_penjualan`
+JOIN `ak_data_penjualan_resep_detail` ON `ak_data_penjualan_resep_detail`.`id_resep`=`ak_data_penjualan_resep`.`id_resep`
+JOIN `ak_data_barang_detail` ON `ak_data_barang_detail`.`id_barang_detail`=`ak_data_penjualan_resep_detail`.`id_barang_detail`
+JOIN `ak_data_barang` ON `ak_data_barang`.`id_barang`=`ak_data_barang_detail`.`id_barang`
+JOIN `ak_data_satuan` ON `ak_data_satuan`.`id_satuan`=`ak_data_barang`.`id_satuan`
+WHERE `ak_data_penjualan`.`id_penjualan` = 'TR18031000003'
+AND `ak_data_penjualan_resep_detail`.`deleted` =0
+ERROR - 2018-03-10 22:46:41 --> Severity: Error --> Call to undefined method CI_DB_mysqli_result::next_result() D:\Projects\master-apotek\application\models\MPenjualan.php 79
+ERROR - 2018-03-10 22:46:41 --> Query error: Commands out of sync; you can't run this command now - Invalid query: UPDATE `ak_data_log` SET `timestamp` = 1520696801
+WHERE `id` = 'rn0ohae7h00aejadne3dbbet3799vmmm'
+AND `ip_address` = '::1'
+ERROR - 2018-03-10 22:46:41 --> Query error: Commands out of sync; you can't run this command now - Invalid query: SELECT RELEASE_LOCK('997f32c6347cc404ff362b220d0536d3') AS ci_session_lock
+ERROR - 2018-03-10 22:46:41 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at D:\Projects\master-apotek\system\database\DB_driver.php:1782) D:\Projects\master-apotek\system\core\Common.php 570
+ERROR - 2018-03-10 22:48:16 --> Severity: Error --> Call to undefined method CI_DB_mysqli_result::next_result() D:\Projects\master-apotek\application\models\MPenjualan.php 79
+ERROR - 2018-03-10 22:48:16 --> Query error: Commands out of sync; you can't run this command now - Invalid query: UPDATE `ak_data_log` SET `timestamp` = 1520696896
+WHERE `id` = 'rn0ohae7h00aejadne3dbbet3799vmmm'
+AND `ip_address` = '::1'
+ERROR - 2018-03-10 22:48:16 --> Query error: Commands out of sync; you can't run this command now - Invalid query: SELECT RELEASE_LOCK('997f32c6347cc404ff362b220d0536d3') AS ci_session_lock
+ERROR - 2018-03-10 22:48:16 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at D:\Projects\master-apotek\system\database\DB_driver.php:1782) D:\Projects\master-apotek\system\core\Common.php 570
+ERROR - 2018-03-10 22:51:10 --> Severity: Error --> Call to undefined method CI_DB_mysqli_result::next_result() D:\Projects\master-apotek\application\models\MPenjualan.php 79
+ERROR - 2018-03-10 22:51:13 --> Severity: Error --> Call to undefined method CI_DB_mysqli_result::next_result() D:\Projects\master-apotek\application\models\MPenjualan.php 79
+ERROR - 2018-03-10 22:51:41 --> Severity: Error --> Call to undefined method CI_DB_mysqli_result::next_result() D:\Projects\master-apotek\application\models\MPenjualan.php 79
+ERROR - 2018-03-10 22:51:43 --> Severity: Error --> Call to undefined method CI_DB_mysqli_result::next_result() D:\Projects\master-apotek\application\models\MPenjualan.php 79
+ERROR - 2018-03-10 22:52:30 --> Severity: Error --> Call to a member function result() on array D:\Projects\master-apotek\application\controllers\Penjualan.php 110
+ERROR - 2018-03-10 22:52:44 --> Severity: Error --> Call to a member function result() on null D:\Projects\master-apotek\application\controllers\Penjualan.php 110
+ERROR - 2018-03-10 23:00:47 --> Query error: Unknown column 'ak_data_penjualan_resep_detail.deleted' in 'where clause' - Invalid query: SELECT *
+FROM `ak_data_penjualan`
+JOIN `ak_data_penjualan_resep` ON `ak_data_penjualan_resep`.`id_penjualan`=`ak_data_penjualan`.`id_penjualan`
+JOIN `ak_data_penjualan_resep_detail` ON `ak_data_penjualan_resep_detail`.`id_resep`=`ak_data_penjualan_resep`.`id_resep`
+JOIN `ak_data_barang_detail` ON `ak_data_barang_detail`.`id_barang_detail`=`ak_data_penjualan_resep_detail`.`id_barang_detail`
+JOIN `ak_data_barang` ON `ak_data_barang`.`id_barang`=`ak_data_barang_detail`.`id_barang`
+JOIN `ak_data_satuan` ON `ak_data_satuan`.`id_satuan`=`ak_data_barang`.`id_satuan`
+WHERE `ak_data_penjualan`.`id_penjualan` = 'TR18031000003'
+AND `ak_data_penjualan_resep_detail`.`deleted` =0
+ERROR - 2018-03-10 23:17:04 --> Query error: Unknown column 'id_barang_detail' in 'order clause' - Invalid query: SELECT *
+FROM `ak_data_barang_detail`
+WHERE `id_barang` = '5'
+ORDER BY `id_barang_detail` DESC
+ERROR - 2018-03-10 23:30:52 --> Query error: Unknown column 'id_barang_detail' in 'order clause' - Invalid query: SELECT *
+FROM `ak_data_barang_detail`
+WHERE `id_barang` = '5'
+ORDER BY `id_barang_detail` DESC
+ERROR - 2018-03-10 23:42:45 --> Severity: Error --> Call to private method MPenjualan::pembulatan() from context 'Penjualan' D:\Projects\master-apotek\application\controllers\Penjualan.php 194
+ERROR - 2018-03-10 23:51:07 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-03-10 23:51:43 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-03-10 23:53:02 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-03-10 23:54:02 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-03-10 23:54:48 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-03-10 23:57:22 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-03-10 23:57:42 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-03-10 23:59:35 --> 404 Page Not Found: Assets/DataTables
