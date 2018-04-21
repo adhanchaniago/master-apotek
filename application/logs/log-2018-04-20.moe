@@ -1,0 +1,68 @@
+ERROR - 2018-04-20 00:00:13 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-20 00:00:13 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-20 00:00:22 --> Severity: Warning --> json_decode() expects parameter 1 to be string, array given /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 67
+ERROR - 2018-04-20 00:01:07 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/models/MPenjualan.php 86
+ERROR - 2018-04-20 00:01:21 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/models/MPenjualan.php 86
+ERROR - 2018-04-20 00:01:25 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-20 00:01:25 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-20 00:01:33 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/models/MPenjualan.php 86
+ERROR - 2018-04-20 00:01:37 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/models/MPenjualan.php 86
+ERROR - 2018-04-20 00:01:39 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/models/MPenjualan.php 86
+ERROR - 2018-04-20 00:01:40 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/models/MPenjualan.php 86
+ERROR - 2018-04-20 00:02:34 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-20 00:02:34 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-20 00:02:47 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/models/MPenjualan.php 86
+ERROR - 2018-04-20 00:02:52 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/models/MPenjualan.php 86
+ERROR - 2018-04-20 00:03:30 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-20 00:03:31 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-20 00:04:20 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-20 00:04:20 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-20 00:05:33 --> Query error: Unknown column 'id_penjualans' in 'where clause' - Invalid query: SELECT *
+FROM `ak_data_penjualan_bebas`
+WHERE `id_barang` = '6'
+AND `id_penjualans` IS NULL
+ERROR - 2018-04-20 00:06:38 --> Severity: Warning --> json_decode() expects parameter 1 to be string, array given /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 67
+ERROR - 2018-04-20 00:07:19 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-20 00:07:19 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-20 00:07:52 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-20 00:07:53 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-20 00:08:28 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-20 00:08:29 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-20 00:09:24 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-20 00:09:24 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-20 00:09:30 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-20 00:09:30 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-20 00:10:18 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/models/MPembelian.php 98
+ERROR - 2018-04-20 00:10:27 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-20 00:10:27 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-20 00:10:34 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-20 00:10:35 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-20 00:12:38 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-20 00:12:38 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-20 00:13:52 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-20 00:13:53 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-20 00:13:59 --> Severity: Error --> Call to undefined method MPenjualan::GetSingle() /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 46
+ERROR - 2018-04-20 00:35:23 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-20 00:35:23 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-20 00:35:24 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-20 00:35:31 --> 404 Page Not Found: Penjualan/bayar
+ERROR - 2018-04-20 00:36:42 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-20 00:36:42 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-20 00:36:49 --> 404 Page Not Found: Penjualan/bayar
+ERROR - 2018-04-20 00:38:40 --> 404 Page Not Found: Penjualan/bayar
+ERROR - 2018-04-20 00:39:13 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-20 00:39:13 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-20 00:39:17 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-20 00:39:17 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-20 00:39:59 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-20 00:39:59 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-20 00:40:46 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-20 00:40:46 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-20 00:44:42 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-20 00:44:42 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-20 00:44:56 --> Severity: Notice --> Undefined property: Penjualan::$data_barang_stok_masuk /Volumes/Data/Projects/master-apotek/system/core/Model.php 73
+ERROR - 2018-04-20 00:44:56 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(`id_barang`, `id_penjualan`, `tanggal_keluar`, `stok_keluar`, `deleted`) VALUES' at line 1 - Invalid query: INSERT INTO  (`id_barang`, `id_penjualan`, `tanggal_keluar`, `stok_keluar`, `deleted`) VALUES ('6', NULL, '2018-04-20 00:44:56', '1', 1)
+ERROR - 2018-04-20 00:45:01 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-20 00:45:02 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-20 00:45:28 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-20 00:45:28 --> 404 Page Not Found: Assets/bootstrap

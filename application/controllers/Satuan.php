@@ -4,52 +4,69 @@ class Satuan extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->model('MSatuan');
-		if($this->session->userdata('isLogin')==NULL) :
+		$isLogin = $this->session->userdata('isLogin');
+		if(!$isLogin) {
 			redirect('portal','refresh');
-		endif;
+		}
 	}
 
 	public function index() {
-		$data['Title'] = "Satuan Obat";
-		$data['Nav'] = "Master Data";
-		$data['Nama'] = $this->session->userdata('nama');
-		$data['Level'] = $this->session->userdata('level');
-		//======== Pagination Start =========
-		$limit_per_page = 10;
-		$start_index = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-		$total_records = $this->MSatuan->GetTotalData();
-
-		if ($total_records > 0) 
-		{
-			// get current page records
-			$data["Data"] = $this->MSatuan->GetData($limit_per_page, $start_index);
-			
-			$config['base_url'] = base_url() . 'satuan/index';
-			$config['total_rows'] = $total_records;
-			$config['per_page'] = $limit_per_page;
-			$config["uri_segment"] = 3;
-			
-			$this->pagination->initialize($config);
-			$data["links"] = $this->pagination->create_links();
+		$level = $this->session->userdata('level');
+		if($level=="Master" OR $level=="Pemilik") {
+			redirect('dashboard/administrator');
+		} else {
+			redirect('dashboard/apoteker');
 		}
-		//============== END of Pagination =============
-		$data['Konten'] = 'Farmasi/V_Satuan_Barang';
-		$this->load->view('Master',$data);
+	}
+
+	public function list_all_data() {
+		$list = $this->MSatuan->GetAll();
+		$datatb= array();
+		$nomor = 1;
+		foreach ($list as $data) {
+			$row = array();
+			$row[] = $nomor++;
+			$row[] = '<a id="getdata" data="'.$data->id_satuan.'" style="cursor:pointer">'.$data->id_satuan.'</a>';
+			$row[] = $data->nm_satuan;
+
+			$datatb[] = $row;
+		}
+
+		$output = array(
+						"draw" => $this->input->post('draw'),
+						"data" => $datatb
+					);
+		echo json_encode($output);
+	}
+
+	public function get_data() {
+		$res = $this->MSatuan->GetSingle();
+		$data = array(
+						'id_satuan' => $res->id_satuan,
+						'nm_satuan' => $res->nm_satuan
+					);
+		echo json_encode($data);
+	}
+
+	public function get_option() {
+		$res = $this->MSatuan->GetOption();
+		echo json_encode($res);
 	}
 
 	public function tambah_data() {
-		$x = $this->MSatuan->SaveData();
-		redirect('satuan','refresh');
+		$res = $this->MSatuan->SaveData();
+		$data = array(
+						'status' => $res
+					);
+		echo json_encode($data);
 	}
 
-	public function edit_data($id) {
-		$x = $this->MSatuan->EditData($id);
-		redirect('satuan','refresh');
-	}
-
-	public function del_data($id) {
-		$x = $this->MSatuan->DelData($id);
-		redirect('satuan','refresh');	
+	public function hapus_data() {
+		$res = $this->MSatuan->DelData();
+		$data = array(
+						'status' => $res
+					);
+		echo json_encode($data);
 	}
 
 }

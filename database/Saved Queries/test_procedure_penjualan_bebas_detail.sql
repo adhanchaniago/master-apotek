@@ -1,1 +1,0 @@
-CALL `ak_procedure_insert_penjualan_bebas`('68', 'USR00001', '1', '0', '80', '15500', '1')

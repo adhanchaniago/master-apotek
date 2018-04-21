@@ -3,53 +3,78 @@ class Pbf extends CI_Controller {
 
 	public function __construct() {
 		parent::__construct();
-		$this->load->model('MPbf');
-		if($this->session->userdata('isLogin')==NULL) :
+		$this->load->model('MPBF');
+		$isLogin = $this->session->userdata('isLogin');
+		if(!$isLogin) {
 			redirect('portal','refresh');
-		endif;
+		}
 	}
 
 	public function index() {
-		$data['Title'] = "PBF Obat";
-		$data['Nav'] = "Master Data";
-		$data['Nama'] = $this->session->userdata('nama');
-		$data['Level'] = $this->session->userdata('level');
-		//======== Pagination Start =========
-		$limit_per_page = 10;
-		$start_index = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-		$total_records = $this->MPbf->GetTotalData();
-
-		if ($total_records > 0) 
-		{
-			// get current page records
-			$data["Data"] = $this->MPbf->GetData($limit_per_page, $start_index);
-			
-			$config['base_url'] = base_url() . 'pbf/index';
-			$config['total_rows'] = $total_records;
-			$config['per_page'] = $limit_per_page;
-			$config["uri_segment"] = 3;
-			
-			$this->pagination->initialize($config);
-			$data["links"] = $this->pagination->create_links();
+		$level = $this->session->userdata('level');
+		if($level=="Master" OR $level=="Pemilik") {
+			redirect('dashboard/administrator');
+		} else {
+			redirect('dashboard/apoteker');
 		}
-		//============== END of Pagination =============
-		$data['Konten'] = 'Gudang/V_PBF';
-		$this->load->view('Master',$data);
+	}
+
+	public function list_all_data() {
+		$list = $this->MPBF->GetAll();
+		$datatb= array();
+		$nomor = 1;
+		foreach ($list as $data) {
+			$row = array();
+			$row[] = $nomor++;
+			$row[] = '<a id="getdata" data="'.$data->id_pbf.'" style="cursor:pointer">'.$data->id_pbf.'</a>';
+			$row[] = $data->nm_pbf;
+			$row[] = $data->alamat_pbf;
+			$row[] = $data->kota_pbf;
+			$row[] = $data->kontak_kantor_pbf;
+			$row[] = $data->kontak_person_pbf;
+
+			$datatb[] = $row;
+		}
+
+		$output = array(
+						"draw" => $this->input->post('draw'),
+						"data" => $datatb
+					);
+		echo json_encode($output);
+	}
+
+	public function get_data() {
+		$res = $this->MPBF->GetSingle();
+		$data = array(
+						'id_pbf' => $res->id_pbf,
+						'nm_pbf' => $res->nm_pbf,
+						'alamat_pbf' => $res->alamat_pbf,
+						'kota_pbf' => $res->kota_pbf,
+						'kontak_kantor_pbf' => $res->kontak_kantor_pbf,
+						'kontak_person_pbf' => $res->kontak_person_pbf
+					);
+		echo json_encode($data);
+	}
+
+	public function get_option() {
+		$res = $this->MPBF->GetOption();
+		echo json_encode($res);
 	}
 
 	public function tambah_data() {
-		$x = $this->MPbf->SaveData();
-		redirect('pbf','refresh');
+		$res = $this->MPBF->SaveData();
+		$data = array(
+						'status' => $res
+					);
+		echo json_encode($data);
 	}
 
-	public function edit_data($id) {
-		$x = $this->MPbf->EditData($id);
-		redirect('pbf','refresh');
-	}
-
-	public function del_data($id) {
-		$x = $this->MPbf->DelData($id);
-		redirect('pbf','refresh');	
+	public function hapus_data() {
+		$res = $this->MPBF->DelData();
+		$data = array(
+						'status' => $res
+					);
+		echo json_encode($data);
 	}
 
 }

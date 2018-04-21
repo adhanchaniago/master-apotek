@@ -7,14 +7,15 @@
 		<title>SISTEM APOTEK - <?= $Title ?></title>
 		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 		<link rel="stylesheet" href="<?= base_url('assets/bootstrap/css/bootstrap.min.css') ?>">
+		<link rel="stylesheet" href="<?= base_url('assets/bootstrap/css/daterangepicker.css') ?>">
+		<link rel="stylesheet" href="<?= base_url('assets/bootstrap/css/bootstrap-datepicker.min.css') ?>">
 		<link rel="stylesheet" href="<?= base_url('assets/font-awesome/css/font-awesome.min.css') ?>">
-		<link rel="stylesheet" href="<?= base_url('assets/select2/dist/css/select2.min.css') ?>">
-		<link rel="stylesheet" href="<?= base_url('assets/adminLTE/css/AdminLTE.css') ?>">
-		<link rel="stylesheet" href="<?= base_url('assets/adminLTE/css/skins/skin-red.css') ?>">
+		<link rel="stylesheet" href="<?= base_url('assets/select2/select2.min.css') ?>">
+		<link rel="stylesheet" href="<?= base_url('assets/AdminLTE/css/AdminLTE.css') ?>">
+		<link rel="stylesheet" href="<?= base_url('assets/AdminLTE/css/skins/skin-purple.min.css') ?>">
 		<link rel="stylesheet" href="<?= base_url('assets/sweet-alert/sweetalert.css') ?>">
-		<link rel="stylesheet" href="<?= base_url('assets/DataTables/datatables.min.css'); ?>">
-		<link rel="stylesheet" href="<?= base_url('assets/css/bootstrap-datepicker.min.css'); ?>">
-		<link rel="stylesheet" href="<?= base_url('assets/css/pace-theme-center-atom.css'); ?>">
+		<link rel="stylesheet" href="<?= base_url('assets/datatables/datatables.min.css'); ?>">
+		<link rel="stylesheet" href="<?= base_url('assets/pace/themes/purple/pace-theme-center-atom.css'); ?>">
 		<style>
 			.ui-autocomplete {
 				max-height: 100px;
@@ -34,26 +35,56 @@
 				z-index: 1999;
 				background: #34495e;
 			}
+			/* .dataTables_wrapper { min-height: 300px; } */
+			.scroll {
+				position:fixed;
+				right:20px;
+				bottom:20px;
+				background:#b2b2b2;
+				background:rgba(178,178,178,0.7);
+				padding:15px;
+				border-radius: 5px;
+				text-align: center;
+				margin: 0 0 0 0;
+				cursor:pointer;
+				transition: 0.5s;
+				-moz-transition: 0.5s;
+				-webkit-transition: 0.5s;
+				-o-transition: 0.5s; 		
+			}
+			.scroll .fa {
+				font-size:30px;
+				margin-top:-5px;
+				margin-left:1px;
+				transition: 0.5s;
+				-moz-transition: 0.5s;
+				-webkit-transition: 0.5s;
+				-o-transition: 0.5s; 	
+			}
+			.dropdown-submenu {
+				position: relative;
+			}
+
+			.dropdown-submenu .dropdown-menu {
+				top: 0;
+				left: 100%;
+				margin-top: -1px;
+			}
 		</style>
 		<script src="<?= base_url('assets/jquery/jquery.min.js') ?>"></script>
-		<script src="<?= base_url('assets/bootstrap/js/bootstrap.js') ?>"></script>
-		<script src="<?= base_url('assets/jquery/jquery.slimscroll.js') ?>"></script>
-		<script src="<?= base_url('assets/fastclick/lib/fastclick.js') ?>"></script>
-		<script src="<?= base_url('assets/adminLTE/js/adminlte.min.js') ?>"></script>
-		<script src="<?= base_url('assets/input-mask/jquery.inputmask.js') ?>"></script>
-		<script src="<?= base_url('assets/input-mask/jquery.inputmask.date.extensions.js') ?>"></script>
-		<script src="<?= base_url('assets/select2/dist/js/select2.full.min.js') ?>"></script>
-		<script src="<?= base_url('assets/DataTables/datatables.min.js') ?>"></script>
+		<script src="<?= base_url('assets/bootstrap/js/bootstrap.min.js') ?>"></script>
+		<script src="<?= base_url('assets/jquery/jquery.slimscroll.min.js') ?>"></script>
+		<script src="<?= base_url('assets/dist/js/fastclick.js') ?>"></script>
+		<script src="<?= base_url('assets/AdminLTE/js/adminlte.min.js') ?>"></script>
+		<script src="<?= base_url('assets/select2/select2.full.min.js') ?>"></script>
+		<script src="<?= base_url('assets/datatables/datatables.min.js') ?>"></script>
 		<script src="<?= base_url('assets/sweet-alert/sweetalert.min.js') ?>"></script>
-		<script src="<?= base_url('assets/js/bootstrap-datepicker.min.js') ?>"></script>
-		<script src="<?= base_url('assets/js/pace.js') ?>"></script>
-		<script>
-			Pace.on("done", function(){
-				$(".cover").fadeOut(1000);
-			});
-		</script>
+		<script src="<?= base_url('assets/pace/pace.min.js') ?>"></script>
+		<script>Pace.on("done", function(){ $(".cover").fadeOut(1000); });</script>
 	</head>
-	<body class="hold-transition skin-red layout-top-nav">
+	<body class="hold-transition skin-purple layout-top-nav">
+		<a id="up" href="#down"></a>
+		<div class="up"></div>
 		<div class="wrapper">
 			<div class="cover"></div>
 			<header class="main-header">
@@ -66,59 +97,75 @@
 							</button>
 						</div>
 						<div class="collapse navbar-collapse pull-left" id="navbar-collapse">
-							<?php if($Level=="IT Support") : ?>
-								<ul class="nav navbar-nav">
-									<li class="<?php if($Nav=='Dashboard') : echo 'active'; endif; ?>"><a href="<?= base_url('dashboard') ?>"><i class="fa fa-home"></i> Dashboard <span class="sr-only">(current)</span></a></li>
+							<ul class="nav navbar-nav">
+								<li class="<?php if($Nav=='Dashboard') : echo 'active'; endif; ?>"><a href="<?= base_url('dashboard') ?>"><i class="fa fa-home"></i> Dashboard <span class="sr-only">(current)</span></a></li>
+								<?php if($Level=="Master" OR $Level=="Pemilik") : ?>
 									<li class="dropdown <?php if($Nav=='Master Data') : echo 'active'; endif; ?>">
-										<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cube"></i> Master Data <span class="caret"></span></a>
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+											<i class="fa fa-cube"></i>
+											Master Data 
+											<span class="fa fa-caret-down"></span>
+										</a>
 										<ul class="dropdown-menu" role="menu">
-											<li><a href="<?= base_url('jenis-obat') ?>">Jenis Obat</a></li>
-											<li><a href="<?= base_url('kemasan') ?>">Kemasan</a></li>
-											<li><a href="<?= base_url('satuan') ?>">Satuan</a></li>
-											<li><a href="<?= base_url('pabrik') ?>">Pabrik</a></li>
-											<li><a href="<?= base_url('pbf') ?>">PBF</a></li>
-											<li><a href="<?= base_url('barang') ?>">Barang</a></li>
-											<li><a href="<?= base_url('margin') ?>">Index Margin</a></li>
-											<li><a href="<?= base_url('user') ?>">Pengguna</a></li>
+											<li><a href="<?= base_url('master/jenis-obat') ?>">Jenis Obat</a></li>
+											<li><a href="<?= base_url('master/kemasan') ?>">Kemasan</a></li>
+											<li><a href="<?= base_url('master/satuan') ?>">Satuan</a></li>
+											<li><a href="<?= base_url('master/pabrik') ?>">Pabrik</a></li>
+											<li><a href="<?= base_url('master/pbf') ?>">PBF</a></li>
+											<li><a href="<?= base_url('master/margin') ?>">Index Margin</a></li>
+											<li><a href="<?= base_url('master/barang') ?>">Barang</a></li>
+											<li><a href="<?= base_url('master/karyawan') ?>">Karyawan</a></li>
 										</ul>
 									</li>
-									<li class="dropdown <?php if($Nav=='Pembelian') : echo 'active'; endif; ?>">
+									<li class="dropdown <?php if($Nav=='Transaksi') : echo 'active'; endif; ?>">
 										<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-shopping-cart"></i> Transaksi <span class="caret"></span></a>
 										<ul class="dropdown-menu" role="menu">
-											<li><a href="<?= base_url('penjualan/pj-resep') ?>">Penjualan Resep</a></li>
-											<li><a href="<?= base_url('penjualan/pj-non-resep') ?>">Penjualan Non Resep</a></li>
-											<li><a href="<?= base_url('pesanan') ?>">Pemesanan</a></li>
-											<li><a href="<?= base_url('pembelian') ?>">Pembelian</a></li>
-											<li><a href="<?= base_url('penyesuaian') ?>">Penyesuaian Stok</a></li>
-											<li><a href="<?= base_url('retur-obat') ?>">Retur Obat</a></li>
+											<li><a href="<?= base_url('transaksi/pemesanan') ?>">Pemesanan</a></li>
+											<li><a href="<?= base_url('transaksi/pembelian') ?>">Pembelian</a></li>
+											<li><a href="<?= base_url('transaksi/pj-bebas') ?>">Penjualan Bebas</a></li>
+											<li><a href="<?= base_url('transaksi/pj-resep') ?>">Penjualan Resep</a></li>
+											<li><a href="<?= base_url('transaksi/retur-obat') ?>">Retur Obat</a></li>
 										</ul>
 									</li>
 									<li class="dropdown <?php if($Nav=='Laporan') : echo 'active'; endif; ?>">
 										<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-archive"></i> Laporan <span class="caret"></span></a>
 										<ul class="dropdown-menu" role="menu">
-											<li><a href="<?= base_url('report/pendapatan') ?>">Pendapatan</a></li>
-											<li><a href="<?= base_url('report/persediaan') ?>">Persediaan</a></li>
-											<li><a href="<?= base_url('report/pembelian') ?>">Pembelian</a></li>
-											<li><a href="<?= base_url('report/kartu-stok') ?>">Kartu Stok</a></li>
-											<li><a href="<?= base_url('report/hutang') ?>">Hutang</a></li>
-											<li><a href="<?= base_url('report/piutang') ?>">Piutang</a></li>
-											<li><a href="<?= base_url('report/penyesuaian') ?>">Penyesuaian</a></li>
-											<li><a href="<?= base_url('report/shu') ?>">SHU</a></li>
+											<li class="dropdown-submenu">
+												<a class="test" tabindex="-1" href="#">Laporan Pembelian <span class="fa fa-caret-right"></span></a>
+												<ul class="dropdown-menu">
+													<li><a tabindex="-1" href="<?= base_url('laporan/pembelian-barang-pabrik') ?>">Barang dan Pabrik</a></li>
+													<li><a tabindex="-1" href="<?= base_url('laporan/pembelian-surat-pesanan') ?>">Surat Pesanan</a></li>
+												</ul>
+											</li>
+											<li><a href="<?= base_url('laporan/penerimaan-barang') ?>">Laporan Penerimaan Barang</a></li>
+											<li class="dropdown-submenu">
+												<a class="test" tabindex="-1" href="#">Laporan Stok <span class="fa fa-caret-right"></span></a>
+												<ul class="dropdown-menu">
+													<li><a tabindex="-1" href="<?= base_url('laporan/stok-limit') ?>">Limit</a></li>
+													<li><a tabindex="-1" href="<?= base_url('laporan/stok-inhand') ?>">Inhand</a></li>
+													<li><a tabindex="-1" href="<?= base_url('laporan/stok-opname') ?>">Opname</a></li>
+												</ul>
+											</li>
+											<li><a href="<?= base_url('laporan/piutang') ?>">Laporan Piutang</a></li>
+											<li><a href="<?= base_url('laporan/hutang') ?>">Laporan Hutang</a></li>
+											<li><a href="<?= base_url('laporan/cashflow') ?>">Laporan Cashflow</a></li>
+											<li><a href="<?= base_url('laporan/laba-rugi') ?>">Laporan Laba Rugi</a></li>
 										</ul>
 									</li>
-								</ul>
-							<?php endif ?>
+									<li class="<?php if($Nav=='Setup') : echo 'active'; endif; ?>"><a href="<?= base_url('setup') ?>"><i class="fa fa-gears"></i> Konfigurasi <span class="sr-only">(current)</span></a></li>
+								<?php endif ?>
+							</ul>
 						</div>
 						<div class="navbar-custom-menu">
 							<ul class="nav navbar-nav">
 								<li class="dropdown user user-menu">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-										<img src="<?= base_url('assets/adminLTE/img/avatar5.png') ?>" class="user-image" alt="User Image">
+										<img src="<?= base_url('assets/AdminLTE/img/avatar5.png') ?>" class="user-image" alt="User Image">
 										<span class="hidden-xs"><?= $Nama ?></span>
 									</a>
 									<ul class="dropdown-menu">
 										<li class="user-header">
-											<img src="<?= base_url('assets/adminLTE/img/avatar5.png') ?>" class="img-circle" alt="User Image">
+											<img src="<?= base_url('assets/AdminLTE/img/avatar5.png') ?>" class="img-circle" alt="User Image">
 											<p>
 												<?= $Nama ?> - <?= $Level; ?>
 												<small>Member since <?= $this->session->userdata('created') ?></small>
@@ -150,9 +197,21 @@
 			</footer>
 		</div>
 		<script>
-		$(document).ready(function () {
-			$('.sidebar-menu').tree()
-		})
+			$(document).ready(function () {
+				$('.sidebar-menu').tree();
+				$('#up, #down').on('click', function(e){
+		    		e.preventDefault();
+		    		var target= $(this).get(0).id == 'up' ? $('#down') : $('#up');
+		    		$('html, body').stop().animate({
+		       			scrollTop: target.offset().top
+		    		}, 1000);
+				});
+				$('.dropdown-submenu a.test').on("click", function(e){
+					$(this).next('ul').toggle();
+					e.stopPropagation();
+					e.preventDefault();
+				});
+			})
 		</script>
 	</body>
 </html>

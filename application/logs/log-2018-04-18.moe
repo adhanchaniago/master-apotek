@@ -1,0 +1,154 @@
+ERROR - 2018-04-18 14:42:27 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) /Volumes/Data/Projects/master-apotek/system/database/drivers/mysqli/mysqli_driver.php 201
+ERROR - 2018-04-18 14:42:27 --> Unable to connect to the database
+ERROR - 2018-04-18 20:03:59 --> Severity: Error --> Call to undefined method MPenjualan::GetAllDetail() /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 57
+ERROR - 2018-04-18 20:26:57 --> Severity: Error --> Call to undefined method MPenjualan::GetAllDetail() /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 57
+ERROR - 2018-04-18 20:50:41 --> Query error: Table 'simkes_apotek.ak_data_barang_satuan' doesn't exist - Invalid query: SELECT *
+FROM `ak_data_penjualan`
+JOIN `ak_data_barang` ON `ak_data_barang`.`id_barang`=`ak_data_penjualan`.`id_barang`
+JOIN `ak_data_barang_satuan` ON `ak_data_barang_satuan`.`id_satuan`=`ak_data_barang`.`id_satuan`
+WHERE `ak_data_penjualan_bebas_detail`.`deleted` =0
+AND `ak_data_penjualan_bebas_detail` IS NULL
+ERROR - 2018-04-18 20:53:06 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-18 20:53:06 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-18 20:53:22 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-18 20:53:22 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-18 20:53:22 --> Query error: Table 'simkes_apotek.ak_data_barang_satuan' doesn't exist - Invalid query: SELECT *
+FROM `ak_data_penjualan`
+JOIN `ak_data_barang` ON `ak_data_barang`.`id_barang`=`ak_data_penjualan`.`id_barang`
+JOIN `ak_data_barang_satuan` ON `ak_data_barang_satuan`.`id_satuan`=`ak_data_barang`.`id_satuan`
+WHERE `ak_data_penjualan_bebas_detail`.`deleted` =0
+AND `ak_data_penjualan_bebas_detail`.`id_penjualan` IS NULL
+ERROR - 2018-04-18 20:53:47 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-18 20:53:47 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-18 20:53:47 --> Query error: Unknown column 'ak_data_penjualan_bebas_detail.deleted' in 'where clause' - Invalid query: SELECT *
+FROM `ak_data_penjualan`
+JOIN `ak_data_barang` ON `ak_data_barang`.`id_barang`=`ak_data_penjualan`.`id_barang`
+JOIN `ak_data_satuan` ON `ak_data_satuan`.`id_satuan`=`ak_data_barang`.`id_satuan`
+WHERE `ak_data_penjualan_bebas_detail`.`deleted` =0
+AND `ak_data_penjualan_bebas_detail`.`id_penjualan` IS NULL
+ERROR - 2018-04-18 20:55:05 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-18 20:55:05 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-18 20:55:05 --> Query error: Unknown column 'ak_data_penjualan.id_barang' in 'on clause' - Invalid query: SELECT *
+FROM `ak_data_penjualan_bebas`
+JOIN `ak_data_barang` ON `ak_data_barang`.`id_barang`=`ak_data_penjualan`.`id_barang`
+JOIN `ak_data_satuan` ON `ak_data_satuan`.`id_satuan`=`ak_data_barang`.`id_satuan`
+WHERE `ak_data_penjualan_bebas`.`deleted` =0
+AND `ak_data_penjualan_bebas`.`id_penjualan` IS NULL
+ERROR - 2018-04-18 20:55:27 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-18 20:55:27 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-18 20:56:24 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-18 20:56:24 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-18 21:52:08 --> Query error: Column 'qty' cannot be null - Invalid query: INSERT INTO `ak_data_penjualan_bebas` (`id_penjualan`, `id_barang`, `id_user`, `nm_pasien`, `qty`, `diskon`, `pembulatan`, `subtotal`) VALUES (NULL, '6', 'USR00001', 'Akasaka Ryuunosuke', NULL, NULL, 0, 0)
+ERROR - 2018-04-18 21:52:12 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-18 21:52:12 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-18 21:52:17 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-18 21:52:17 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-18 21:52:31 --> Query error: Column 'qty' cannot be null - Invalid query: INSERT INTO `ak_data_penjualan_bebas` (`id_penjualan`, `id_barang`, `id_user`, `nm_pasien`, `qty`, `diskon`, `pembulatan`, `subtotal`) VALUES (NULL, '6', 'USR00001', 'Akasaka Ryuunosuke', NULL, NULL, 0, 0)
+ERROR - 2018-04-18 21:55:23 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-18 21:55:23 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-18 21:58:26 --> Severity: Error --> Call to undefined method MPenjualan::GetSingle() /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 45
+ERROR - 2018-04-18 21:58:34 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-18 21:58:34 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-18 21:58:47 --> Query error: Duplicate entry '' for key 'PRIMARY' - Invalid query: INSERT INTO `ak_data_penjualan_bebas` (`id_penjualan`, `id_barang`, `id_user`, `nm_pasien`, `qty`, `diskon`, `pembulatan`, `subtotal`) VALUES (NULL, '6', 'USR00001', 'Akasaka Ryuunosuke', '1', '0', 14719, 100)
+ERROR - 2018-04-18 22:04:52 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-18 22:04:52 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-18 22:05:35 --> Severity: Error --> Call to undefined method MPenjualan::GetSingle() /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 46
+ERROR - 2018-04-18 22:06:04 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-18 22:06:04 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-18 23:00:31 --> Severity: Notice --> Undefined property: Penjualan::$data_barang_stok_tersedia /Volumes/Data/Projects/master-apotek/system/core/Model.php 73
+ERROR - 2018-04-18 23:00:31 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(`id_barang`, `stok_tersedia`, `updated`) VALUES ('6', '0', '2018-04-18 23:00:31' at line 1 - Invalid query: INSERT INTO  (`id_barang`, `stok_tersedia`, `updated`) VALUES ('6', '0', '2018-04-18 23:00:31')
+ERROR - 2018-04-18 23:00:34 --> Severity: Notice --> Undefined property: Penjualan::$data_barang_stok_tersedia /Volumes/Data/Projects/master-apotek/system/core/Model.php 73
+ERROR - 2018-04-18 23:00:34 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(`id_barang`, `stok_tersedia`, `updated`) VALUES ('6', '0', '2018-04-18 23:00:34' at line 1 - Invalid query: INSERT INTO  (`id_barang`, `stok_tersedia`, `updated`) VALUES ('6', '0', '2018-04-18 23:00:34')
+ERROR - 2018-04-18 23:00:39 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-18 23:00:39 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-18 23:00:42 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-18 23:00:43 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-18 23:01:08 --> Severity: Notice --> Undefined property: Penjualan::$data_barang_stok_tersedia /Volumes/Data/Projects/master-apotek/system/core/Model.php 73
+ERROR - 2018-04-18 23:01:08 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(`id_barang`, `stok_tersedia`, `updated`) VALUES ('6', '0', '2018-04-18 23:01:08' at line 1 - Invalid query: INSERT INTO  (`id_barang`, `stok_tersedia`, `updated`) VALUES ('6', '0', '2018-04-18 23:01:08')
+ERROR - 2018-04-18 23:03:04 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-18 23:03:04 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-18 23:12:11 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-18 23:12:11 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-18 23:12:15 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-18 23:12:16 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-18 23:12:16 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Pembelian.php 88
+ERROR - 2018-04-18 23:12:16 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Pembelian.php 89
+ERROR - 2018-04-18 23:12:16 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Pembelian.php 90
+ERROR - 2018-04-18 23:14:09 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-18 23:14:09 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-18 23:14:21 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-18 23:14:21 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-18 23:14:27 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-18 23:14:27 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-18 23:14:31 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-18 23:14:31 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-18 23:14:31 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Pembelian.php 88
+ERROR - 2018-04-18 23:14:31 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Pembelian.php 89
+ERROR - 2018-04-18 23:14:31 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Pembelian.php 90
+ERROR - 2018-04-18 23:15:56 --> Query error: Column 'subtotal' cannot be null - Invalid query: INSERT INTO `ak_data_pembelian` (`id_pembelian`, `id_pbf`, `id_user`, `tanggal_pembelian`, `tanggal_jatuh_tempo`, `subtotal`) VALUES ('FK18041800002', 'PBF00001', 'USR00001', '2018-04-18', '2018-05-01', NULL)
+ERROR - 2018-04-18 23:20:10 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-18 23:20:10 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-18 23:20:32 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-18 23:20:32 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-18 23:20:32 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Pembelian.php 88
+ERROR - 2018-04-18 23:20:32 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Pembelian.php 89
+ERROR - 2018-04-18 23:20:32 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Pembelian.php 90
+ERROR - 2018-04-18 23:22:11 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-18 23:22:11 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-18 23:22:15 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-18 23:22:15 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-18 23:22:15 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Pembelian.php 88
+ERROR - 2018-04-18 23:22:15 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Pembelian.php 89
+ERROR - 2018-04-18 23:22:15 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Pembelian.php 90
+ERROR - 2018-04-18 23:23:07 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-18 23:23:07 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-18 23:24:21 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-18 23:24:21 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-18 23:26:41 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-18 23:26:41 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-18 23:28:53 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-18 23:28:54 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-18 23:28:54 --> Severity: Notice --> Undefined variable: data_qty /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 30
+ERROR - 2018-04-18 23:29:52 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-18 23:29:52 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-18 23:29:52 --> Severity: Notice --> Undefined variable: data_qty /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 27
+ERROR - 2018-04-18 23:30:43 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-18 23:30:43 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-18 23:33:21 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-18 23:33:21 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-18 23:36:26 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Pembelian.php 88
+ERROR - 2018-04-18 23:36:26 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Pembelian.php 89
+ERROR - 2018-04-18 23:36:26 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Pembelian.php 90
+ERROR - 2018-04-18 23:46:01 --> Query error: Table 'simkes_apotek.ak_data_barang_tersedia' doesn't exist - Invalid query: SELECT *
+FROM `ak_data_barang_tersedia`
+WHERE `id_barang` = '6'
+ERROR - 2018-04-18 23:46:07 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-18 23:46:07 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-18 23:46:48 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-18 23:46:48 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-18 23:46:49 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Pembelian.php 88
+ERROR - 2018-04-18 23:46:49 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Pembelian.php 89
+ERROR - 2018-04-18 23:46:49 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Pembelian.php 90
+ERROR - 2018-04-18 23:48:09 --> Query error: Table 'simkes_apotek.ak_data_barang_tersedia' doesn't exist - Invalid query: SELECT *
+FROM `ak_data_barang_tersedia`
+WHERE `id_barang` = '6'
+ERROR - 2018-04-18 23:50:28 --> Severity: Error --> Call to undefined method MPembelian::input_post() /Volumes/Data/Projects/master-apotek/application/models/MPembelian.php 93
+ERROR - 2018-04-18 23:50:39 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-18 23:50:40 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-18 23:50:40 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Pembelian.php 88
+ERROR - 2018-04-18 23:50:40 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Pembelian.php 89
+ERROR - 2018-04-18 23:50:40 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Pembelian.php 90
+ERROR - 2018-04-18 23:50:53 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-18 23:50:53 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-18 23:50:53 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Pembelian.php 88
+ERROR - 2018-04-18 23:50:53 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Pembelian.php 89
+ERROR - 2018-04-18 23:50:53 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Pembelian.php 90
+ERROR - 2018-04-18 23:51:06 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-18 23:51:06 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-18 23:51:07 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-18 23:51:07 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-18 23:51:07 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Pembelian.php 88
+ERROR - 2018-04-18 23:51:07 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Pembelian.php 89
+ERROR - 2018-04-18 23:51:07 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Pembelian.php 90
+ERROR - 2018-04-18 23:51:58 --> Severity: Error --> Call to undefined method MPembelian::input_post() /Volumes/Data/Projects/master-apotek/application/models/MPembelian.php 93
+ERROR - 2018-04-18 23:54:28 --> Severity: Error --> Call to undefined method MPembelian::input_post() /Volumes/Data/Projects/master-apotek/application/models/MPembelian.php 93

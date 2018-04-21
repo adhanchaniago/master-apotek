@@ -1,150 +1,93 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 class MBarang extends CI_Model {
 
-	protected $table = array( 'ak_data_pbf',
-														'ak_data_barang',
-														'ak_data_barang_detail',
-														'ak_data_barang_info',
-														'ak_data_barang_stok',
-														'ak_data_jenis_obat',
-														'ak_data_satuan',
-														'ak_data_pabrik',
-														'ak_data_kemasan'
-													);
+	protected $data_barang = "ak_data_barang";
+	protected $data_jenis_obat = "ak_data_jenis_obat";
+	protected $data_pabrik = "ak_data_pabrik";
+	protected $data_kemasan = "ak_data_kemasan";
+	protected $data_satuan = "ak_data_satuan";
+	protected $data_barang_stok_tersedia = "ak_data_barang_stok_tersedia";
 
-	public function GetTotalBarang() {
-		$res = $this->db->where($this->table[1].'.deleted',FALSE)
-						->join($this->table[5],$this->table[5].'.id_jenis='.$this->table[1].'.id_jenis')
-						->join($this->table[8],$this->table[8].'.id_kemasan='.$this->table[1].'.id_kemasan')
-						->join($this->table[6],$this->table[6].'.id_satuan='.$this->table[1].'.id_satuan')
-						->join($this->table[7],$this->table[7].'.id_pabrik='.$this->table[1].'.id_pabrik')
-						->get($this->table[1]);
-		return $res->num_rows();
-	}
 
-	public function GetPBF() {
-		$res = $this->db->where('deleted',FALSE)
-						->get($this->table[0]);
+	public function GetAll() {
+		$res = $this->db->where($this->data_barang.'.deleted',FALSE)
+						->join(
+								$this->data_jenis_obat,
+								$this->data_jenis_obat.'.id_jenis='.
+								$this->data_barang.'.id_jenis'
+							)
+						->join(
+								$this->data_pabrik,
+								$this->data_pabrik.'.id_pabrik='.
+								$this->data_barang.'.id_pabrik'
+							)
+						->join(
+								$this->data_kemasan,
+								$this->data_kemasan.'.id_kemasan='.
+								$this->data_barang.'.id_kemasan'
+							)
+						->join(
+								$this->data_satuan,
+								$this->data_satuan.'.id_satuan='.
+								$this->data_barang.'.id_satuan'
+							)
+						->order_by('nm_barang','ASC')
+						->get($this->data_barang);
 		return $res->result();
 	}
 
-	public function GetBarang() {
-		$res = $this->db->where($this->table[1].'.deleted',FALSE)
-						->join($this->table[5],$this->table[5].'.id_jenis='.$this->table[1].'.id_jenis')
-						->join($this->table[8],$this->table[8].'.id_kemasan='.$this->table[1].'.id_kemasan')
-						->join($this->table[6],$this->table[6].'.id_satuan='.$this->table[1].'.id_satuan')
-						->join($this->table[7],$this->table[7].'.id_pabrik='.$this->table[1].'.id_pabrik')
-						->order_by('nm_barang','asc')
-						->get($this->table[1]);
-		return $res->result();
-	}
-
-	public function GetSingleData($id) {
-		$res = $this->db->where($this->table[1].'.deleted',FALSE)
-						->where($this->table[1].'.id_barang',$id)
-						->join($this->table[5],$this->table[5].'.id_jenis='.$this->table[1].'.id_jenis')
-						->join($this->table[8],$this->table[8].'.id_kemasan='.$this->table[1].'.id_kemasan')
-						->join($this->table[6],$this->table[6].'.id_satuan='.$this->table[1].'.id_satuan')
-						->join($this->table[7],$this->table[7].'.id_pabrik='.$this->table[1].'.id_pabrik')
-						->order_by('nm_barang','asc')
-						->get($this->table[1]);
+	public function GetSingle() {
+		$id_barang = $this->input->post('id_barang');
+		$res = $this->db->where('id_barang',$id_barang)->get($this->data_barang);
 		return $res->row();
 	}
 
+	public function GetOption() {
+		$res = $this->db->select($this->data_barang.'.id_barang,nm_barang')
+						->where($this->data_barang.'.deleted',FALSE)
+						->order_by('nm_barang','ASC')
+						->get($this->data_barang);
+		return $res->result();
+	}
+
 	public function SaveData() {
-		$a = $this->input->post('nm_barang');
-		$b = $this->input->post('nm_pabrik');
-		$c = $this->input->post('kemasan');
-		$d = $this->input->post('isi_kemasan');
-		$e = $this->input->post('satuan');
-		$f = $this->input->post('hna');
-		$g = $this->input->post('gol_obat');
-		$h = $this->input->post('jenis_obat');
-		$i = $this->input->post('formularium');
-		$j = $this->input->post('konsinyasi');
-		$k = $this->input->post('dosis');
-		$l = $this->input->post('komposisi');
-		$m = $this->input->post('indikasi');
-		$n = $this->input->post('efek_samping');
-		$o = $this->input->post('stok_max');
-		$p = $this->input->post('stok_min');
+		if($this->input->post('id_barang')==NULL) {
+			$hitung_data = $this->db->get($this->data_barang)->num_rows();
+			$id = "BRG".str_pad($hitung_data+1, 5, "0", STR_PAD_LEFT);
+			$data = array(
+							'id_barang' => $id,
+							'nm_barang' => $this->input->post('nm_barang')
+						);
+			$this->db->insert($this->data_barang,$data);
+		} else {
+			$data = array(
+							'nm_barang' => $this->input->post('nm_barang'),
+							'id_jenis' => $this->input->post('id_jenis'),
+							'id_pabrik' => $this->input->post('id_pabrik'),
+							'golongan_obat' => $this->input->post('id_golongan'),
+							'id_kemasan' => $this->input->post('id_kemasan'),
+							'id_satuan' => $this->input->post('id_satuan'),
+							'isi_satuan' => $this->input->post('isi_satuan'),
+							'margin' => $this->input->post('margin'),
+							'harga_dasar' => $this->input->post('harga_dasar'),
+							'stok_maksimum' => $this->input->post('stok_maksimum'),
+							'stok_minimum' => $this->input->post('stok_minimum'),
+							'konsinyasi' => $this->input->post('konsinyasi'),
+							'formularium' => $this->input->post('formularium')
+						);
+			$this->db->where('id_barang',$this->input->post('id_barang'))
+					 ->update($this->data_barang,$data);
+		}
+		return TRUE;
+	}
+
+	public function DelData() {
 		$data = array(
-						'id_jenis' => $h,
-						'nm_barang' => $a,
-						'id_pabrik' => $b,
-						'id_kemasan' => $c,
-						'id_satuan' => $e,
-						'isi_satuan' => $d,
-						'golongan_obat' => $g,
-						'harga_dasar' => $f,
-						'dosis' => $k,
-						'komposisi' => $l,
-						'indikasi' => $m,
-						'efek_samping' => $n,
-						'formularium' => $i,
-						'konsinyasi' => $j,
-						'stok_maksimum' => $o,
-						'stok_minimum' => $p
-					 );
-		$this->db->insert($this->table[1],$data);
-		return "success-Data telah tersimpan!";
-	}
-
-	public function EditData($id) {
-		$a = $this->input->post('nm_barang');
-		$b = $this->input->post('nm_pabrik');
-		$c = $this->input->post('kemasan');
-		$d = $this->input->post('isi_kemasan');
-		$e = $this->input->post('satuan');
-		$f = $this->input->post('hna');
-		$g = $this->input->post('gol_obat');
-		$h = $this->input->post('jenis_obat');
-		$i = $this->input->post('formularium');
-		$j = $this->input->post('konsinyasi');
-		$k = $this->input->post('dosis');
-		$l = $this->input->post('komposisi');
-		$m = $this->input->post('indikasi');
-		$n = $this->input->post('efek_samping');
-		$o = $this->input->post('stok_max');
-		$p = $this->input->post('stok_min');
-		$data = array(
-						'id_jenis' => $h,
-						'nm_barang' => $a,
-						'id_pabrik' => $b,
-						'id_kemasan' => $c,
-						'id_satuan' => $e,
-						'isi_satuan' => $d,
-						'golongan_obat' => $g,
-						'harga_dasar' => $f,
-						'dosis' => $k,
-						'komposisi' => $l,
-						'indikasi' => $m,
-						'efek_samping' => $n,
-						'formularium' => $i,
-						'konsinyasi' => $j,
-						'stok_maksimum' => $o,
-						'stok_minimum' => $p
-					 );
-		$this->db->where('id_barang',$id)
-				 ->update($this->table[1],$data);
-		return "success-Data telah diubah!";
-	}
-
-	public function DelData($id) {
-		$data = array(
-									'deleted' => 1
-								 );
-		$this->db->where('id_barang',$id)
-						 ->update($this->table[1],$data);
-		return "success-Data telah dihapus!";
-	}
-
-	private function hash_pwd($password) {
-		return password_hash($password, PASSWORD_BCRYPT);
-	}
-
-	private function zerofill ($num, $zerofill = 5) {
-		return str_pad($num, $zerofill, '0', STR_PAD_LEFT);
+						'deleted' => 1
+					);
+		$this->db->where('id_barang',$this->input->post('id_barang'))
+				 ->update($this->data_barang,$data);
+		return TRUE;
 	}
 
 }

@@ -1,67 +1,52 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 class MPabrik extends CI_Model {
 
-	private $table = array(
-							'ak_data_pabrik'
-						  );
+	private $data_pabrik = "ak_data_pabrik";
 
-	public function GetTotalData() {
-		$res = $this->db->where('deleted',false)
-						->get($this->table[0]);
-		return $res->num_rows();
-	}
-
-	public function GetData() {
-		$res = $this->db->where($this->table[0].'.deleted',false)
-						->order_by('id_pabrik','ASC')
-						->get($this->table[0]);
+	public function GetAll() {
+		$res = $this->db->where('deleted',FALSE)
+						->get($this->data_pabrik);
 		return $res->result();
 	}
 
-	public function GetSingleData($id) {
-		$res = $this->db->where($this->table[0].'.id_pabrik',$id)
-						->get($this->table[0]);
+	public function GetSingle() {
+		$id_pabrik = $this->input->post('id_pabrik');
+		$res = $this->db->where('id_pabrik',$id_pabrik)->get($this->data_pabrik);
 		return $res->row();
 	}
 
 	public function SaveData() {
-		$a = $this->input->post('nm_pabrik');
-		$tot = $this->db->get($this->table[0])->num_rows();
-		$raw = $tot+1;
-		$id = 'PAB'.$this->zerofill($raw);	
+		if($this->input->post('id_pabrik')==NULL) {
+			$hitung_data = $this->db->get($this->data_pabrik)->num_rows();
+			$id = "PAB".str_pad($hitung_data+1, 5, "0", STR_PAD_LEFT);
+			$data = array(
+							'id_pabrik' => $id,
+							'nm_pabrik' => $this->input->post('nm_pabrik')
+						);
+			$this->db->insert($this->data_pabrik,$data);
+		} else {
+			$data = array(
+							'nm_pabrik' => $this->input->post('nm_pabrik')
+						);
+			$this->db->where('id_pabrik',$this->input->post('id_pabrik'))
+					 ->update($this->data_pabrik,$data);
+		}
+		return TRUE;
+	}
+
+	public function GetOption() {
+		$res = $this->db->where('deleted',FALSE)
+						->get($this->data_pabrik);
+		return $res->result();
+	}
+
+	public function DelData() {
 		$data = array(
-									'id_pabrik' => $id,
-									'nm_pabrik' => $a
-								 );
-		$this->db->insert($this->table[0],$data);
-		return "success-Data telah tersimpan!";
-	}
-
-	public function EditData($id) {
-		$a = $this->input->post('nm_pabrik');
-		$data = array(
-									'nm_pabrik' => $a
-								 );
-		$this->db->where('id_pabrik',$id)
-						 ->update($this->table[0],$data);
-		return "success-Data telah diubah!";
-	}
-
-	public function DelData($id) {
-		$data = array(
-									'deleted' => 1
-								 );
-		$this->db->where('id_pabrik',$id)
-						 ->update($this->table[0],$data);
-		return "success-Data telah dihapus!";
-	}
-
-	private function hash_pwd($password) {
-		return password_hash($password, PASSWORD_BCRYPT);
-	}
-
-	private function zerofill ($num, $zerofill = 5) {
-		return str_pad($num, $zerofill, '0', STR_PAD_LEFT);
+						'deleted' => 1
+					);
+		$this->db->where('id_pabrik',$this->input->post('id_pabrik'))
+				 ->update($this->data_pabrik,$data);
+		return TRUE;
 	}
 
 }

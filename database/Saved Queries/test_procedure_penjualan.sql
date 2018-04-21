@@ -1,1 +1,0 @@
-CALL `ak_procedure_insert_penjualan`('USR00001', 'Tes', '20000', '1')

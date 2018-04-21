@@ -1,0 +1,552 @@
+ERROR - 2018-03-18 14:59:19 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE `id` = 'uc52kh2au9dom8hlo0mcahgmq01t4ikt'' at line 2 - Invalid query: SELECT `data`
+WHERE `id` = 'uc52kh2au9dom8hlo0mcahgmq01t4ikt'
+ERROR - 2018-03-18 14:59:19 --> Severity: Warning --> include(D:\Projects\master-apotek\application\errors/html\error_db.php): failed to open stream: No such file or directory D:\Projects\master-apotek\system\core\Exceptions.php 182
+ERROR - 2018-03-18 14:59:19 --> Severity: Warning --> include(): Failed opening 'D:\Projects\master-apotek\application\errors/html\error_db.php' for inclusion (include_path='C:\xampp\php\PEAR') D:\Projects\master-apotek\system\core\Exceptions.php 182
+ERROR - 2018-03-18 14:59:59 --> Query error: No database selected - Invalid query: SELECT `data`
+FROM `ak_data_log`
+WHERE `id` = '8s83fmn3h8o35tr5rhc1gctlhcr2lcc5'
+AND `ip_address` = '::1'
+ERROR - 2018-03-18 14:59:59 --> Severity: Warning --> include(D:\Projects\master-apotek\application\errors/html\error_db.php): failed to open stream: No such file or directory D:\Projects\master-apotek\system\core\Exceptions.php 182
+ERROR - 2018-03-18 14:59:59 --> Severity: Warning --> include(): Failed opening 'D:\Projects\master-apotek\application\errors/html\error_db.php' for inclusion (include_path='C:\xampp\php\PEAR') D:\Projects\master-apotek\system\core\Exceptions.php 182
+ERROR - 2018-03-18 15:00:50 --> Query error: No database selected - Invalid query: SELECT `data`
+FROM `ak_data_log`
+WHERE `id` = 'eua1crnvgvog9bedcu92e83oeaqipgvp'
+AND `ip_address` = '::1'
+ERROR - 2018-03-18 15:00:50 --> Severity: Warning --> include(D:\Projects\master-apotek\application\errors/html\error_db.php): failed to open stream: No such file or directory D:\Projects\master-apotek\system\core\Exceptions.php 182
+ERROR - 2018-03-18 15:00:50 --> Severity: Warning --> include(): Failed opening 'D:\Projects\master-apotek\application\errors/html\error_db.php' for inclusion (include_path='C:\xampp\php\PEAR') D:\Projects\master-apotek\system\core\Exceptions.php 182
+ERROR - 2018-03-18 15:01:25 --> Query error: No database selected - Invalid query: SELECT `data`
+FROM `ak_data_log`
+WHERE `id` = 'fvqotmm6usd7dv4oo33s4b5rvp9nibe3'
+AND `ip_address` = '::1'
+ERROR - 2018-03-18 15:03:19 --> 404 Page Not Found: /index
+ERROR - 2018-03-18 15:04:23 --> 404 Page Not Found: Portal/index
+ERROR - 2018-03-18 15:04:43 --> 404 Page Not Found: Portal/index
+ERROR - 2018-03-18 15:04:48 --> 404 Page Not Found: Portal/index
+ERROR - 2018-03-18 15:06:19 --> Severity: Parsing Error --> syntax error, unexpected '$this' (T_VARIABLE) D:\Projects\master-apotek\application\controllers\Portal.php 4
+ERROR - 2018-03-18 15:06:31 --> Severity: Parsing Error --> syntax error, unexpected '$this' (T_VARIABLE) D:\Projects\master-apotek\application\controllers\Portal.php 4
+ERROR - 2018-03-18 15:06:40 --> Severity: Parsing Error --> syntax error, unexpected '$this' (T_VARIABLE) D:\Projects\master-apotek\application\controllers\Portal.php 8
+ERROR - 2018-03-18 15:06:49 --> Severity: Parsing Error --> syntax error, unexpected 'private' (T_PRIVATE) D:\Projects\master-apotek\application\controllers\Portal.php 6
+ERROR - 2018-03-18 15:08:00 --> 404 Page Not Found: Portal/index
+ERROR - 2018-03-18 15:08:11 --> 404 Page Not Found: Portal/index
+ERROR - 2018-03-18 15:09:15 --> Severity: Notice --> Undefined property: Portal::$isLogin D:\Projects\master-apotek\application\controllers\Portal.php 14
+ERROR - 2018-03-18 15:31:14 --> Severity: Parsing Error --> syntax error, unexpected 'edatatends' (T_STRING), expecting '{' D:\Projects\master-apotek\application\controllers\Portal.php 2
+ERROR - 2018-03-18 15:31:31 --> Severity: error --> Exception: D:\Projects\master-apotek\application\models/MLogin.php exists, but doesn't declare class MLogin D:\Projects\master-apotek\system\core\Loader.php 340
+ERROR - 2018-03-18 15:32:27 --> 404 Page Not Found: Assets/adminLTE
+ERROR - 2018-03-18 15:34:13 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 15:34:13 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 15:34:13 --> 404 Page Not Found: Assets/font_awesome
+ERROR - 2018-03-18 15:34:13 --> 404 Page Not Found: Assets/adminLTE
+ERROR - 2018-03-18 15:34:13 --> 404 Page Not Found: Assets/adminLTE
+ERROR - 2018-03-18 15:34:13 --> 404 Page Not Found: Assets/adminLTE
+ERROR - 2018-03-18 15:34:13 --> 404 Page Not Found: Assets/fastclick
+ERROR - 2018-03-18 15:34:13 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 15:34:13 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 15:34:14 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 15:34:14 --> 404 Page Not Found: Assets/fastclick
+ERROR - 2018-03-18 15:34:14 --> 404 Page Not Found: Assets/adminLTE
+ERROR - 2018-03-18 15:34:21 --> 404 Page Not Found: Assets/adminLTE
+ERROR - 2018-03-18 15:34:21 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 15:34:21 --> 404 Page Not Found: Assets/adminLTE
+ERROR - 2018-03-18 15:34:21 --> 404 Page Not Found: Assets/font_awesome
+ERROR - 2018-03-18 15:34:37 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 15:34:37 --> 404 Page Not Found: Assets/adminLTE
+ERROR - 2018-03-18 15:34:37 --> 404 Page Not Found: Assets/adminLTE
+ERROR - 2018-03-18 15:34:37 --> 404 Page Not Found: Assets/font_awesome
+ERROR - 2018-03-18 15:34:37 --> 404 Page Not Found: Assets/adminLTE
+ERROR - 2018-03-18 15:34:37 --> 404 Page Not Found: Assets/fastclick
+ERROR - 2018-03-18 15:34:37 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 15:34:37 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 15:34:37 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 15:34:38 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 15:34:38 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 15:34:38 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 15:34:38 --> 404 Page Not Found: Assets/fastclick
+ERROR - 2018-03-18 15:34:38 --> 404 Page Not Found: Assets/adminLTE
+ERROR - 2018-03-18 15:37:16 --> 404 Page Not Found: Assets/adminLTE
+ERROR - 2018-03-18 15:37:16 --> 404 Page Not Found: Assets/adminLTE
+ERROR - 2018-03-18 15:37:16 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 15:37:16 --> 404 Page Not Found: Assets/adminLTE
+ERROR - 2018-03-18 15:37:16 --> 404 Page Not Found: Assets/font_awesome
+ERROR - 2018-03-18 15:37:16 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 15:37:16 --> 404 Page Not Found: Assets/fastclick
+ERROR - 2018-03-18 15:37:16 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 15:37:16 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 15:37:16 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 15:37:16 --> 404 Page Not Found: Assets/fastclick
+ERROR - 2018-03-18 15:37:16 --> 404 Page Not Found: Assets/adminLTE
+ERROR - 2018-03-18 15:38:25 --> 404 Page Not Found: Assets/adminLTE
+ERROR - 2018-03-18 15:38:25 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 15:38:25 --> 404 Page Not Found: Assets/adminLTE
+ERROR - 2018-03-18 15:38:25 --> 404 Page Not Found: Assets/adminLTE
+ERROR - 2018-03-18 15:38:25 --> 404 Page Not Found: Assets/fastclick
+ERROR - 2018-03-18 15:38:25 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 15:38:25 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 15:38:25 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 15:38:25 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 15:38:26 --> 404 Page Not Found: Assets/fastclick
+ERROR - 2018-03-18 15:38:26 --> 404 Page Not Found: Assets/adminLTE
+ERROR - 2018-03-18 15:39:54 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 15:39:54 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 15:39:54 --> 404 Page Not Found: Assets/fastclick
+ERROR - 2018-03-18 15:39:54 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 15:39:54 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 15:39:54 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 15:39:54 --> 404 Page Not Found: Assets/fastclick
+ERROR - 2018-03-18 15:41:06 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 15:41:06 --> 404 Page Not Found: Assets/fastclick
+ERROR - 2018-03-18 15:41:07 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 15:41:07 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 15:41:07 --> 404 Page Not Found: Assets/fastclick
+ERROR - 2018-03-18 15:41:58 --> 404 Page Not Found: Assets/fastclick
+ERROR - 2018-03-18 15:41:59 --> 404 Page Not Found: Assets/fastclick
+ERROR - 2018-03-18 15:41:59 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 15:43:01 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 15:43:15 --> Severity: Notice --> Undefined property: Portal::$level D:\Projects\master-apotek\system\core\Model.php 73
+ERROR - 2018-03-18 15:43:15 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '=`ak_data_user`.`level_user`
+WHERE `login_user` = 'master'' at line 3 - Invalid query: SELECT *
+FROM `ak_data_level`
+JOIN `ak_data_user` ON .`id_level`=`ak_data_user`.`level_user`
+WHERE `login_user` = 'master'
+ERROR - 2018-03-18 15:44:39 --> 404 Page Not Found: Dashboard/index
+ERROR - 2018-03-18 15:44:43 --> 404 Page Not Found: Dashboard/index
+ERROR - 2018-03-18 15:46:08 --> Severity: error --> Exception: Unable to locate the model you have specified: MAdmin D:\Projects\master-apotek\system\core\Loader.php 348
+ERROR - 2018-03-18 15:46:17 --> Severity: error --> Exception: Unable to locate the model you have specified: MAdmin D:\Projects\master-apotek\system\core\Loader.php 348
+ERROR - 2018-03-18 15:47:22 --> Severity: Notice --> Undefined property: Dashboard::$MAdmin D:\Projects\master-apotek\application\controllers\Dashboard.php 17
+ERROR - 2018-03-18 15:47:22 --> Severity: Error --> Call to a member function GetInstansi() on null D:\Projects\master-apotek\application\controllers\Dashboard.php 17
+ERROR - 2018-03-18 15:54:43 --> 404 Page Not Found: Dashboard/apoteker
+ERROR - 2018-03-18 15:54:55 --> 404 Page Not Found: Dashboard/apoteker
+ERROR - 2018-03-18 15:55:55 --> 404 Page Not Found: Dashboard/apoteker
+ERROR - 2018-03-18 15:55:58 --> 404 Page Not Found: Dashboard/login
+ERROR - 2018-03-18 15:56:14 --> 404 Page Not Found: Assets/select2
+ERROR - 2018-03-18 15:56:14 --> 404 Page Not Found: Assets/css
+ERROR - 2018-03-18 15:56:14 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-03-18 15:56:14 --> 404 Page Not Found: Assets/css
+ERROR - 2018-03-18 15:56:14 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 15:56:14 --> 404 Page Not Found: Assets/sweet_alert
+ERROR - 2018-03-18 15:56:14 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 15:56:14 --> 404 Page Not Found: Assets/fastclick
+ERROR - 2018-03-18 15:56:14 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 15:56:14 --> 404 Page Not Found: Assets/sweet_alert
+ERROR - 2018-03-18 15:56:14 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-03-18 15:56:14 --> 404 Page Not Found: Assets/js
+ERROR - 2018-03-18 15:56:14 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 15:56:14 --> 404 Page Not Found: Assets/js
+ERROR - 2018-03-18 15:56:14 --> 404 Page Not Found: Assets/select2
+ERROR - 2018-03-18 15:56:15 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 15:56:15 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 15:56:15 --> 404 Page Not Found: Assets/fastclick
+ERROR - 2018-03-18 15:56:15 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 15:56:15 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 15:56:15 --> 404 Page Not Found: Assets/select2
+ERROR - 2018-03-18 15:56:15 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-03-18 15:56:15 --> 404 Page Not Found: Assets/sweet_alert
+ERROR - 2018-03-18 15:56:15 --> 404 Page Not Found: Assets/js
+ERROR - 2018-03-18 15:56:15 --> 404 Page Not Found: Assets/js
+ERROR - 2018-03-18 15:56:29 --> 404 Page Not Found: Assets/sweet_alert
+ERROR - 2018-03-18 15:56:29 --> 404 Page Not Found: Assets/select2
+ERROR - 2018-03-18 15:56:29 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-03-18 15:56:29 --> 404 Page Not Found: Assets/css
+ERROR - 2018-03-18 15:56:29 --> 404 Page Not Found: Assets/css
+ERROR - 2018-03-18 15:56:29 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 15:58:03 --> 404 Page Not Found: Assets/sweet_alert
+ERROR - 2018-03-18 15:58:03 --> 404 Page Not Found: Assets/css
+ERROR - 2018-03-18 15:58:03 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-03-18 15:58:03 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 15:58:03 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 15:58:03 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 15:58:03 --> 404 Page Not Found: Assets/css
+ERROR - 2018-03-18 15:58:03 --> 404 Page Not Found: Assets/fastclick
+ERROR - 2018-03-18 15:58:03 --> 404 Page Not Found: Assets/select2
+ERROR - 2018-03-18 15:58:03 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 15:58:03 --> 404 Page Not Found: Assets/js
+ERROR - 2018-03-18 15:58:03 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-03-18 15:58:03 --> 404 Page Not Found: Assets/sweet_alert
+ERROR - 2018-03-18 15:58:03 --> 404 Page Not Found: Assets/js
+ERROR - 2018-03-18 15:58:03 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 15:58:03 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 15:58:03 --> 404 Page Not Found: Assets/fastclick
+ERROR - 2018-03-18 15:58:03 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 15:58:04 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 15:58:04 --> 404 Page Not Found: Assets/select2
+ERROR - 2018-03-18 15:58:04 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-03-18 15:58:04 --> 404 Page Not Found: Assets/sweet_alert
+ERROR - 2018-03-18 15:58:04 --> 404 Page Not Found: Assets/js
+ERROR - 2018-03-18 15:58:04 --> 404 Page Not Found: Assets/js
+ERROR - 2018-03-18 15:58:04 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 15:59:10 --> 404 Page Not Found: Assets/css
+ERROR - 2018-03-18 15:59:10 --> 404 Page Not Found: Assets/fastclick
+ERROR - 2018-03-18 15:59:10 --> 404 Page Not Found: Assets/css
+ERROR - 2018-03-18 15:59:10 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 15:59:10 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-03-18 15:59:10 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 15:59:10 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 15:59:10 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 15:59:10 --> 404 Page Not Found: Assets/select2
+ERROR - 2018-03-18 15:59:10 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-03-18 15:59:10 --> 404 Page Not Found: Assets/js
+ERROR - 2018-03-18 15:59:10 --> 404 Page Not Found: Assets/js
+ERROR - 2018-03-18 15:59:11 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 15:59:11 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 15:59:11 --> 404 Page Not Found: Assets/fastclick
+ERROR - 2018-03-18 15:59:11 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 15:59:11 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 15:59:11 --> 404 Page Not Found: Assets/select2
+ERROR - 2018-03-18 15:59:11 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-03-18 15:59:11 --> 404 Page Not Found: Assets/js
+ERROR - 2018-03-18 15:59:11 --> 404 Page Not Found: Assets/js
+ERROR - 2018-03-18 15:59:11 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 15:59:43 --> 404 Page Not Found: Assets/fastclick
+ERROR - 2018-03-18 15:59:43 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-03-18 15:59:43 --> 404 Page Not Found: Assets/css
+ERROR - 2018-03-18 15:59:43 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 15:59:43 --> 404 Page Not Found: Assets/css
+ERROR - 2018-03-18 15:59:43 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 15:59:43 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 15:59:43 --> 404 Page Not Found: Assets/js
+ERROR - 2018-03-18 15:59:43 --> 404 Page Not Found: Assets/select2
+ERROR - 2018-03-18 15:59:43 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-03-18 15:59:43 --> 404 Page Not Found: Assets/js
+ERROR - 2018-03-18 15:59:43 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 15:59:43 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 15:59:43 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 15:59:43 --> 404 Page Not Found: Assets/fastclick
+ERROR - 2018-03-18 15:59:43 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 15:59:44 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 15:59:44 --> 404 Page Not Found: Assets/select2
+ERROR - 2018-03-18 15:59:44 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-03-18 15:59:44 --> 404 Page Not Found: Assets/js
+ERROR - 2018-03-18 15:59:44 --> 404 Page Not Found: Assets/js
+ERROR - 2018-03-18 15:59:44 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 16:00:25 --> 404 Page Not Found: Assets/css
+ERROR - 2018-03-18 16:00:25 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-03-18 16:00:25 --> 404 Page Not Found: Assets/fastclick
+ERROR - 2018-03-18 16:00:25 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 16:00:25 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 16:00:25 --> 404 Page Not Found: Assets/css
+ERROR - 2018-03-18 16:00:25 --> 404 Page Not Found: Assets/js
+ERROR - 2018-03-18 16:00:25 --> 404 Page Not Found: Assets/select2
+ERROR - 2018-03-18 16:00:25 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-03-18 16:00:25 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 16:00:25 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 16:00:25 --> 404 Page Not Found: Assets/js
+ERROR - 2018-03-18 16:00:26 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 16:00:26 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 16:00:26 --> 404 Page Not Found: Assets/fastclick
+ERROR - 2018-03-18 16:00:26 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 16:00:26 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 16:00:26 --> 404 Page Not Found: Assets/select2
+ERROR - 2018-03-18 16:00:26 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-03-18 16:00:26 --> 404 Page Not Found: Assets/js
+ERROR - 2018-03-18 16:00:26 --> 404 Page Not Found: Assets/js
+ERROR - 2018-03-18 16:00:26 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 16:00:59 --> 404 Page Not Found: Assets/AdminLTE_select2
+ERROR - 2018-03-18 16:00:59 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-03-18 16:00:59 --> 404 Page Not Found: Assets/css
+ERROR - 2018-03-18 16:00:59 --> 404 Page Not Found: Assets/css
+ERROR - 2018-03-18 16:00:59 --> 404 Page Not Found: Assets/fastclick
+ERROR - 2018-03-18 16:00:59 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 16:00:59 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-03-18 16:00:59 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 16:00:59 --> 404 Page Not Found: Assets/select2
+ERROR - 2018-03-18 16:00:59 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 16:00:59 --> 404 Page Not Found: Assets/js
+ERROR - 2018-03-18 16:00:59 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 16:00:59 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 16:00:59 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 16:00:59 --> 404 Page Not Found: Assets/fastclick
+ERROR - 2018-03-18 16:00:59 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 16:00:59 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 16:01:00 --> 404 Page Not Found: Assets/select2
+ERROR - 2018-03-18 16:01:00 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-03-18 16:01:00 --> 404 Page Not Found: Assets/js
+ERROR - 2018-03-18 16:01:00 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 16:03:52 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-03-18 16:03:52 --> 404 Page Not Found: Assets/css
+ERROR - 2018-03-18 16:03:52 --> 404 Page Not Found: Assets/AdminLTE_select2
+ERROR - 2018-03-18 16:03:52 --> 404 Page Not Found: Assets/css
+ERROR - 2018-03-18 16:03:52 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 16:03:52 --> 404 Page Not Found: Assets/select2
+ERROR - 2018-03-18 16:03:52 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 16:03:53 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-03-18 16:03:53 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 16:03:53 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 16:03:53 --> 404 Page Not Found: Assets/fastclick
+ERROR - 2018-03-18 16:03:53 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 16:03:53 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 16:03:53 --> 404 Page Not Found: Assets/fastclick
+ERROR - 2018-03-18 16:03:53 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 16:03:53 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 16:03:53 --> 404 Page Not Found: Assets/select2
+ERROR - 2018-03-18 16:03:53 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-03-18 16:03:53 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 16:05:34 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-03-18 16:05:34 --> 404 Page Not Found: Assets/css
+ERROR - 2018-03-18 16:05:34 --> 404 Page Not Found: Assets/css
+ERROR - 2018-03-18 16:05:34 --> 404 Page Not Found: Assets/fastclick
+ERROR - 2018-03-18 16:05:34 --> 404 Page Not Found: Assets/AdminLTE_select2
+ERROR - 2018-03-18 16:05:34 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 16:05:34 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 16:05:34 --> 404 Page Not Found: Assets/select2
+ERROR - 2018-03-18 16:05:34 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 16:05:34 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 16:05:34 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 16:05:34 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 16:05:34 --> 404 Page Not Found: Assets/fastclick
+ERROR - 2018-03-18 16:05:34 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 16:05:34 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 16:05:34 --> 404 Page Not Found: Assets/select2
+ERROR - 2018-03-18 16:05:34 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 16:06:36 --> 404 Page Not Found: Assets/AdminLTE_select2
+ERROR - 2018-03-18 16:06:36 --> 404 Page Not Found: Assets/css
+ERROR - 2018-03-18 16:06:36 --> 404 Page Not Found: Assets/css
+ERROR - 2018-03-18 16:06:36 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 16:06:36 --> 404 Page Not Found: Assets/fastclick
+ERROR - 2018-03-18 16:06:36 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 16:06:36 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 16:06:36 --> 404 Page Not Found: Assets/select2
+ERROR - 2018-03-18 16:06:36 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 16:06:36 --> 404 Page Not Found: Assets/DataTables
+ERROR - 2018-03-18 16:06:37 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 16:06:37 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 16:06:37 --> 404 Page Not Found: Assets/fastclick
+ERROR - 2018-03-18 16:06:37 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 16:06:37 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 16:06:37 --> 404 Page Not Found: Assets/select2
+ERROR - 2018-03-18 16:06:37 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 16:08:02 --> 404 Page Not Found: Assets/css
+ERROR - 2018-03-18 16:08:02 --> 404 Page Not Found: Assets/AdminLTE_select2
+ERROR - 2018-03-18 16:08:02 --> 404 Page Not Found: Assets/css
+ERROR - 2018-03-18 16:08:02 --> 404 Page Not Found: Assets/fastclick
+ERROR - 2018-03-18 16:08:02 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 16:08:02 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 16:08:02 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 16:08:02 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 16:08:02 --> 404 Page Not Found: Assets/select2
+ERROR - 2018-03-18 16:08:03 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 16:08:03 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 16:08:03 --> 404 Page Not Found: Assets/fastclick
+ERROR - 2018-03-18 16:08:03 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 16:08:03 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 16:08:03 --> 404 Page Not Found: Assets/select2
+ERROR - 2018-03-18 16:08:04 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-03-18 16:08:04 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 16:09:42 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 16:09:42 --> 404 Page Not Found: Assets/AdminLTE_select2
+ERROR - 2018-03-18 16:09:42 --> 404 Page Not Found: Assets/css
+ERROR - 2018-03-18 16:09:42 --> 404 Page Not Found: Assets/css
+ERROR - 2018-03-18 16:09:42 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 16:09:42 --> 404 Page Not Found: Assets/fastclick
+ERROR - 2018-03-18 16:09:42 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 16:09:42 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 16:09:42 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 16:09:42 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 16:09:43 --> 404 Page Not Found: Assets/fastclick
+ERROR - 2018-03-18 16:09:43 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 16:09:43 --> 404 Page Not Found: Assets/input_mask
+ERROR - 2018-03-18 16:09:43 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-03-18 16:09:44 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 16:10:23 --> 404 Page Not Found: Assets/css
+ERROR - 2018-03-18 16:10:23 --> 404 Page Not Found: Assets/AdminLTE_select2
+ERROR - 2018-03-18 16:10:23 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 16:10:23 --> 404 Page Not Found: Assets/css
+ERROR - 2018-03-18 16:10:23 --> 404 Page Not Found: Assets/fastclick
+ERROR - 2018-03-18 16:10:23 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 16:10:24 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 16:10:24 --> 404 Page Not Found: Assets/jquery
+ERROR - 2018-03-18 16:10:24 --> 404 Page Not Found: Assets/fastclick
+ERROR - 2018-03-18 16:10:24 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-03-18 16:10:25 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 16:10:53 --> 404 Page Not Found: Assets/AdminLTE_select2
+ERROR - 2018-03-18 16:10:53 --> 404 Page Not Found: Assets/css
+ERROR - 2018-03-18 16:10:53 --> 404 Page Not Found: Assets/css
+ERROR - 2018-03-18 16:10:54 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-03-18 16:10:54 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 16:11:36 --> 404 Page Not Found: Assets/AdminLTE_select2
+ERROR - 2018-03-18 16:11:36 --> 404 Page Not Found: Assets/css
+ERROR - 2018-03-18 16:11:37 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-03-18 16:11:37 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 16:11:48 --> 404 Page Not Found: Assets/AdminLTE_select2
+ERROR - 2018-03-18 16:11:49 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-03-18 16:11:49 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 16:12:15 --> 404 Page Not Found: Assets/AdminLTE_select2
+ERROR - 2018-03-18 16:12:16 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-03-18 16:12:16 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 16:13:05 --> 404 Page Not Found: Assets/AdminLTE_select2
+ERROR - 2018-03-18 16:13:06 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-03-18 16:13:06 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 16:13:27 --> 404 Page Not Found: Assets/AdminLTE_select2
+ERROR - 2018-03-18 16:13:28 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-03-18 16:13:28 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 16:13:35 --> 404 Page Not Found: Assets/AdminLTE_select2
+ERROR - 2018-03-18 16:14:03 --> 404 Page Not Found: Assets/AdminLTE_select2
+ERROR - 2018-03-18 16:14:27 --> 404 Page Not Found: Assets/AdminLTE_select2
+ERROR - 2018-03-18 16:14:36 --> 404 Page Not Found: Assets/AdminLTE_select2
+ERROR - 2018-03-18 16:14:36 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-03-18 16:14:36 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 16:15:25 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-03-18 16:15:26 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 16:15:41 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-03-18 16:15:41 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 16:18:26 --> 404 Page Not Found: Margin/index
+ERROR - 2018-03-18 16:20:00 --> Severity: Notice --> Undefined variable: Instansi D:\Projects\master-apotek\application\views\Dashboard\V_Dashboard_Admin.php 53
+ERROR - 2018-03-18 16:20:00 --> Severity: Notice --> Trying to get property of non-object D:\Projects\master-apotek\application\views\Dashboard\V_Dashboard_Admin.php 53
+ERROR - 2018-03-18 16:20:00 --> Severity: Notice --> Undefined variable: Instansi D:\Projects\master-apotek\application\views\Dashboard\V_Dashboard_Admin.php 54
+ERROR - 2018-03-18 16:20:00 --> Severity: Notice --> Trying to get property of non-object D:\Projects\master-apotek\application\views\Dashboard\V_Dashboard_Admin.php 54
+ERROR - 2018-03-18 16:20:00 --> Severity: Notice --> Undefined variable: Instansi D:\Projects\master-apotek\application\views\Dashboard\V_Dashboard_Admin.php 54
+ERROR - 2018-03-18 16:20:00 --> Severity: Notice --> Trying to get property of non-object D:\Projects\master-apotek\application\views\Dashboard\V_Dashboard_Admin.php 54
+ERROR - 2018-03-18 16:20:00 --> Severity: Notice --> Undefined variable: Instansi D:\Projects\master-apotek\application\views\Dashboard\V_Dashboard_Admin.php 58
+ERROR - 2018-03-18 16:20:00 --> Severity: Notice --> Trying to get property of non-object D:\Projects\master-apotek\application\views\Dashboard\V_Dashboard_Admin.php 58
+ERROR - 2018-03-18 16:20:00 --> Severity: Notice --> Undefined variable: Instansi D:\Projects\master-apotek\application\views\Dashboard\V_Dashboard_Admin.php 59
+ERROR - 2018-03-18 16:20:00 --> Severity: Notice --> Trying to get property of non-object D:\Projects\master-apotek\application\views\Dashboard\V_Dashboard_Admin.php 59
+ERROR - 2018-03-18 16:20:00 --> Severity: Notice --> Undefined variable: Users D:\Projects\master-apotek\application\views\Dashboard\V_Dashboard_Admin.php 78
+ERROR - 2018-03-18 16:20:00 --> Severity: Warning --> Invalid argument supplied for foreach() D:\Projects\master-apotek\application\views\Dashboard\V_Dashboard_Admin.php 78
+ERROR - 2018-03-18 16:20:00 --> 404 Page Not Found: Assets/images
+ERROR - 2018-03-18 16:20:17 --> Severity: Notice --> Undefined variable: Users D:\Projects\master-apotek\application\views\Dashboard\V_Dashboard_Admin.php 25
+ERROR - 2018-03-18 16:20:17 --> Severity: Warning --> Invalid argument supplied for foreach() D:\Projects\master-apotek\application\views\Dashboard\V_Dashboard_Admin.php 25
+ERROR - 2018-03-18 16:20:28 --> Severity: Notice --> Undefined variable: Users D:\Projects\master-apotek\application\views\Dashboard\V_Dashboard_Admin.php 24
+ERROR - 2018-03-18 16:20:28 --> Severity: Warning --> Invalid argument supplied for foreach() D:\Projects\master-apotek\application\views\Dashboard\V_Dashboard_Admin.php 24
+ERROR - 2018-03-18 16:32:56 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-03-18 16:32:56 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 16:33:02 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-03-18 16:33:02 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 16:33:59 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-03-18 16:33:59 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 16:38:13 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 16:40:43 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-03-18 16:40:43 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 16:41:54 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-03-18 16:41:54 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 16:55:54 --> Severity: Notice --> Undefined variable: no_surat D:\Projects\master-apotek\application\views\Dashboard\V_Dashboard_Admin.php 50
+ERROR - 2018-03-18 16:56:01 --> Severity: Notice --> Undefined variable: no_surat D:\Projects\master-apotek\application\views\Dashboard\V_Dashboard_Admin.php 50
+ERROR - 2018-03-18 17:03:05 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-03-18 17:03:05 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 17:32:59 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-03-18 17:32:59 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 17:33:19 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-03-18 17:33:19 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 17:35:23 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-03-18 17:35:23 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 17:35:51 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-03-18 17:35:51 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 17:36:19 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-03-18 17:36:19 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 17:37:07 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-03-18 17:37:07 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 17:37:15 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-03-18 17:37:15 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 17:37:50 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-03-18 17:37:50 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 17:38:32 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-03-18 17:38:33 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 17:38:48 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-03-18 17:38:49 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 17:38:58 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-03-18 17:38:58 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 17:43:45 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-03-18 17:43:45 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-03-18 17:57:52 --> 404 Page Not Found: Dashboard/apoteker
+ERROR - 2018-03-18 17:58:12 --> 404 Page Not Found: Dashboard/apoteker
+ERROR - 2018-03-18 18:27:29 --> Severity: Parsing Error --> syntax error, unexpected end of file, expecting function (T_FUNCTION) D:\Projects\master-apotek\application\controllers\Penjualan.php 17
+ERROR - 2018-03-18 18:27:35 --> Severity: Parsing Error --> syntax error, unexpected end of file, expecting function (T_FUNCTION) D:\Projects\master-apotek\application\controllers\Penjualan.php 17
+ERROR - 2018-03-18 18:27:58 --> Severity: Error --> Call to undefined function CURDATE() D:\Projects\master-apotek\application\models\MPenjualan.php 7
+ERROR - 2018-03-18 18:28:41 --> Severity: Error --> Call to undefined function CURDATE() D:\Projects\master-apotek\application\models\MPenjualan.php 7
+ERROR - 2018-03-18 18:33:23 --> Query error: Unknown column 'stanggal_penjualan' in 'where clause' - Invalid query: SELECT *
+FROM `ak_data_penjualan`
+WHERE `stanggal_penjualan` = 'CURDATE()'
+ERROR - 2018-03-18 18:34:28 --> Severity: Parsing Error --> syntax error, unexpected '->' (T_OBJECT_OPERATOR) D:\Projects\master-apotek\application\models\MPenjualan.php 8
+ERROR - 2018-03-18 18:36:28 --> Severity: Error --> Call to a member function result() on array D:\Projects\master-apotek\application\controllers\Penjualan.php 16
+ERROR - 2018-03-18 18:36:37 --> Severity: Notice --> Undefined index: draw D:\Projects\master-apotek\application\controllers\Penjualan.php 25
+ERROR - 2018-03-18 18:36:37 --> Severity: Error --> Call to undefined method MPenjualan::GetData() D:\Projects\master-apotek\application\controllers\Penjualan.php 26
+ERROR - 2018-03-18 18:37:03 --> Severity: Notice --> Undefined index: draw D:\Projects\master-apotek\application\controllers\Penjualan.php 25
+ERROR - 2018-03-18 18:37:48 --> Severity: Notice --> Undefined index: draw D:\Projects\master-apotek\application\controllers\Penjualan.php 31
+ERROR - 2018-03-18 18:37:59 --> 404 Page Not Found: Penjualan/list_penjualan_bebas
+ERROR - 2018-03-18 18:38:03 --> Severity: Notice --> Undefined index: draw D:\Projects\master-apotek\application\controllers\Penjualan.php 31
+ERROR - 2018-03-18 18:38:57 --> Severity: Notice --> Undefined index: draw D:\Projects\master-apotek\application\controllers\Penjualan.php 31
+ERROR - 2018-03-18 18:39:12 --> 404 Page Not Found: Penjualan/list_penjualan_bebas
+ERROR - 2018-03-18 18:39:54 --> Severity: Error --> Call to undefined method MPenjualan::GetDataPJ() D:\Projects\master-apotek\application\controllers\Penjualan.php 14
+ERROR - 2018-03-18 18:40:05 --> Severity: Notice --> Undefined index: start D:\Projects\master-apotek\application\controllers\Penjualan.php 16
+ERROR - 2018-03-18 18:40:06 --> Severity: Notice --> Undefined index: draw D:\Projects\master-apotek\application\controllers\Penjualan.php 32
+ERROR - 2018-03-18 18:42:04 --> Severity: Notice --> Undefined index: start D:\Projects\master-apotek\application\controllers\Penjualan.php 16
+ERROR - 2018-03-18 18:42:04 --> Severity: Notice --> Undefined index: draw D:\Projects\master-apotek\application\controllers\Penjualan.php 32
+ERROR - 2018-03-18 18:42:10 --> Severity: Notice --> Undefined index: start D:\Projects\master-apotek\application\controllers\Penjualan.php 16
+ERROR - 2018-03-18 18:42:10 --> Severity: Notice --> Undefined index: draw D:\Projects\master-apotek\application\controllers\Penjualan.php 32
+ERROR - 2018-03-18 18:42:56 --> Severity: Notice --> Undefined index: draw D:\Projects\master-apotek\application\controllers\Penjualan.php 31
+ERROR - 2018-03-18 18:43:35 --> Severity: Error --> Call to undefined method MPenjualan::GetData() D:\Projects\master-apotek\application\controllers\Penjualan.php 14
+ERROR - 2018-03-18 18:43:51 --> Severity: Notice --> Undefined variable: id D:\Projects\master-apotek\application\controllers\Penjualan.php 14
+ERROR - 2018-03-18 18:43:51 --> Severity: Notice --> Undefined index: start D:\Projects\master-apotek\application\controllers\Penjualan.php 16
+ERROR - 2018-03-18 18:43:51 --> Severity: Error --> Call to a member function result() on array D:\Projects\master-apotek\application\controllers\Penjualan.php 17
+ERROR - 2018-03-18 18:44:06 --> Severity: Notice --> Undefined variable: id D:\Projects\master-apotek\application\controllers\Penjualan.php 14
+ERROR - 2018-03-18 18:44:06 --> Severity: Notice --> Undefined index: start D:\Projects\master-apotek\application\controllers\Penjualan.php 16
+ERROR - 2018-03-18 18:44:06 --> Severity: Notice --> Undefined property: stdClass::$nm_barang D:\Projects\master-apotek\application\controllers\Penjualan.php 20
+ERROR - 2018-03-18 18:44:06 --> Severity: Notice --> Undefined property: stdClass::$harga_dasar D:\Projects\master-apotek\application\controllers\Penjualan.php 21
+ERROR - 2018-03-18 18:44:06 --> Severity: Notice --> Undefined property: stdClass::$margin D:\Projects\master-apotek\application\controllers\Penjualan.php 21
+ERROR - 2018-03-18 18:44:06 --> Severity: Notice --> Undefined property: stdClass::$qty D:\Projects\master-apotek\application\controllers\Penjualan.php 22
+ERROR - 2018-03-18 18:44:06 --> Severity: Notice --> Undefined property: stdClass::$nm_satuan D:\Projects\master-apotek\application\controllers\Penjualan.php 22
+ERROR - 2018-03-18 18:44:06 --> Severity: Notice --> Undefined property: stdClass::$etiket D:\Projects\master-apotek\application\controllers\Penjualan.php 23
+ERROR - 2018-03-18 18:44:06 --> Severity: Notice --> Undefined property: stdClass::$diskon D:\Projects\master-apotek\application\controllers\Penjualan.php 24
+ERROR - 2018-03-18 18:44:06 --> Severity: Notice --> Undefined property: stdClass::$total D:\Projects\master-apotek\application\controllers\Penjualan.php 25
+ERROR - 2018-03-18 18:44:06 --> Severity: Notice --> Undefined property: stdClass::$harga_dasar D:\Projects\master-apotek\application\controllers\Penjualan.php 26
+ERROR - 2018-03-18 18:44:06 --> Severity: Notice --> Undefined property: stdClass::$id_resep_detail D:\Projects\master-apotek\application\controllers\Penjualan.php 27
+ERROR - 2018-03-18 18:44:06 --> Severity: Notice --> Undefined index: draw D:\Projects\master-apotek\application\controllers\Penjualan.php 33
+ERROR - 2018-03-18 18:44:06 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at D:\Projects\master-apotek\system\core\Exceptions.php:271) D:\Projects\master-apotek\system\core\Common.php 570
+ERROR - 2018-03-18 18:44:06 --> Severity: Error --> Call to undefined method MPenjualan::GetData() D:\Projects\master-apotek\application\controllers\Penjualan.php 34
+ERROR - 2018-03-18 18:44:19 --> Severity: Notice --> Undefined index: start D:\Projects\master-apotek\application\controllers\Penjualan.php 16
+ERROR - 2018-03-18 18:44:19 --> Severity: Notice --> Undefined property: stdClass::$nm_barang D:\Projects\master-apotek\application\controllers\Penjualan.php 20
+ERROR - 2018-03-18 18:44:19 --> Severity: Notice --> Undefined property: stdClass::$harga_dasar D:\Projects\master-apotek\application\controllers\Penjualan.php 21
+ERROR - 2018-03-18 18:44:19 --> Severity: Notice --> Undefined property: stdClass::$margin D:\Projects\master-apotek\application\controllers\Penjualan.php 21
+ERROR - 2018-03-18 18:44:19 --> Severity: Notice --> Undefined property: stdClass::$qty D:\Projects\master-apotek\application\controllers\Penjualan.php 22
+ERROR - 2018-03-18 18:44:19 --> Severity: Notice --> Undefined property: stdClass::$nm_satuan D:\Projects\master-apotek\application\controllers\Penjualan.php 22
+ERROR - 2018-03-18 18:44:19 --> Severity: Notice --> Undefined property: stdClass::$etiket D:\Projects\master-apotek\application\controllers\Penjualan.php 23
+ERROR - 2018-03-18 18:44:19 --> Severity: Notice --> Undefined property: stdClass::$diskon D:\Projects\master-apotek\application\controllers\Penjualan.php 24
+ERROR - 2018-03-18 18:44:19 --> Severity: Notice --> Undefined property: stdClass::$total D:\Projects\master-apotek\application\controllers\Penjualan.php 25
+ERROR - 2018-03-18 18:44:19 --> Severity: Notice --> Undefined property: stdClass::$harga_dasar D:\Projects\master-apotek\application\controllers\Penjualan.php 26
+ERROR - 2018-03-18 18:44:19 --> Severity: Notice --> Undefined property: stdClass::$id_resep_detail D:\Projects\master-apotek\application\controllers\Penjualan.php 27
+ERROR - 2018-03-18 18:44:19 --> Severity: Notice --> Undefined index: draw D:\Projects\master-apotek\application\controllers\Penjualan.php 33
+ERROR - 2018-03-18 18:44:19 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at D:\Projects\master-apotek\system\core\Exceptions.php:271) D:\Projects\master-apotek\system\core\Common.php 570
+ERROR - 2018-03-18 18:44:19 --> Severity: Error --> Call to undefined method MPenjualan::GetData() D:\Projects\master-apotek\application\controllers\Penjualan.php 34
+ERROR - 2018-03-18 18:44:31 --> Severity: Notice --> Undefined property: stdClass::$nm_barang D:\Projects\master-apotek\application\controllers\Penjualan.php 18
+ERROR - 2018-03-18 18:44:31 --> Severity: Notice --> Undefined property: stdClass::$harga_dasar D:\Projects\master-apotek\application\controllers\Penjualan.php 19
+ERROR - 2018-03-18 18:44:31 --> Severity: Notice --> Undefined property: stdClass::$margin D:\Projects\master-apotek\application\controllers\Penjualan.php 19
+ERROR - 2018-03-18 18:44:31 --> Severity: Notice --> Undefined property: stdClass::$qty D:\Projects\master-apotek\application\controllers\Penjualan.php 20
+ERROR - 2018-03-18 18:44:31 --> Severity: Notice --> Undefined property: stdClass::$nm_satuan D:\Projects\master-apotek\application\controllers\Penjualan.php 20
+ERROR - 2018-03-18 18:44:31 --> Severity: Notice --> Undefined property: stdClass::$etiket D:\Projects\master-apotek\application\controllers\Penjualan.php 21
+ERROR - 2018-03-18 18:44:31 --> Severity: Notice --> Undefined property: stdClass::$diskon D:\Projects\master-apotek\application\controllers\Penjualan.php 22
+ERROR - 2018-03-18 18:44:31 --> Severity: Notice --> Undefined property: stdClass::$total D:\Projects\master-apotek\application\controllers\Penjualan.php 23
+ERROR - 2018-03-18 18:44:31 --> Severity: Notice --> Undefined property: stdClass::$harga_dasar D:\Projects\master-apotek\application\controllers\Penjualan.php 24
+ERROR - 2018-03-18 18:44:31 --> Severity: Notice --> Undefined property: stdClass::$id_resep_detail D:\Projects\master-apotek\application\controllers\Penjualan.php 25
+ERROR - 2018-03-18 18:44:31 --> Severity: Notice --> Undefined index: draw D:\Projects\master-apotek\application\controllers\Penjualan.php 31
+ERROR - 2018-03-18 18:44:31 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at D:\Projects\master-apotek\system\core\Exceptions.php:271) D:\Projects\master-apotek\system\core\Common.php 570
+ERROR - 2018-03-18 18:44:31 --> Severity: Error --> Call to undefined method MPenjualan::GetData() D:\Projects\master-apotek\application\controllers\Penjualan.php 32
+ERROR - 2018-03-18 18:44:42 --> Severity: Notice --> Undefined property: stdClass::$harga_dasar D:\Projects\master-apotek\application\controllers\Penjualan.php 19
+ERROR - 2018-03-18 18:44:42 --> Severity: Notice --> Undefined property: stdClass::$margin D:\Projects\master-apotek\application\controllers\Penjualan.php 19
+ERROR - 2018-03-18 18:44:42 --> Severity: Notice --> Undefined property: stdClass::$qty D:\Projects\master-apotek\application\controllers\Penjualan.php 20
+ERROR - 2018-03-18 18:44:42 --> Severity: Notice --> Undefined property: stdClass::$nm_satuan D:\Projects\master-apotek\application\controllers\Penjualan.php 20
+ERROR - 2018-03-18 18:44:42 --> Severity: Notice --> Undefined property: stdClass::$etiket D:\Projects\master-apotek\application\controllers\Penjualan.php 21
+ERROR - 2018-03-18 18:44:42 --> Severity: Notice --> Undefined property: stdClass::$diskon D:\Projects\master-apotek\application\controllers\Penjualan.php 22
+ERROR - 2018-03-18 18:44:42 --> Severity: Notice --> Undefined property: stdClass::$total D:\Projects\master-apotek\application\controllers\Penjualan.php 23
+ERROR - 2018-03-18 18:44:42 --> Severity: Notice --> Undefined property: stdClass::$harga_dasar D:\Projects\master-apotek\application\controllers\Penjualan.php 24
+ERROR - 2018-03-18 18:44:42 --> Severity: Notice --> Undefined property: stdClass::$id_resep_detail D:\Projects\master-apotek\application\controllers\Penjualan.php 25
+ERROR - 2018-03-18 18:44:42 --> Severity: Notice --> Undefined index: draw D:\Projects\master-apotek\application\controllers\Penjualan.php 31
+ERROR - 2018-03-18 18:44:42 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at D:\Projects\master-apotek\system\core\Exceptions.php:271) D:\Projects\master-apotek\system\core\Common.php 570
+ERROR - 2018-03-18 18:44:42 --> Severity: Error --> Call to undefined method MPenjualan::GetData() D:\Projects\master-apotek\application\controllers\Penjualan.php 32
+ERROR - 2018-03-18 18:45:03 --> Severity: Notice --> Undefined property: stdClass::$total D:\Projects\master-apotek\application\controllers\Penjualan.php 20
+ERROR - 2018-03-18 18:45:03 --> Severity: Notice --> Undefined property: stdClass::$harga_dasar D:\Projects\master-apotek\application\controllers\Penjualan.php 21
+ERROR - 2018-03-18 18:45:03 --> Severity: Notice --> Undefined property: stdClass::$id_resep_detail D:\Projects\master-apotek\application\controllers\Penjualan.php 22
+ERROR - 2018-03-18 18:45:03 --> Severity: Notice --> Undefined index: draw D:\Projects\master-apotek\application\controllers\Penjualan.php 28
+ERROR - 2018-03-18 18:45:03 --> Severity: Error --> Call to undefined method MPenjualan::GetData() D:\Projects\master-apotek\application\controllers\Penjualan.php 29
+ERROR - 2018-03-18 18:45:28 --> Severity: Notice --> Undefined index: draw D:\Projects\master-apotek\application\controllers\Penjualan.php 26
+ERROR - 2018-03-18 18:45:28 --> Severity: Error --> Call to undefined method MPenjualan::GetData() D:\Projects\master-apotek\application\controllers\Penjualan.php 27
+ERROR - 2018-03-18 18:45:36 --> Severity: Notice --> Undefined index: draw D:\Projects\master-apotek\application\controllers\Penjualan.php 26
+ERROR - 2018-03-18 18:47:15 --> Severity: Notice --> Undefined index: draw D:\Projects\master-apotek\application\controllers\Penjualan.php 26
+ERROR - 2018-03-18 18:49:18 --> Severity: Notice --> Undefined index: draw D:\Projects\master-apotek\application\controllers\Penjualan.php 26
+ERROR - 2018-03-18 18:50:16 --> Severity: Notice --> Undefined index: draw D:\Projects\master-apotek\application\controllers\Penjualan.php 26
+ERROR - 2018-03-18 18:50:48 --> Severity: Parsing Error --> syntax error, unexpected ';', expecting ')' D:\Projects\master-apotek\application\controllers\Penjualan.php 26
+ERROR - 2018-03-18 18:50:51 --> Severity: Parsing Error --> syntax error, unexpected '"data"' (T_CONSTANT_ENCAPSED_STRING), expecting ')' D:\Projects\master-apotek\application\controllers\Penjualan.php 27
+ERROR - 2018-03-18 18:55:51 --> Severity: Notice --> Undefined variable: Subtotal D:\Projects\master-apotek\application\views\Dashboard\V_Dashboard_Apoteker.php 29
+ERROR - 2018-03-18 18:56:33 --> Severity: Notice --> Undefined variable: Subtotal D:\Projects\master-apotek\application\views\Dashboard\V_Dashboard_Apoteker.php 29
+ERROR - 2018-03-18 18:56:51 --> Severity: Notice --> Undefined variable: Subtotal D:\Projects\master-apotek\application\views\Dashboard\V_Dashboard_Apoteker.php 29
+ERROR - 2018-03-18 19:03:35 --> 404 Page Not Found: Penjualan/pj_non_resep
+ERROR - 2018-03-18 19:04:11 --> Severity: Error --> Call to undefined method MPenjualan::GetSubTotalPJ() D:\Projects\master-apotek\application\controllers\Penjualan.php 41
+ERROR - 2018-03-18 19:07:25 --> Query error: Unknown column 'subtotal' in 'field list' - Invalid query: SELECT SUM(`subtotal`) AS `subtotal`
+FROM `ak_data_penjualan_bebas_detail`
+WHERE `id_penjualan` IS NULL

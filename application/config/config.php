@@ -324,11 +324,7 @@ $config['cache_query_string'] = FALSE;
 | https://codeigniter.com/user_guide/libraries/encryption.html
 |
 */
-// Get a hex-encoded representation of the key:
-$key = bin2hex('Akasaka');
-// Put the same value in your config with hex2bin(),
-// so that it is still passed as binary to the library:
-$config['encryption_key'] = hex2bin($key);
+$config['encryption_key'] = 'akasaka';
 
 /*
 |--------------------------------------------------------------------------
@@ -382,11 +378,11 @@ $config['encryption_key'] = hex2bin($key);
 |
 */
 $config['sess_driver'] = 'database';
-$config['sess_cookie_name'] = 'moe_apotek';
+$config['sess_cookie_name'] = 'ak_cookie';
 $config['sess_expiration'] = 7200;
 $config['sess_save_path'] = 'ak_data_log';
 $config['sess_match_ip'] = TRUE;
-$config['sess_time_to_update'] = 7200;
+$config['sess_time_to_update'] = 300;
 $config['sess_regenerate_destroy'] = TRUE;
 
 /*
@@ -404,8 +400,8 @@ $config['sess_regenerate_destroy'] = TRUE;
 |       'cookie_httponly') will also affect sessions.
 |
 */
-$config['cookie_prefix']	= 'moe_';
-$config['cookie_domain']	= 'localhost';
+$config['cookie_prefix']	= '';
+$config['cookie_domain']	= '';
 $config['cookie_path']		= '/';
 $config['cookie_secure']	= FALSE;
 $config['cookie_httponly'] 	= FALSE;
@@ -453,8 +449,8 @@ $config['global_xss_filtering'] = TRUE;
 | 'csrf_exclude_uris' = Array of URIs which ignore CSRF checks
 */
 $config['csrf_protection'] = FALSE;
-$config['csrf_token_name'] = 'csrf_moe_token';
-$config['csrf_cookie_name'] = 'csrf_moe_cookie';
+$config['csrf_token_name'] = 'akasaka_token';
+$config['csrf_cookie_name'] = 'akasaka_csrf_cookie';
 $config['csrf_expire'] = 7200;
 $config['csrf_regenerate'] = TRUE;
 $config['csrf_exclude_uris'] = array();
@@ -506,7 +502,7 @@ $config['time_reference'] = date_default_timezone_set("Asia/Jakarta");
 | Note: You need to have eval() enabled for this to work.
 |
 */
-$config['rewrite_short_tags'] = FALSE;
+$config['rewrite_short_tags'] = TRUE;
 
 /*
 |--------------------------------------------------------------------------

@@ -1,53 +1,86 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') OR edatait('No direct script access allowed');
 class User extends CI_Controller {
 
 	public function __construct() {
 		parent::__construct();
 		$this->load->model('MUser');
-	}
-
-	public function index() {
-		$data['Title'] = "Data User";
-		$data['Nav'] = "Master Data";
-		$data['Nama'] = $this->session->userdata('nama');
-		$data['Level'] = $this->session->userdata('level');
-		$data['Hak'] = $this->MUser->GetLevel();
-		//======== Pagination Start =========
-		$limit_per_page = 5;
-		$start_index = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-		$total_records = $this->MUser->GetTotalData();
-
-		if ($total_records > 0) 
-		{
-				// get current page records
-				$data["Data"] = $this->MUser->GetData($limit_per_page, $start_index);
-				
-				$config['base_url'] = base_url() . 'user/index';
-				$config['total_rows'] = $total_records;
-				$config['per_page'] = $limit_per_page;
-				$config["uri_segment"] = 3;
-				 
-				$this->pagination->initialize($config);
-				$data["links"] = $this->pagination->create_links();
+		$this->load->model('MLevel');
+		$isLogin = $this->session->userdata('isLogin');
+		if(!$isLogin) {
+			redirect('portal','refresh');
 		}
-		//============== END of Pagination =============
-		$data['Konten'] = 'Admin/V_Users';
-		$this->load->view('Master',$data);
 	}
 
-	public function tambah_data() {
-		$x = $this->MUser->SaveData();
-		redirect('user','refresh');
+	public function list_data_user() {
+		if($this->session->userdata('level')=="Master" OR $this->session->userdata('level')=="Web Administrator") :
+			$list = $this->MUser->GetAll();
+		else :
+			$list = $this->MUser->GetUser($this->session->userdata('kode'));
+		endif;
+		$datatb = array();
+		$nomor = 1;
+		foreach ($list as $data) {
+			$row = array();
+			$row[] = $nomor++;
+			$row[] = '<a id="getdata" user="'.$data->id_user.'" style="cursor:pointer">'.$data->nm_user.'</a>';
+			$row[] = $data->login_user;
+			$row[] = $data->nm_level;
+			$row[] = $data->created_date;
+			$row[] = $data->login_terakhir;
+
+			$datatb[] = $row;
+		}
+
+		$output = array(
+						"draw" => $this->input->post('draw'),
+						"data" => $datatb
+					 );
+		echo json_encode($output);
 	}
 
-	public function edit_data($id) {
-		$x = $this->MUser->EditData($id);
-		redirect('user','refresh');
+	public function get_data() {
+		$res = $this->MUser->get_single();
+		$data = array(
+						'id_user' => $res->id_user,
+						'nm_user' => $res->nm_user,
+						'login_user' => $res->login_user,
+						'pass_user' => $res->pass_user,
+						'level_user' => $res->level_user,
+					);
+		echo json_encode($data);
 	}
 
-	public function del_data($id) {
-		$x = $this->MUser->DelData($id);
-		redirect('user','refresh');
+	public function tambah_user() {
+		$res = $this->MUser->SaveData();
+		$data = array(
+						'status' => $res
+					);
+		echo json_encode($data);
 	}
+
+	public function edit_user() {
+		$res = $this->MUser->EditData();
+		$data = array(
+						'status' => $res
+					);
+		echo json_encode($data);
+	}
+
+	public function del_data() {
+		$res = $this->MUser->DelData();
+		$data = array(
+						'status' => $res
+					);
+		echo json_encode($data);
+	}
+
+	public function verif_user() {
+		$res = $this->MUser->verif_user();
+		$data = array(
+						'status' => $res
+					);
+		echo json_encode($data);
+	}
+
 
 }

@@ -4,59 +4,69 @@ class Pabrik extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->model('MPabrik');
-		if($this->session->userdata('isLogin')==NULL) :
+		$isLogin = $this->session->userdata('isLogin');
+		if(!$isLogin) {
 			redirect('portal','refresh');
-		endif;
+		}
 	}
 
 	public function index() {
-		$data['Title'] = "Pabrik Obat";
-		$data['Nav'] = "Master Data";
-		$data['Nama'] = $this->session->userdata('nama');
-		$data['Level'] = $this->session->userdata('level');
-		$data['Konten'] = 'Farmasi/V_Pabrik';
-		$this->load->view('Master',$data);
+		$level = $this->session->userdata('level');
+		if($level=="Master" OR $level=="Pemilik") {
+			redirect('dashboard/administrator');
+		} else {
+			redirect('dashboard/apoteker');
+		}
 	}
 
-	public function GetData($id=null) {
-		$data = $this->MPabrik->GetData();
-		echo
-			'{
-				"data": [';
-				foreach($data as $d) :
-					echo'	[
-								"'.$d->id_pabrik.'",
-								"'.$d->nm_pabrik.'"
-							],';
-				endforeach;
-					echo'	[
-								"-",
-								"-"
-							]';
-		echo'	]
-			}';
+	public function list_all_data() {
+		$list = $this->MPabrik->GetAll();
+		$datatb= array();
+		$nomor = 1;
+		foreach ($list as $data) {
+			$row = array();
+			$row[] = $nomor++;
+			$row[] = '<a id="getdata" data="'.$data->id_pabrik.'" style="cursor:pointer">'.$data->id_pabrik.'</a>';
+			$row[] = $data->nm_pabrik;
+
+			$datatb[] = $row;
+		}
+
+		$output = array(
+						"draw" => $this->input->post('draw'),
+						"data" => $datatb
+					);
+		echo json_encode($output);
+	}
+
+	public function get_data() {
+		$res = $this->MPabrik->GetSingle();
+		$data = array(
+						'id_pabrik' => $res->id_pabrik,
+						'nm_pabrik' => $res->nm_pabrik
+					);
+		echo json_encode($data);
+	}
+
+	public function get_option() {
+		$res = $this->MPabrik->GetOption();
+		echo json_encode($res);
 	}
 
 	public function tambah_data() {
-		$data['Konten'] = 'Farmasi/V_Pabrik';
-		$this->load->view('Farmasi/V_Pabrik',$data);
+		$res = $this->MPabrik->SaveData();
+		$data = array(
+						'status' => $res
+					);
+		echo json_encode($data);
 	}
 
-	public function edit_data($id) {
-		$data['Nama'] = $this->session->userdata('nama');
-		$data['Level'] = $this->session->userdata('level');
-		$data['Data'] = $this->MPabrik->GetSingleData($id);
-		$this->load->view('Farmasi/V_Edit_Pabrik',$data);
-	}
-
-	public function proses_edit_data($id) {
-		$x = $this->MPabrik->EditData($id);
-		echo "<script>window.close();</script>";
-	}
-
-	public function del_data($id) {
-		$x = $this->MPabrik->DelData($id);
-		redirect('pabrik','refresh');	
+	public function hapus_data() {
+		$res = $this->MPabrik->DelData();
+		$data = array(
+						'status' => $res
+					);
+		echo json_encode($data);
 	}
 
 }

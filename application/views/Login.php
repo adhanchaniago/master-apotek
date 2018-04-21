@@ -4,19 +4,18 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Sistem Apotek - <?= $Title ?></title>
+		<title>SISTEM APOTEK - <?= $Title ?></title>
 		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 		<link rel="stylesheet" href="<?= base_url('assets/bootstrap/css/bootstrap.min.css') ?>">
 		<link rel="stylesheet" href="<?= base_url('assets/font-awesome/css/font-awesome.min.css') ?>">
-		<link rel="stylesheet" href="<?= base_url('assets/adminLTE/css/AdminLTE.css') ?>">
-		<link rel="stylesheet" href="<?= base_url('assets/adminLTE/css/skins/skin-green.css') ?>">
+		<link rel="stylesheet" href="<?= base_url('assets/AdminLTE/css/AdminLTE.css') ?>">
 	</head>
 	<body class="hold-transition login-page">
 		<div class="login-box">
 			<div class="login-logo">
-				<span style="font-size:0.8em;">APOTEK CIREMAI FARMA</span>
+				<span style="font-size:0.8em;"><?= $Instansi->nm_instansi ?></span>
 				<span style="font-size:0.4em;display:block">
-					SISTEM INFORMASI MANAJEMEN APOTEK
+					<?= $Instansi->alamat_instansi ?>
 				</span>
 			</div>
 			<?php 
@@ -34,11 +33,22 @@
 				<?php endif; ?>
 				<?= form_open('portal/proses-login') ?>
 					<div class="form-group has-feedback">
-						<?= form_input('usr',null,array('class' => 'form-control','placeholder' => 'Username')) ?>
+						<?= form_input('usr',null,array(
+														'class' => 'form-control',
+														'placeholder' => 'Username',
+														'autocomplete' => 'nope'
+														)
+									) 
+						?>
 						<span class="fa fa-user form-control-feedback"></span>
 					</div>
 					<div class="form-group has-feedback">
-						<?= form_password('pwd',null,array('class' => 'form-control','placeholder' => 'Password')) ?>
+						<?= form_password('pwd',null,array(
+															'class' => 'form-control',
+															'placeholder' => 'Password',
+															'autocomplete' => 'new-password'
+														  )
+										 ) ?>
 						<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 					</div>
 					<div class="row">
@@ -49,15 +59,15 @@
 				<?= form_close() ?>
 				<br />
 				<p class="login-box-msg">
-					&copy; 2017<br />
+					&copy; 2017 - <?= date('Y') ?><br />
 					Developed with <i style="color:red" class="fa fa-heart"></i> by <a href="https://akasakapratama.web.id/">Akasaka Pratama</a>
 				</p>
 			</div>
 		</div>
 		<script src="<?= base_url('assets/jquery/jquery.min.js') ?>"></script>
 		<script src="<?= base_url('assets/bootstrap/js/bootstrap.min.js') ?>"></script>
-		<script src="<?= base_url('assets/jquery/jquery.slimscroll.js') ?>"></script>
-		<script src="<?= base_url('assets/fastclick/lib/fastclick.js') ?>"></script>
+		<script src="<?= base_url('assets/jquery/jquery.slimscroll.min.js') ?>"></script>
+		<script src="<?= base_url('assets/dist/js/fastclick.js') ?>"></script>
 		<script src="<?= base_url('assets/adminLTE/js/adminlte.min.js') ?>"></script>
 		<script>
 			$(document).ready(function () {

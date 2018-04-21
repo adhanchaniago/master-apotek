@@ -3,75 +3,86 @@ class Barang extends CI_Controller {
 
 	public function __construct() {
 		parent::__construct();
-		$this->load->model('MFarmasi');
-		$this->load->model('MGudang');
-		$this->load->model('MPabrik');
-		$this->load->model('MKemasan');
+		$this->load->model('MBarang');
+		$isLogin = $this->session->userdata('isLogin');
+		if(!$isLogin) {
+			redirect('portal','refresh');
+		}
 	}
 
 	public function index() {
-		$data['Title'] = "Barang";
-		$data['Nav'] = "Master Data";
-		$data['Nama'] = $this->session->userdata('nama');
-		$data['Level'] = $this->session->userdata('level');
-		$data['Pabrik'] = $this->MPabrik->Getdata(NULL,NULL);
-		$data['Kemasan'] = $this->MKemasan->Getdata(NULL,NULL);
-		$data['Satuan'] = $this->MFarmasi->GetSatuan();
-		$data['Jenis'] = $this->MFarmasi->GetGolObat();
-		$data['Konten'] = 'Gudang/V_Barang';
-		$this->load->view('Master',$data);
+		$level = $this->session->userdata('level');
+		if($level=="Master" OR $level=="Pemilik") {
+			redirect('dashboard/administrator');
+		} else {
+			redirect('dashboard/apoteker');
+		}
 	}
 
-	public function ajax_list() {
-		$list = $this->MGudang->GetBarang();
-		$data = array();
-		$no = $_POST['start'];
-		foreach ($list as $d) {
-			$no++;
+	public function list_all_data() {
+		$list = $this->MBarang->GetAll();
+		$datatb= array();
+		$nomor = 1;
+		foreach ($list as $data) {
 			$row = array();
-			$row[] = $d->id_barang;
-			$row[] = $d->nm_barang;
-			$row[] = $d->nm_jenis;
-			$row[] = $d->nm_pabrik;
-			$row[] = $d->golongan_obat;
-			$row[] = $d->isi_satuan.' '.$d->nm_satuan;
-			$row[] = 'Rp. '.number_format($d->harga_dasar,2,",",".");
+			$row[] = $nomor++;
+			$row[] = '<a id="getdata" data="'.$data->id_barang.'" style="cursor:pointer">'.$data->nm_barang.'</a>';
+			$row[] = $data->nm_jenis;
+			$row[] = $data->nm_pabrik;
+			$row[] = $data->nm_kemasan;
+			$row[] = $data->nm_satuan;
+			$row[] = $data->golongan_obat;
 
-			$data[] = $row;
+			$datatb[] = $row;
 		}
 
 		$output = array(
-										"draw" => $_POST['draw'],
-										"recordsTotal" => $this->MGudang->GetTotalBarang(),
-										"data" => $data,
-									 );
+						"draw" => $this->input->post('draw'),
+						"data" => $datatb
+					);
 		echo json_encode($output);
 	}
 
+	public function get_data() {
+		$res = $this->MBarang->GetSingle();
+		$data = array(
+						'id_barang' => $res->id_barang,
+						'nm_barang' => $res->nm_barang,
+						'id_jenis' => $res->id_jenis,
+						'id_golongan' => $res->golongan_obat,
+						'id_kemasan' => $res->id_kemasan,
+						'id_satuan' => $res->id_satuan,
+						'isi_satuan' => $res->isi_satuan,
+						'margin' => $res->margin,
+						'harga_dasar' => $res->harga_dasar,
+						'id_pabrik' => $res->id_pabrik,
+						'stok_maksimum' => $res->stok_maksimum,
+						'stok_minimum' => $res->stok_minimum,
+						'konsinyasi' => $res->konsinyasi,
+						'formularium' => $res->formularium
+					);
+		echo json_encode($data);
+	}
+
+	public function get_option() {
+		$res = $this->MBarang->GetOption();
+		echo json_encode($res);
+	}
+
 	public function tambah_data() {
-		$x = $this->MGudang->SaveData();
-		redirect('barang','refresh');
+		$res = $this->MBarang->SaveData();
+		$data = array(
+						'status' => $res
+					);
+		echo json_encode($data);
 	}
 
-	public function edit_data($id) {
-		$data['Nama'] = $this->session->userdata('nama');
-		$data['Level'] = $this->session->userdata('level');
-		$data['Data'] = $this->MGudang->GetSingleData($id);
-		$data['Pabrik'] = $this->MPabrik->Getdata(NULL,NULL);
-		$data['Kemasan'] = $this->MKemasan->Getdata(NULL,NULL);
-		$data['Satuan'] = $this->MFarmasi->GetSatuan();
-		$data['Jenis'] = $this->MFarmasi->GetGolObat();
-		$this->load->view('Gudang/Barang/V_Edit_Barang',$data);
-	}
-
-	public function proses_edit_data($id) {
-		$x = $this->MGudang->EditData($id);
-		echo "<script>window.close();</script>";
-	}
-
-	public function del_data($id) {
-		$x = $this->MGudang->DelData($id);
-		redirect('barang','refresh');
+	public function hapus_data() {
+		$res = $this->MBarang->DelData();
+		$data = array(
+						'status' => $res
+					);
+		echo json_encode($data);
 	}
 
 }

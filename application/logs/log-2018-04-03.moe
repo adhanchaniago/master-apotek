@@ -1,0 +1,9 @@
+ERROR - 2018-04-03 19:51:17 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) /var/www/html/master-apotek/system/database/drivers/mysqli/mysqli_driver.php 201
+ERROR - 2018-04-03 19:51:17 --> Unable to connect to the database
+ERROR - 2018-04-03 19:51:34 --> 404 Page Not Found: Assets/adminLTE
+ERROR - 2018-04-03 19:51:34 --> 404 Page Not Found: Assets/adminLTE
+ERROR - 2018-04-03 19:51:34 --> 404 Page Not Found: Assets/adminLTE
+ERROR - 2018-04-03 19:51:38 --> Query error: Unknown column 'login_user' in 'where clause' - Invalid query: SELECT *
+FROM `ak_data_user`
+WHERE `login_user` = 'master'
+AND `deleted` =0
