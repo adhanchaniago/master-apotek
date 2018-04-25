@@ -1,0 +1,129 @@
+ERROR - 2018-04-26 00:01:36 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-26 00:01:36 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-26 00:01:41 --> Query error: Unknown column 'qty' in 'field list' - Invalid query: UPDATE `ak_data_barang_detail` SET `qty` = -1
+WHERE `id_detail_barang` = '36'
+ERROR - 2018-04-26 00:03:31 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-26 00:03:31 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-26 00:03:31 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 58
+ERROR - 2018-04-26 00:04:29 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-26 00:04:29 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-26 00:04:29 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 58
+ERROR - 2018-04-26 00:05:29 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-26 00:05:29 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-26 00:05:29 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 58
+ERROR - 2018-04-26 00:06:57 --> Query error: Unknown column 'stok_tersedias' in 'field list' - Invalid query: UPDATE `ak_data_barang_detail` SET `stok_tersedias` = 'stok_tersedia-.1'
+WHERE `id_detail_barang` = '36'
+ERROR - 2018-04-26 00:07:24 --> Query error: Unknown column 'stok_tersedias' in 'field list' - Invalid query: UPDATE `ak_data_barang_detail` SET `stok_tersedias` = 'stok_tersedias-.1'
+WHERE `id_detail_barang` = '36'
+ERROR - 2018-04-26 00:09:54 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-26 00:09:54 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-26 00:10:18 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/models/MPembelian.php 98
+ERROR - 2018-04-26 00:10:34 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 58
+ERROR - 2018-04-26 00:12:04 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 58
+ERROR - 2018-04-26 00:14:25 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 58
+ERROR - 2018-04-26 00:14:30 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 58
+ERROR - 2018-04-26 00:31:22 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 58
+ERROR - 2018-04-26 00:45:39 --> Severity: Error --> Call to undefined method MPenjualan::get_nama_pasien_resep() /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 97
+ERROR - 2018-04-26 00:45:40 --> Query error: Unknown column 'ak_data_penjualan_resep.deleted' in 'where clause' - Invalid query: SELECT *
+FROM `ak_data_penjualan_resep`
+JOIN `ak_data_barang` ON `ak_data_barang`.`id_barang`=`ak_data_penjualan_resep`.`id_barang`
+JOIN `ak_data_satuan` ON `ak_data_satuan`.`id_satuan`=`ak_data_barang`.`id_satuan`
+JOIN `ak_data_barang_stok_tersedia` ON `ak_data_barang_stok_tersedia`.`id_barang`=`ak_data_barang`.`id_barang`
+WHERE `ak_data_penjualan_resep`.`deleted` =0
+AND `ak_data_penjualan_resep`.`id_penjualan` IS NULL
+AND `ak_data_barang_stok_tersedia`.`deleted` =0
+ERROR - 2018-04-26 00:45:44 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-26 00:45:44 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-26 00:46:04 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-26 00:46:04 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-26 00:46:04 --> Severity: Error --> Call to undefined method MPenjualan::get_nama_pasien_resep() /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 97
+ERROR - 2018-04-26 00:46:04 --> Query error: Unknown column 'ak_data_penjualan_resep.deleted' in 'where clause' - Invalid query: SELECT *
+FROM `ak_data_penjualan_resep`
+JOIN `ak_data_barang` ON `ak_data_barang`.`id_barang`=`ak_data_penjualan_resep`.`id_barang`
+JOIN `ak_data_satuan` ON `ak_data_satuan`.`id_satuan`=`ak_data_barang`.`id_satuan`
+JOIN `ak_data_barang_stok_tersedia` ON `ak_data_barang_stok_tersedia`.`id_barang`=`ak_data_barang`.`id_barang`
+WHERE `ak_data_penjualan_resep`.`deleted` =0
+AND `ak_data_penjualan_resep`.`id_penjualan` IS NULL
+AND `ak_data_barang_stok_tersedia`.`deleted` =0
+ERROR - 2018-04-26 00:46:30 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-26 00:46:30 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-26 00:46:30 --> Severity: Error --> Call to undefined method MPenjualan::get_nama_pasien_resep() /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 97
+ERROR - 2018-04-26 00:46:30 --> Query error: Unknown column 'ak_data_penjualan_resep.id_barang' in 'on clause' - Invalid query: SELECT *
+FROM `ak_data_penjualan_resep`
+JOIN `ak_data_barang` ON `ak_data_barang`.`id_barang`=`ak_data_penjualan_resep`.`id_barang`
+JOIN `ak_data_satuan` ON `ak_data_satuan`.`id_satuan`=`ak_data_barang`.`id_satuan`
+JOIN `ak_data_barang_stok_tersedia` ON `ak_data_barang_stok_tersedia`.`id_barang`=`ak_data_barang`.`id_barang`
+WHERE `ak_data_penjualan_resep`.`deleted` =0
+AND `ak_data_penjualan_resep`.`id_penjualan` IS NULL
+AND `ak_data_barang_stok_tersedia`.`deleted` =0
+ERROR - 2018-04-26 00:47:06 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-26 00:47:06 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-26 00:47:06 --> Severity: Error --> Call to undefined method MPenjualan::get_nama_pasien_resep() /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 97
+ERROR - 2018-04-26 00:47:15 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-26 00:47:15 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-26 00:47:19 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-26 00:47:19 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-26 00:47:19 --> Severity: Error --> Call to undefined method MPenjualan::get_nama_pasien_resep() /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 97
+ERROR - 2018-04-26 00:48:27 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-26 00:48:27 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-26 00:48:28 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 99
+ERROR - 2018-04-26 00:48:42 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-26 00:48:42 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-26 00:48:42 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 99
+ERROR - 2018-04-26 00:56:39 --> Query error: Column 'qty' cannot be null - Invalid query: INSERT INTO `ak_data_penjualan_bebas` (`id_penjualan_bebas`, `id_penjualan`, `id_barang`, `id_user`, `nm_pasien`, `qty`, `diskon`, `pembulatan`, `subtotal`) VALUES ('B18042600007', NULL, '6', 'USR00001', 'Akasaka Ryuunosuke', NULL, NULL, 0, 0)
+ERROR - 2018-04-26 00:57:53 --> Query error: Unknown column 'id_penjualan_resep' in 'field list' - Invalid query: INSERT INTO `ak_data_penjualan_resep` (`id_penjualan_resep`, `id_penjualan`, `id_barang`, `id_user`, `nm_pasien`, `nm_dokter`, `alamat_pasien`, `etiket`, `qty`, `diskon`, `pembulatan`, `subtotal`) VALUES ('R18042600002', NULL, '6', 'USR00001', 'Akasaka Ryuunosuke', 'Chitanda Eru', 'Jl. K-On Blok A No.1', NULL, NULL, NULL, 0, 0)
+ERROR - 2018-04-26 00:59:38 --> Query error: Unknown column 'alamat_pasien' in 'field list' - Invalid query: INSERT INTO `ak_data_penjualan_resep` (`id_penjualan_resep`, `id_penjualan`, `id_barang`, `id_user`, `nm_pasien`, `nm_dokter`, `alamat_pasien`, `etiket`, `qty`, `diskon`, `pembulatan`, `subtotal`) VALUES ('R18042600002', NULL, '6', 'USR00001', 'Akasaka Ryuunosuke', 'Chitanda Eru', 'Jl. K-On Blok A No.1', NULL, NULL, NULL, 0, 0)
+ERROR - 2018-04-26 00:59:59 --> Query error: Column 'id_penjualan' cannot be null - Invalid query: INSERT INTO `ak_data_penjualan_resep` (`id_penjualan_resep`, `id_penjualan`, `id_barang`, `id_user`, `nm_pasien`, `nm_dokter`, `alamat_pasien`, `etiket`, `qty`, `diskon`, `pembulatan`, `subtotal`) VALUES ('R18042600002', NULL, '6', 'USR00001', 'Akasaka Ryuunosuke', 'Chitanda Eru', 'Jl. K-On Blok A No.1', NULL, NULL, NULL, 0, 0)
+ERROR - 2018-04-26 01:00:11 --> Query error: Column 'id_penjualan' cannot be null - Invalid query: INSERT INTO `ak_data_penjualan_resep` (`id_penjualan_resep`, `id_penjualan`, `id_barang`, `id_user`, `nm_pasien`, `nm_dokter`, `alamat_pasien`, `etiket`, `qty`, `diskon`, `pembulatan`, `subtotal`) VALUES ('R18042600002', NULL, '6', 'USR00001', 'Akasaka Ryuunosuke', 'Chitanda Eru', 'Jl. K-On Blok A No.1', NULL, NULL, NULL, 0, 0)
+ERROR - 2018-04-26 01:00:28 --> Query error: Column 'qty' cannot be null - Invalid query: INSERT INTO `ak_data_penjualan_resep` (`id_penjualan_resep`, `id_penjualan`, `id_barang`, `id_user`, `nm_pasien`, `nm_dokter`, `alamat_pasien`, `etiket`, `qty`, `diskon`, `pembulatan`, `subtotal`) VALUES ('R18042600002', NULL, '6', 'USR00001', 'Akasaka Ryuunosuke', 'Chitanda Eru', 'Jl. K-On Blok A No.1', NULL, NULL, NULL, 0, 0)
+ERROR - 2018-04-26 01:02:18 --> Query error: Column 'qty' cannot be null - Invalid query: INSERT INTO `ak_data_penjualan_resep` (`id_penjualan_resep`, `id_penjualan`, `id_barang`, `id_user`, `nm_pasien`, `nm_dokter`, `alamat_pasien`, `etiket`, `qty`, `diskon`, `pembulatan`, `subtotal`) VALUES ('R18042600002', NULL, '6', 'USR00001', 'Akasaka Ryuunosuke', 'Chitanda Eru', 'Jl. K-On Blok A No.1', NULL, NULL, NULL, 0, 0)
+ERROR - 2018-04-26 01:02:27 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-26 01:02:28 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-26 01:02:28 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 99
+ERROR - 2018-04-26 01:02:47 --> Query error: Table 'simkes_apotek.ak_data_penjualan_resep_detal' doesn't exist - Invalid query: INSERT INTO `ak_data_penjualan_resep_detal` (`id_penjualan`, `id_barang`, `id_barang_detail`, `qty`) VALUES (NULL, '6', '36', '1')
+ERROR - 2018-04-26 01:03:52 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-26 01:03:52 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-26 01:03:59 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-26 01:03:59 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-26 01:03:59 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 91
+ERROR - 2018-04-26 01:04:12 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-26 01:04:12 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-26 01:08:29 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-26 01:08:29 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-26 01:08:49 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-26 01:08:49 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-26 01:08:56 --> Severity: Error --> Call to undefined method MPenjualan::GetSingleResep() /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 79
+ERROR - 2018-04-26 01:09:00 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-26 01:09:00 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-26 01:10:20 --> Severity: Notice --> Undefined property: stdClass::$nm_dokter /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 100
+ERROR - 2018-04-26 01:10:20 --> Severity: Notice --> Undefined property: stdClass::$alamat_pasien /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 101
+ERROR - 2018-04-26 01:10:25 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-26 01:10:25 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-26 01:10:29 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-26 01:10:29 --> Severity: Notice --> Undefined property: stdClass::$nm_dokter /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 100
+ERROR - 2018-04-26 01:10:29 --> Severity: Notice --> Undefined property: stdClass::$alamat_pasien /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 101
+ERROR - 2018-04-26 01:11:00 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-26 01:11:00 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-26 01:11:32 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-26 01:11:33 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-26 01:16:55 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-26 01:16:55 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-26 01:17:46 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-26 01:17:46 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-26 01:18:03 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-26 01:18:03 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-26 01:18:03 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 99
+ERROR - 2018-04-26 01:18:03 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 100
+ERROR - 2018-04-26 01:18:03 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 101
+ERROR - 2018-04-26 01:22:47 --> 404 Page Not Found: Assets/datatables
+ERROR - 2018-04-26 01:22:47 --> 404 Page Not Found: Assets/bootstrap
+ERROR - 2018-04-26 01:22:55 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 99
+ERROR - 2018-04-26 01:22:55 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 100
+ERROR - 2018-04-26 01:22:55 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 101
+ERROR - 2018-04-26 01:23:00 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 91
+ERROR - 2018-04-26 01:28:34 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 99
+ERROR - 2018-04-26 01:28:34 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 100
+ERROR - 2018-04-26 01:28:34 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 101
+ERROR - 2018-04-26 03:00:38 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 99
+ERROR - 2018-04-26 03:00:38 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 100
+ERROR - 2018-04-26 03:00:38 --> Severity: Notice --> Trying to get property of non-object /Volumes/Data/Projects/master-apotek/application/controllers/Penjualan.php 101

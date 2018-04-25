@@ -74,8 +74,9 @@
 									<?= form_input('diskon',null,array(
 																			'id' => 'diskon',
 																			'class' => 'form-control',
+																			'disabled' => 'true'
 																			//'placeholder' => 'Nama Pasien',
-																			'required' => 'true'
+																			//'required' => 'true'
 																		));
 									?>
 								</div>
@@ -83,7 +84,7 @@
 							<div class="col-lg-6">
 								<div class="form-group">
 									<div class="checkbox">
-										<label><input type="checkbox" id="kasbon" name="kasbon" value="2"> Kasbon</label>
+										<label><input type="checkbox" id="kasbon" name="kasbon" value="1"> Kasbon</label>
 									</div>
 								</div>
 							</div>
@@ -101,7 +102,7 @@
 						</div>
 						<div class="box-footer">
 							<span class="col-lg-6" style="padding-left:0">
-								<button type="button" class="btn btn-block btn-primary" onclick="bayar()">Bayar</button>
+								<button type="button" class="btn btn-block btn-primary" data-toggle="modal" data-target="#formByr">Bayar</button>
 							</span>
 							<span class="col-lg-6" style="padding-right:0">
 								<button type="button" class="btn btn-block btn-danger" disabled="true">Hapus</button>
@@ -111,12 +112,59 @@
 				</div>
 			</div>
 		</div>
+		<div id="formByr" class="modal fade" role="dialog">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Modal Header</h4>
+					</div>
+					<!--<form action="" method="POST" id="bayar" role="form">-->
+						<div class="modal-body row">
+							<div class="col-lg-12">
+								<div class="form-group">
+									<label for="bayar">Bayar</label>
+									<?= form_input('bayar',null,array(
+																			'id' => 'bayar',
+																			'class' => 'form-control',
+																			//'disabled' => 'true'
+																			//'placeholder' => 'Nama Pasien',
+																			'required' => 'true'
+																		));
+									?>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary" id="pay">Bayar</button>
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					<!--</form>-->
+				</div>
+			</div>
+		</div>
 	</section>
 	<script src="<?= base_url('assets/jquery/jquery.inputmask.js') ?>"></script>
 	<script src="<?= base_url('assets/jquery/jquery.inputmask.date.extensions.js') ?>"></script>
 	<script src="<?= base_url('assets/jquery/jquery.inputmask.extensions.js') ?>"></script>
 	<script>
 		$(document).ready(function(){
+			$.ajax({
+				type: "GET",
+				url: "<?= base_url('penjualan/get_nama_pasien_bebas/'.$this->uri->segment(3)) ?>",
+				success: function(data){
+					var opts = $.parseJSON(data);
+					$('#nm_pasien').val(opts.nm_pasien);
+				}
+			});
+			/*$.ajax({
+				type: "GET",
+				url: "<?= base_url('penjualan/get_subtotal/'.$this->uri->segment(3)) ?>",
+				success: function(data){
+					var opts = $.parseJSON(data);
+					$('#subtotal').text(opts.subtotal);
+				}
+			});*/
 			$("#nm_pasien").focus();
 			var dtTable = $('#dtTable').DataTable({
 				"processing": true,
@@ -138,7 +186,7 @@
 				var id_barang = $("#id_barang").val();
 				var qty = $("#qty").val();
 				var diskon = $("#diskon").val();
-				var kasbon = $("#kasbon").val();
+				//var kasbon = $("#kasbon").val();
 				Pace.track(function(){
 					jQuery.ajax({
 						type: "POST",
@@ -148,21 +196,32 @@
 								nm_pasien : nm_pasien,
 								id_barang : id_barang,
 								qty : qty,
-								diskon : diskon,
-								kasbon : kasbon
+								diskon : diskon
+								//kasbon : kasbon
 							},
 						success: function(data) {
 							if(data.status) {
 								$("#dtTable").DataTable().ajax.reload();
 								$("#Hapus").attr("disabled","true");
 								$("#nm_pasien").attr("disabled","true");
+								$.ajax({
+									type: "GET",
+									url: "<?= base_url('penjualan/get_subtotal/'.$this->uri->segment(3)) ?>",
+									success: function(data){
+										var opts = $.parseJSON(data);
+										$('#subtotal').text(opts.subtotal);
+									}
+								});
 								//$("#register")[0].reset();
 								$("#id_barang").focus();
 								$("#qty").val("");
 								$("#diskon").val("");
 								$(document).ajaxStart(function() { Pace.restart(); });
 							} else {
-								alert('Barang sudah di tambahkan!');
+								alert('Barang sudah di tambahkan atau stok telah habis!');
+								$("#id_barang").focus();
+								$("#qty").val("");
+								$("#diskon").val("");
 							}
 						}
 					});
@@ -216,44 +275,31 @@
 				}
 			});
 		});
-		function bayar() {
-			swal({
-					text: 'Uang yang harus di bayar',
-					content: "input",
-					button: {
-						text: "Proses",
-						closeModal: false,
-					},
-				})
-			.then(bayar => {
-				if (!bayar) throw null;
-				return fetch(`<?= base_url('penjualan/simpan_semua/') ?>${bayar}`);
-			})
-			.then(results => {
-				return results.json();
-			})
-			.then(json => {
-				const movie = json.results[0];
-				if (!movie) {
-					return swal("No movie was found!");
+		$(document).on('click','#pay',function() {
+			var nm_pasien = $("#nm_pasien").val();
+			var bayar = $("#bayar").val();
+			var check = $('#kasbon').is(':checked');
+			if(check) {
+				var kasbon = $("#kasbon").val();
+			} else {
+				var kasbon = 0;
 			}
-			const name = movie.trackName;
-			const imageURL = movie.artworkUrl100;
-			swal({
-					title: "Top result:",
-					text: name,
-					icon: imageURL,
+			Pace.track(function(){
+				jQuery.ajax({
+					type: "POST",
+					url: "<?= base_url('penjualan/simpan_semua/'.$this->uri->segment(3)) ?>",
+					dataType: 'json',
+					data: {
+							nm_pasien : nm_pasien,
+							bayar : bayar,
+							kasbon : kasbon
+						},
+					success: function(data) {
+						alert(data.kembalian)
+					}
 				});
-			})
-			.catch(err => {
-							if (err) {
-								swal("Oh noes!", "The AJAX request failed!", "error");
-							} else {
-								swal.stopLoading();
-								swal.close();
-							}
 			});
-		}
+		});
 		$("#id_barang").select2();
 		//$('#tgl_lahir_pasien').inputmask('yyyy-mm-dd', { 'placeholder': 'yyyy-mm-dd' })
 		//$('#tanggal_kunjungan_pasien').inputmask('yyyy-mm-dd', { 'placeholder': 'yyyy-mm-dd' })

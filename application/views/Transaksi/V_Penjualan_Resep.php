@@ -76,16 +76,14 @@
 							<div class="col-lg-12">
 								<div class="form-group">
 									<label>Nama Barang</label>
-									<select name="barang" id="id_barang" class="form-control">
-										<option></option>
-									</select>
+									<select name="barang" id="id_barang" class="form-control"></select>
 								</div>
 							</div>
 							<div class="col-lg-6">
 								<div class="form-group">
-									<label for="qty_penjualan_bebas">Qty</label>
-									<?= form_input('qty_penjualan_bebas',null,array(
-																			'id' => 'qty_penjualan_bebas',
+									<label for="qty">Qty</label>
+									<?= form_input('qty',null,array(
+																			'id' => 'qty',
 																			'class' => 'form-control',
 																			//'placeholder' => 'Nama Pasien',
 																			'required' => 'true'
@@ -95,9 +93,9 @@
 							</div>
 							<div class="col-lg-6">
 								<div class="form-group">
-									<label for="diskon_penjualan_bebas">Diskon (%)</label>
-									<?= form_input('diskon_penjualan_bebas',null,array(
-																			'id' => 'diskon_penjualan_bebas',
+									<label for="diskon">Diskon (%)</label>
+									<?= form_input('diskon',null,array(
+																			'id' => 'diskon',
 																			'class' => 'form-control',
 																			//'placeholder' => 'Nama Pasien',
 																			'required' => 'true'
@@ -126,7 +124,7 @@
 						</div>
 						<div class="box-footer">
 							<span class="col-lg-6" style="padding-left:0">
-								<button type="button" class="btn btn-block btn-primary" onclick="bayar()">Simpan</button>
+								<button type="button" class="btn btn-block btn-primary" data-toggle="modal" data-target="#formByr">Bayar</button>
 							</span>
 							<span class="col-lg-6" style="padding-right:0">
 								<button type="button" class="btn btn-block btn-danger" disabled="true">Hapus</button>
@@ -136,18 +134,68 @@
 				</div>
 			</div>
 		</div>
+		<div id="formByr" class="modal fade" role="dialog">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Modal Header</h4>
+					</div>
+					<!--<form action="" method="POST" id="bayar" role="form">-->
+						<div class="modal-body row">
+							<div class="col-lg-12">
+								<div class="form-group">
+									<label for="bayar">Bayar</label>
+									<?= form_input('bayar',null,array(
+																			'id' => 'bayar',
+																			'class' => 'form-control',
+																			//'disabled' => 'true'
+																			//'placeholder' => 'Nama Pasien',
+																			'required' => 'true'
+																		));
+									?>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary" id="pay">Bayar</button>
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					<!--</form>-->
+				</div>
+			</div>
+		</div>
 	</section>
 	<script src="<?= base_url('assets/jquery/jquery.inputmask.js') ?>"></script>
 	<script src="<?= base_url('assets/jquery/jquery.inputmask.date.extensions.js') ?>"></script>
 	<script src="<?= base_url('assets/jquery/jquery.inputmask.extensions.js') ?>"></script>
 	<script>
 		$(document).ready(function(){
+			$.ajax({
+				type: "GET",
+				url: "<?= base_url('penjualan/get_nama_pasien_resep/'.$this->uri->segment(3)) ?>",
+				success: function(data){
+					var opts = $.parseJSON(data);
+					$('#nm_pasien').val(opts.nm_pasien);
+					$('#nm_dokter').val(opts.nm_dokter);
+					$('#alamat_pasien').val(opts.alamat_pasien);
+				}
+			});
+			$.ajax({
+				type: "GET",
+				url: "<?= base_url('penjualan/get_subtotal_resep/'.$this->uri->segment(3)) ?>",
+				success: function(data){
+					var opts = $.parseJSON(data);
+					$('#subtotal').text(opts.subtotal);
+				}
+			});
+			$("#nm_pasien").focus();
 			var dtTable = $('#dtTable').DataTable({
 				"processing": true,
-				/*"ajax": {
-					"url": "<?= base_url('jenis/list_all_data') ?>",
+				"ajax": {
+					"url": "<?= base_url('penjualan/list_detail_data_resep/'.$this->uri->segment(3)) ?>",
 					"type": "POST"
-				},*/
+				},
 				"autoWidth": false,
 				"info": false,
 				"ordering": false,
@@ -158,24 +206,53 @@
 			});
 			$("#register").submit(function(e) {
 			event.preventDefault();
-				var id_jenis = $("#id_jenis").val();
-				var nm_jenis = $("#nm_jenis").val();
+				var nm_pasien = $("#nm_pasien").val();
+				var nm_dokter = $("#nm_dokter").val();
+				var alamat_pasien = $("#alamat_pasien").val();
+				var id_barang = $("#id_barang").val();
+				var qty = $("#qty").val();
+				var diskon = $("#diskon").val();
+				//var kasbon = $("#kasbon").val();
 				Pace.track(function(){
 					jQuery.ajax({
 						type: "POST",
-						url: "<?= base_url('jenis/tambah_data/') ?>",
+						url: "<?= base_url('penjualan/tambah_data_resep/'.$this->uri->segment(3)) ?>",
 						dataType: 'json',
 						data: {
-								id_jenis : id_jenis,
-								nm_jenis : nm_jenis
+								nm_pasien : nm_pasien,
+								nm_dokter : nm_dokter,
+								alamat_pasien : alamat_pasien,
+								id_barang : id_barang,
+								qty : qty,
+								diskon : diskon
+								//kasbon : kasbon
 							},
 						success: function(data) {
-							$("#dtTable").DataTable().ajax.reload();
-							$("#Hapus").attr("disabled","true");
-							$("#nm_jenis").attr("disabled","true");
-	        				$("#register")[0].reset();
-	        				$("#nm_jenis").focus();
-	        				$(document).ajaxStart(function() { Pace.restart(); });
+							if(data.status) {
+								$("#dtTable").DataTable().ajax.reload();
+								$("#Hapus").attr("disabled","true");
+								$("#nm_pasien").attr("disabled","true");
+								$("#nm_dokter").attr("disabled","true");
+								$("#alamat_pasien").attr("disabled","true");
+								$.ajax({
+									type: "GET",
+									url: "<?= base_url('penjualan/get_subtotal_resep/'.$this->uri->segment(3)) ?>",
+									success: function(data){
+										var opts = $.parseJSON(data);
+										$('#subtotal').text(opts.subtotal);
+									}
+								});
+								//$("#register")[0].reset();
+								$("#id_barang").focus();
+								$("#qty").val("");
+								$("#diskon").val("");
+								$(document).ajaxStart(function() { Pace.restart(); });
+							} else {
+								alert('Barang sudah di tambahkan atau stok telah habis!');
+								$("#id_barang").focus();
+								$("#qty").val("");
+								$("#diskon").val("");
+							}
 						}
 					});
 				});
@@ -192,81 +269,73 @@
 			});
 		});
 		$(document).on('click','#getdata',function() {
-	  		var id_jenis = $(this).attr("data");
-	  		jQuery.ajax({
+			var id_barang = $(this).attr("data");
+			jQuery.ajax({
 				type: "POST",
-				url: "<?= base_url('jenis/get_data/') ?>",
+				url: "<?= base_url('penjualan/get_data_resep/'.$this->uri->segment(3)) ?>",
 				dataType: 'json',
 				data: {
-						id_jenis : id_jenis
+						id_barang : id_barang
 					},
 				success: function(data) {
-					$("#id_jenis").val(data.id_jenis);
-					$("#nm_jenis").val(data.nm_jenis);
+					$("#id_barang").val(data.id_barang);
+					$("#qty").val(data.qty);
+					$("#diskon").val(data.diskon);
 					$("#Hapus").removeAttr("disabled");
-					$("#id_jenis").removeAttr("disabled");
+					$("#nm_pasien").attr("disabled","true");
 				}
 			});
 		});
 		$(document).on('click','#Hapus',function() {
-	  		var id_jenis = $("#id_jenis").val();
-	  		jQuery.ajax({
+			var id_barang = $("#id_barang").val();
+			jQuery.ajax({
 				type: "POST",
-				url: "<?= base_url('jenis/hapus_data/') ?>",
+				url: "<?= base_url('penjualan/hapus_data_resep/'.$this->uri->segment(3)) ?>",
 				dataType: 'json',
 				data: {
-						id_jenis : id_jenis
+						id_barang : id_barang
 					},
 				success: function(data) {
 					$('#dtTable').DataTable().ajax.reload();
 					$("#Hapus").attr("disabled","true");
-					$("#id_jenis").attr("disabled","true");
-    				$('#register')[0].reset();
-    				$('#nm_jenis').focus();
-    				$(document).ajaxStart(function() { Pace.restart(); });
+					$("#id_barang").attr("disabled","true");
+					$("#qty").val("");
+					$("#diskon").val("");
+					$(document).ajaxStart(function() { Pace.restart(); });
 				}
 			});
 		});
-		function bayar() {
-			swal({
-				title: "Are you sure?",
-				text: "Once deleted, you will not be able to recover this imaginary file!",
-				icon: "warning",
-				buttons: true,
-				dangerMode: true,
-			})
-			.then((willDelete) => {
-				if (willDelete) {
-					event.preventDefault();
-				var user = "<?= $this->session->userdata('kode') ?>";
-				var nama = $("#nm_pasien").val();
-				var bayar = $("#bayar").val();
+		$(document).on('click','#pay',function() {
+			var nm_pasien = $("#nm_pasien").val();
+			var nm_dokter = $("#nm_dokter").val();
+			var alamat_pasien = $("#alamat_pasien").val();
+			var bayar = $("#bayar").val();
+			var check = $('#kasbon').is(':checked');
+			if(check) {
+				var kasbon = $("#kasbon").val();
+			} else {
+				var kasbon = 0;
+			}
+			Pace.track(function(){
 				jQuery.ajax({
 					type: "POST",
-					url: "<?= base_url('penjualan/bayar/') ?>",
+					url: "<?= base_url('penjualan/simpan_semua_resep/'.$this->uri->segment(3)) ?>",
 					dataType: 'json',
-					data: {user: user, nama: nama, bayar: bayar},
-					success: function(res) {
-						if (res)
-						{
-							swal("Kembali Rp. "+res.bayar+" -,", {
-									icon: "success",
-								})
-								.then((Confirm) => {
-									if(Confirm) {
-										window.location.href = "<?= base_url('dashboard') ?>"
-									};
-								});
-						}
+					data: {
+							nm_pasien : nm_pasien,
+							nm_dokter : nm_dokter,
+							alamat_pasien : alamat_pasien,
+							bayar : bayar,
+							kasbon : kasbon
+						},
+					success: function(data) {
+						alert(data.kembalian)
 					}
 				});
-				} else {
-					swal("Your imaginary file is safe!");
-				}
 			});
-		}
+		});
 		$("#id_barang").select2();
 		//$('#tgl_lahir_pasien').inputmask('yyyy-mm-dd', { 'placeholder': 'yyyy-mm-dd' })
-	    //$('#tanggal_kunjungan_pasien').inputmask('yyyy-mm-dd', { 'placeholder': 'yyyy-mm-dd' })
+		//$('#tanggal_kunjungan_pasien').inputmask('yyyy-mm-dd', { 'placeholder': 'yyyy-mm-dd' })
 	</script>
 <?php endif ?>
