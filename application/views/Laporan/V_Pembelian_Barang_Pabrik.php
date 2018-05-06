@@ -10,7 +10,7 @@
 	</section>
 	<section class="content">
 		<div class="row">
-			<div class="col-lg-8">
+			<div class="col-lg-12">
 				<div class="box box-primary">
 					<div class="box-header with-border">
 						<i class="fa fa-wheelchair"></i>
@@ -23,56 +23,14 @@
 								<th>Nama Barang</th>
 								<th>Nama Pabrik</th>
 								<th>Jumlah</th>
-								<th>Harga + PPN</th>
-								<th>Total</th>
+								<th>Harga Beli + PPN</th>
+								<th>Grandtotal</th>
 							</thead>
 							<tbody></tbody>
 						</table>
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-4">
-			<div class="box box-primary">
-				<div class="box-header with-border">
-					<i class="fa fa-pencil"></i>
-					<h3 class="box-title">Form Filter <?= $Title ?></h3>
-				</div>
-				<!-- <form action="" method="POST" id="filter" role="form"> -->
-					<div class="box-body row">
-						<div class="col-lg-6">
-							<div class="form-group">
-								<label for="tgl_awal">Dari Tanggal</label>
-								<?= form_input('tgl_awal',null,array(
-																		'id' => 'tgl_awal',
-																		'class' => 'form-control',
-																		//'placeholder' => 'Tanggal Lahir',
-																		//'required' => 'true'
-																		"data-inputmask" => "'alias': 'yyyy-mm-dd",
-																		"data-mask" => "true",
-																		'required' => 'true'
-																	));
-								?>
-							</div>
-						</div>
-						<div class="col-lg-6">
-							<div class="form-group">
-								<label for="tgl_akhir">Sampai Tanggal</label>
-								<?= form_input('tgl_akhir',null,array(
-																		'id' => 'tgl_akhir',
-																		'class' => 'form-control',
-																		//'placeholder' => 'Tanggal Kunjungan',
-																		'required' => 'true'
-																	));
-								?>
-							</div>
-						</div>
-					</div>
-					<div class="box-footer">
-						<button type="button" id="filter" class="btn btn-block btn-primary">Filter</button>
-					</div>
-				<!-- </form> -->
-			</div>
-		</div>
 		</div>
 	</section>
 	<script src="<?= base_url('assets/jquery/jquery.inputmask.js') ?>"></script>
@@ -82,18 +40,25 @@
 		$(document).ready(function(){
 			var dtTable = $('#dtTable').DataTable({
 				"processing": true,
-				/*"ajax": {
+				initComplete : function () {
+    				dtTable.buttons().container().appendTo( $('#dtTable_wrapper .col-sm-6:eq(0)'));
+				},
+				"ajax": {
 					"url": "<?= base_url('pembelian/list_report_barang_pabrik') ?>",
 					"type": "POST"
-				},*/
-				"autoWidth": false,
+				},
+				//dom: 'Bfrtip',
+				buttons: [ 'print' ],
+				"autoWidth": true,
+				"responsive": true,
 				"info": true,
 				"ordering": true,
 				"paging": true,
-				"pageLength": 5,
-				"lengthChange": true,
+				"pageLength": 10,
+				"lengthChange": false,
 				"searching": true
 			});
+			$('#dtTable').DataTable().buttons().container().appendTo( '#dtTable_wrapper .col-sm-6:eq(0)' );
 		});
 		$('#tgl_awal').inputmask('yyyy-mm-dd', { 'placeholder': 'yyyy-mm-dd' })
 	    $('#tgl_akhir').inputmask('yyyy-mm-dd', { 'placeholder': 'yyyy-mm-dd' })

@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.5-10.1.31-MariaDB)
 # Database: simkes_apotek
-# Generation Time: 2018-04-25 20:53:09 +0000
+# Generation Time: 2018-05-06 17:54:18 +0000
 # ************************************************************
 
 
@@ -35,7 +35,7 @@ CREATE TABLE `ak_data_barang` (
   `isi_satuan` int(11) NOT NULL,
   `golongan_obat` enum('Generik','Non Generik') NOT NULL,
   `harga_dasar` decimal(8,2) NOT NULL DEFAULT '0.00',
-  `margin` decimal(8,2) NOT NULL DEFAULT '0.00',
+  `margin` decimal(8,2) DEFAULT '0.00',
   `dosis` text,
   `komposisi` text,
   `indikasi` text,
@@ -1073,7 +1073,10 @@ VALUES
 	('996','JEN00000','Susu Zee Coklat','PAB00000','KEM00000','SAT0000',100,'Generik',4620.00,0.00,NULL,NULL,NULL,NULL,1,0,0,0,0,0),
 	('997','JEN00000','Minyak Wangi HBS','PAB00000','KEM00000','SAT0000',100,'Generik',8000.00,0.00,NULL,NULL,NULL,NULL,1,0,0,0,0,0),
 	('998','JEN00000','Myk Wangi Ar-Rayyan','PAB00000','KEM00000','SAT0000',100,'Generik',8000.00,0.00,NULL,NULL,NULL,NULL,1,0,0,0,0,0),
-	('999','JEN00000','Jaguar','PAB00000','KEM00000','SAT0000',100,'Generik',13000.00,0.00,NULL,NULL,NULL,NULL,1,0,0,0,0,0);
+	('999','JEN00000','Jaguar','PAB00000','KEM00000','SAT0000',100,'Generik',13000.00,0.00,NULL,NULL,NULL,NULL,1,0,0,0,0,0),
+	('BRG01021','','tes','','','',0,'Generik',0.00,0.00,NULL,NULL,NULL,NULL,0,0,0,0,0,0),
+	('BRG01022','','tes','','','',0,'Generik',0.00,0.00,NULL,NULL,NULL,NULL,0,0,0,0,0,0),
+	('BRG01023','JEN00002','tes','PAB00002','KEM00001','SAT00002',1,'Generik',1000.00,NULL,NULL,NULL,NULL,NULL,1,1,1,1,0,0);
 
 /*!40000 ALTER TABLE `ak_data_barang` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1100,10 +1103,10 @@ LOCK TABLES `ak_data_barang_detail` WRITE;
 
 INSERT INTO `ak_data_barang_detail` (`id_detail_barang`, `id_pembelian`, `id_barang`, `batch`, `kadaluarsa`, `stok_tersedia`, `deleted`)
 VALUES
-	(36,'FK25041800001',6,'AAAA','2019-05-01',94,0),
-	(37,'FK25041800002',6,'BBBB','2019-05-01',100,0),
-	(38,'FK25041800003',6,'CCCC','2019-05-01',100,0),
-	(39,'FK26041800004',5,'DDDD','2019-05-01',98,0);
+	(48,'FK07051800001',6,'AAAA','2019-05-01',99,0),
+	(49,'FK07051800001',5,'BBBB','2019-05-02',100,0),
+	(50,'FK07051800002',6,'CCCC','2019-05-01',50,0),
+	(51,'FK07051800002',5,'DDDD','2019-05-01',25,0);
 
 /*!40000 ALTER TABLE `ak_data_barang_detail` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1118,6 +1121,7 @@ CREATE TABLE `ak_data_barang_stok_keluar` (
   `id_stok_barang_keluar` bigint(20) NOT NULL AUTO_INCREMENT,
   `id_barang` bigint(20) NOT NULL,
   `id_penjualan` char(20) DEFAULT NULL,
+  `id_opname` char(50) DEFAULT NULL,
   `tanggal_keluar` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `stok_keluar` int(11) NOT NULL DEFAULT '0',
   `deleted` tinyint(1) NOT NULL DEFAULT '0',
@@ -1127,16 +1131,10 @@ CREATE TABLE `ak_data_barang_stok_keluar` (
 LOCK TABLES `ak_data_barang_stok_keluar` WRITE;
 /*!40000 ALTER TABLE `ak_data_barang_stok_keluar` DISABLE KEYS */;
 
-INSERT INTO `ak_data_barang_stok_keluar` (`id_stok_barang_keluar`, `id_barang`, `id_penjualan`, `tanggal_keluar`, `stok_keluar`, `deleted`)
+INSERT INTO `ak_data_barang_stok_keluar` (`id_stok_barang_keluar`, `id_barang`, `id_penjualan`, `id_opname`, `tanggal_keluar`, `stok_keluar`, `deleted`)
 VALUES
-	(27,6,NULL,'2018-04-25 23:58:28',1,1),
-	(28,6,NULL,'2018-04-26 00:03:38',1,1),
-	(29,6,NULL,'2018-04-26 00:04:38',1,1),
-	(30,6,NULL,'2018-04-26 00:06:52',1,1),
-	(31,6,NULL,'2018-04-26 00:10:40',1,1),
-	(32,5,NULL,'2018-04-26 00:10:45',1,1),
-	(33,6,NULL,'2018-04-26 01:05:54',1,1),
-	(34,5,NULL,'2018-04-26 01:07:04',1,1);
+	(59,6,NULL,NULL,'2018-05-07 00:29:38',1,1),
+	(63,6,NULL,'OP07051800001','2018-05-07 00:36:36',1,0);
 
 /*!40000 ALTER TABLE `ak_data_barang_stok_keluar` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1162,12 +1160,37 @@ LOCK TABLES `ak_data_barang_stok_masuk` WRITE;
 
 INSERT INTO `ak_data_barang_stok_masuk` (`id_stok_barang_masuk`, `id_barang`, `id_pembelian`, `tanggal_masuk`, `stok_masuk`, `deleted`)
 VALUES
-	(36,6,'FK25041800001','2018-04-25 23:48:36',100,0),
-	(37,6,'FK25041800002','2018-04-25 23:50:04',100,0),
-	(38,6,'FK25041800003','2018-04-25 23:50:39',100,0),
-	(39,5,'FK26041800004','2018-04-26 00:10:18',100,0);
+	(48,6,'FK07051800001','2018-04-07 00:17:48',100,0),
+	(49,5,'FK07051800001','2018-04-07 00:20:59',100,0),
+	(50,6,'FK07051800002','2018-05-07 00:23:29',50,0),
+	(51,5,'FK07051800002','2018-05-07 00:23:52',25,0);
 
 /*!40000 ALTER TABLE `ak_data_barang_stok_masuk` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table ak_data_barang_stok_opname
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `ak_data_barang_stok_opname`;
+
+CREATE TABLE `ak_data_barang_stok_opname` (
+  `id_opname` char(50) NOT NULL DEFAULT '',
+  `id_barang` bigint(20) NOT NULL,
+  `tanggal_opname` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `stok_fisik` int(11) NOT NULL DEFAULT '0',
+  `penyesuaian` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id_opname`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+LOCK TABLES `ak_data_barang_stok_opname` WRITE;
+/*!40000 ALTER TABLE `ak_data_barang_stok_opname` DISABLE KEYS */;
+
+INSERT INTO `ak_data_barang_stok_opname` (`id_opname`, `id_barang`, `tanggal_opname`, `stok_fisik`, `penyesuaian`)
+VALUES
+	('OP07051800001',6,'2018-05-07 00:36:36',150,1);
+
+/*!40000 ALTER TABLE `ak_data_barang_stok_opname` ENABLE KEYS */;
 UNLOCK TABLES;
 
 
@@ -1180,6 +1203,7 @@ CREATE TABLE `ak_data_barang_stok_tersedia` (
   `id_stok_tersedia` bigint(20) NOT NULL AUTO_INCREMENT,
   `id_pembelian` char(50) DEFAULT NULL,
   `id_penjualan` char(50) DEFAULT NULL,
+  `id_opname` char(50) DEFAULT NULL,
   `id_barang` bigint(20) NOT NULL,
   `stok_tersedia` int(11) NOT NULL DEFAULT '0',
   `updated` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -1192,20 +1216,14 @@ CREATE TABLE `ak_data_barang_stok_tersedia` (
 LOCK TABLES `ak_data_barang_stok_tersedia` WRITE;
 /*!40000 ALTER TABLE `ak_data_barang_stok_tersedia` DISABLE KEYS */;
 
-INSERT INTO `ak_data_barang_stok_tersedia` (`id_stok_tersedia`, `id_pembelian`, `id_penjualan`, `id_barang`, `stok_tersedia`, `updated`, `fixed`, `deleted`)
+INSERT INTO `ak_data_barang_stok_tersedia` (`id_stok_tersedia`, `id_pembelian`, `id_penjualan`, `id_opname`, `id_barang`, `stok_tersedia`, `updated`, `fixed`, `deleted`)
 VALUES
-	(72,'FK25041800001','0',6,100,'2018-04-25 23:49:17',1,1),
-	(73,'FK25041800002','0',6,200,'2018-04-25 23:50:04',1,1),
-	(74,'FK25041800003','0',6,300,'2018-04-25 23:50:39',1,1),
-	(75,'0','TR18042600001',6,299,'2018-04-25 23:58:28',1,1),
-	(76,'0','TR18042600002',6,298,'2018-04-26 00:03:38',1,1),
-	(77,'0','TR18042600004',6,297,'2018-04-26 00:04:38',1,1),
-	(78,'0','TR18042600005',6,296,'2018-04-26 00:06:52',1,1),
-	(79,'0','TR18042600006',5,100,'2018-04-26 00:10:18',1,1),
-	(80,'0','TR18042600006',6,295,'2018-04-26 00:10:40',1,1),
-	(81,'0','TR18042600006',5,99,'2018-04-26 00:10:45',1,1),
-	(82,'0','TRR18042600007',6,294,'2018-04-26 01:05:54',1,0),
-	(83,'0','TRR18042600007',5,98,'2018-04-26 01:07:04',1,0);
+	(116,'0','TRB18050700001',NULL,6,100,'2018-04-07 00:17:48',1,1),
+	(117,'0','TRB18050700001',NULL,5,100,'2018-04-07 00:20:59',1,1),
+	(118,'0','TRB18050700001',NULL,6,150,'2018-05-07 00:23:29',1,1),
+	(119,'0','TRB18050700001',NULL,5,125,'2018-05-07 00:23:52',1,0),
+	(120,'0','TRB18050700001',NULL,6,149,'2018-05-07 00:29:38',1,1),
+	(124,NULL,NULL,'OP07051800001',6,150,'2018-05-07 00:36:36',1,0);
 
 /*!40000 ALTER TABLE `ak_data_barang_stok_tersedia` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1230,7 +1248,7 @@ LOCK TABLES `ak_data_instansi` WRITE;
 
 INSERT INTO `ak_data_instansi` (`id_instansi`, `nm_instansi`, `alamat_instansi`, `kontak_instansi`, `tuslah_racik`, `emblase_racik`)
 VALUES
-	(1,'APOTEK CIREMAI FARMA','Jl. Raya Ciremai Mandirancan RT.027 RW.010, Desa Sampora Kec. Cilimus Kab. Kuningan','-',0.00,0.00);
+	(1,'SISTEM RETAIL','Jl. Perjuangan No. 40 Blok A Kota Cirebon','-',0.00,0.00);
 
 /*!40000 ALTER TABLE `ak_data_instansi` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1347,10 +1365,20 @@ LOCK TABLES `ak_data_log` WRITE;
 
 INSERT INTO `ak_data_log` (`id`, `ip_address`, `timestamp`, `data`)
 VALUES
+	('387ualtige8ren36homgp19kobii84ld','::1',1525425230,X'5F5F63695F6C6173745F726567656E65726174657C693A313532353432353136393B6B6F64657C733A383A225553523030303031223B6E616D617C733A363A224D6173746572223B757365727C733A363A226D6173746572223B6C6576656C7C733A363A224D6173746572223B637265617465647C733A31393A22323031382D30312D33302030303A34343A3430223B69734C6F67696E7C623A313B'),
+	('3juqv8t3hdtmchak0fgcabocq0gu3mn7','::1',1525511614,X'5F5F63695F6C6173745F726567656E65726174657C693A313532353531303937343B6B6F64657C733A383A225553523030303031223B6E616D617C733A363A224D6173746572223B757365727C733A363A226D6173746572223B6C6576656C7C733A363A224D6173746572223B637265617465647C733A31393A22323031382D30312D33302030303A34343A3430223B69734C6F67696E7C623A313B'),
+	('3o0ovdedi73cseujocn71v9b5maokc70','::1',1525629188,X'5F5F63695F6C6173745F726567656E65726174657C693A313532353632393138383B6B6F64657C733A383A225553523030303031223B6E616D617C733A363A224D6173746572223B757365727C733A363A226D6173746572223B6C6576656C7C733A363A224D6173746572223B637265617465647C733A31393A22323031382D30312D33302030303A34343A3430223B69734C6F67696E7C623A313B'),
+	('9o2v9ob09b194ch00ddsel59n3egi5t0','::1',1525614674,X'5F5F63695F6C6173745F726567656E65726174657C693A313532353631343636343B6974656D7C733A34323A2264616E6765722D557365726E616D6520617461752050617373776F726420746964616B20636F636F6B2E223B5F5F63695F766172737C613A313A7B733A343A226974656D223B733A333A226F6C64223B7D'),
 	('aqj4ql4skblsf9ijfqfqe8n02sfo82hp','::1',1524686439,X'5F5F63695F6C6173745F726567656E65726174657C693A313532343638363432343B6B6F64657C733A383A225553523030303031223B6E616D617C733A363A224D6173746572223B757365727C733A363A226D6173746572223B6C6576656C7C733A363A224D6173746572223B637265617465647C733A31393A22323031382D30312D33302030303A34343A3430223B69734C6F67696E7C623A313B'),
+	('dsjoe91r15relemuaht6pmm8bj3eabq9','::1',1525614563,X'5F5F63695F6C6173745F726567656E65726174657C693A313532353631343535383B6974656D7C733A34323A2264616E6765722D557365726E616D6520617461752050617373776F726420746964616B20636F636F6B2E223B5F5F63695F766172737C613A313A7B733A343A226974656D223B733A333A226F6C64223B7D'),
+	('iqf100l7h358r723qq7qa7463tr4s1hp','::1',1525189082,X'5F5F63695F6C6173745F726567656E65726174657C693A313532353138393038313B6B6F64657C733A383A225553523030303031223B6E616D617C733A363A224D6173746572223B757365727C733A363A226D6173746572223B6C6576656C7C733A363A224D6173746572223B637265617465647C733A31393A22323031382D30312D33302030303A34343A3430223B69734C6F67696E7C623A313B'),
+	('kr66nlqcs2plc03n23kat2brc1e8dffq','::1',1525438390,X'5F5F63695F6C6173745F726567656E65726174657C693A313532353433383338313B6B6F64657C733A383A225553523030303031223B6E616D617C733A363A224D6173746572223B757365727C733A363A226D6173746572223B6C6576656C7C733A363A224D6173746572223B637265617465647C733A31393A22323031382D30312D33302030303A34343A3430223B69734C6F67696E7C623A313B'),
+	('lia1jkd8oaec0gt1gkpu00df3tqe5css','::1',1525331360,X'5F5F63695F6C6173745F726567656E65726174657C693A313532353333313336303B'),
 	('lnp73vqulp6v9g4egr7qu5t5i4g1310t','::1',1524665469,X'5F5F63695F6C6173745F726567656E65726174657C693A313532343636353436393B'),
 	('lr7ttm107vr6itlrtlt1ur8idbklrdl8','::1',1524665453,X'5F5F63695F6C6173745F726567656E65726174657C693A313532343636353435333B'),
-	('nkfna6s79ggm7la7ot8n5ac8nknlp498','::1',1524665534,X'5F5F63695F6C6173745F726567656E65726174657C693A313532343636353533343B');
+	('ncvbos103jhju2n8a4nif1rpq4pkhhqn','::1',1525234676,X'5F5F63695F6C6173745F726567656E65726174657C693A313532353233343637363B6B6F64657C733A383A225553523030303031223B6E616D617C733A363A224D6173746572223B757365727C733A363A226D6173746572223B6C6576656C7C733A363A224D6173746572223B637265617465647C733A31393A22323031382D30312D33302030303A34343A3430223B69734C6F67696E7C623A313B'),
+	('nkfna6s79ggm7la7ot8n5ac8nknlp498','::1',1524665534,X'5F5F63695F6C6173745F726567656E65726174657C693A313532343636353533343B'),
+	('pe1ljgat1b5ts1eg86la40ngta7sar4v','::1',1525134520,X'5F5F63695F6C6173745F726567656E65726174657C693A313532353133343438313B6B6F64657C733A383A225553523030303031223B6E616D617C733A363A224D6173746572223B757365727C733A363A226D6173746572223B6C6576656C7C733A363A224D6173746572223B637265617465647C733A31393A22323031382D30312D33302030303A34343A3430223B69734C6F67696E7C623A313B');
 
 /*!40000 ALTER TABLE `ak_data_log` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1539,18 +1567,17 @@ CREATE TABLE `ak_data_pembelian` (
   `konsinyasi` tinyint(1) NOT NULL DEFAULT '0',
   `jenis` enum('Supplier','Gudang') NOT NULL DEFAULT 'Supplier',
   `deleted` tinyint(1) NOT NULL DEFAULT '0',
+  `lunas` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_pembelian`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 LOCK TABLES `ak_data_pembelian` WRITE;
 /*!40000 ALTER TABLE `ak_data_pembelian` DISABLE KEYS */;
 
-INSERT INTO `ak_data_pembelian` (`id_pembelian`, `id_pesanan`, `id_pbf`, `id_user`, `tanggal_pembelian`, `tanggal_jatuh_tempo`, `diskon`, `subtotal`, `konsinyasi`, `jenis`, `deleted`)
+INSERT INTO `ak_data_pembelian` (`id_pembelian`, `id_pesanan`, `id_pbf`, `id_user`, `tanggal_pembelian`, `tanggal_jatuh_tempo`, `diskon`, `subtotal`, `konsinyasi`, `jenis`, `deleted`, `lunas`)
 VALUES
-	('FK25041800001',NULL,'PBF00001','USR00001','2018-04-25','2018-05-01',0,100000.00,0,'Supplier',0),
-	('FK25041800002',NULL,'PBF00001','USR00001','2018-04-25','2018-05-01',0,100000.00,0,'Supplier',0),
-	('FK25041800003',NULL,'PBF00001','USR00001','2018-04-25','2018-05-01',0,100000.00,0,'Supplier',0),
-	('FK26041800004',NULL,'PBF00001','USR00001','2018-04-26','2018-05-01',0,100000.00,0,'Supplier',0);
+	('FK07051800001',NULL,'PBF00001','USR00001','2018-05-07','2018-05-02',0,1100000.00,0,'Supplier',0,0),
+	('FK07051800002',NULL,'PBF00001','USR00001','2018-05-07','2018-05-03',0,142500.00,0,'Supplier',0,0);
 
 /*!40000 ALTER TABLE `ak_data_pembelian` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1579,10 +1606,10 @@ LOCK TABLES `ak_data_pembelian_detail` WRITE;
 
 INSERT INTO `ak_data_pembelian_detail` (`id_pembelian_detail`, `id_pembelian`, `id_barang`, `id_komputer`, `qty`, `diskon`, `subtotal_barang`, `checked`, `deleted`)
 VALUES
-	(59,'FK25041800001',6,1,100,NULL,100000.00,1,0),
-	(60,'FK25041800002',6,1,100,NULL,100000.00,1,0),
-	(61,'FK25041800003',6,1,100,NULL,100000.00,1,0),
-	(62,'FK26041800004',5,1,100,NULL,100000.00,1,0);
+	(71,'FK07051800001',6,1,100,NULL,100000.00,1,0),
+	(72,'FK07051800001',5,1,100,NULL,1000000.00,1,0),
+	(73,'FK07051800002',6,1,50,NULL,125000.00,1,0),
+	(74,'FK07051800002',5,1,25,NULL,17500.00,1,0);
 
 /*!40000 ALTER TABLE `ak_data_pembelian_detail` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1598,6 +1625,7 @@ CREATE TABLE `ak_data_penjualan` (
   `id_user` char(20) NOT NULL,
   `nm_pasien` char(45) NOT NULL,
   `tanggal_penjualan` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `tanggal_pelunasan` datetime DEFAULT NULL,
   `grandtotal` decimal(10,2) NOT NULL DEFAULT '0.00',
   `pembulatan` decimal(10,2) NOT NULL DEFAULT '0.00',
   `bayar` decimal(10,2) NOT NULL DEFAULT '0.00',
@@ -1610,15 +1638,9 @@ CREATE TABLE `ak_data_penjualan` (
 LOCK TABLES `ak_data_penjualan` WRITE;
 /*!40000 ALTER TABLE `ak_data_penjualan` DISABLE KEYS */;
 
-INSERT INTO `ak_data_penjualan` (`id_penjualan`, `id_user`, `nm_pasien`, `tanggal_penjualan`, `grandtotal`, `pembulatan`, `bayar`, `kembalian`, `status`, `deleted`)
+INSERT INTO `ak_data_penjualan` (`id_penjualan`, `id_user`, `nm_pasien`, `tanggal_penjualan`, `tanggal_pelunasan`, `grandtotal`, `pembulatan`, `bayar`, `kembalian`, `status`, `deleted`)
 VALUES
-	('TR18042600001','USR00001','Akasaka Ryuunosuke','2018-04-26 00:02:04',14800.00,0.00,50000.00,35200.00,0,0),
-	('TR18042600002','USR00001','Akasaka Ryuunosuke','2018-04-26 00:03:51',14800.00,0.00,50000.00,35200.00,0,0),
-	('TR18042600003','USR00001','Akasaka Ryuunosuke','2018-04-26 00:04:21',0.00,0.00,50000.00,50000.00,0,0),
-	('TR18042600004','USR00001','Akasaka Ryuunosuke','2018-04-26 00:04:44',14800.00,0.00,50000.00,35200.00,0,0),
-	('TR18042600005','USR00001','Akasaka Ryuunosuke','2018-04-26 00:09:15',14800.00,0.00,50000.00,35200.00,0,0),
-	('TR18042600006','USR00001','Akasaka Ryuunosuke','2018-04-26 00:10:50',30100.00,0.00,50000.00,19900.00,0,0),
-	('TRR18042600007','USR00001','','2018-04-26 01:17:58',30100.00,0.00,50000.00,19900.00,0,0);
+	('TRB18050700001','USR00001','Akasaka Ryuunosuke','2018-05-07 00:29:52',NULL,14800.00,0.00,20000.00,5200.00,0,0);
 
 /*!40000 ALTER TABLE `ak_data_penjualan` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1648,12 +1670,7 @@ LOCK TABLES `ak_data_penjualan_bebas` WRITE;
 
 INSERT INTO `ak_data_penjualan_bebas` (`id_penjualan_bebas`, `id_penjualan`, `id_barang`, `id_user`, `nm_pasien`, `qty`, `diskon`, `pembulatan`, `subtotal`, `deleted`)
 VALUES
-	('B18042500001','TR18042600001',6,'USR00001','Akasaka Ryuunosuke',1,0,19,14800,0),
-	('B18042600002','TR18042600002',6,'USR00001','Akasaka Ryuunosuke',1,0,19,14800,0),
-	('B18042600003','TR18042600004',6,'USR00001','Akasaka Ryuunosuke',1,0,19,14800,0),
-	('B18042600004','TR18042600005',6,'USR00001','Akasaka Ryuunosuke',1,0,19,14800,0),
-	('B18042600005','TR18042600006',6,'USR00001','Akasaka Ryuunosuke',1,0,19,14800,0),
-	('B18042600006','TR18042600006',5,'USR00001','Akasaka Ryuunosuke',1,0,-23,15300,0);
+	('B18050700001','TRB18050700001',6,'USR00001','Akasaka Ryuunosuke',1,0,19,14800,0);
 
 /*!40000 ALTER TABLE `ak_data_penjualan_bebas` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1679,12 +1696,7 @@ LOCK TABLES `ak_data_penjualan_bebas_detail` WRITE;
 
 INSERT INTO `ak_data_penjualan_bebas_detail` (`id_penjualan_bebas_detail`, `id_penjualan`, `id_barang`, `id_barang_detail`, `qty`, `deleted`)
 VALUES
-	(41,'TR18042600001',6,36,1,0),
-	(42,'TR18042600002',6,36,1,0),
-	(43,'TR18042600004',6,36,1,0),
-	(44,'TR18042600005',6,36,1,0),
-	(45,'TR18042600006',6,36,1,0),
-	(46,'TR18042600006',5,39,1,0);
+	(52,'TRB18050700001',6,48,1,0);
 
 /*!40000 ALTER TABLE `ak_data_penjualan_bebas_detail` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1714,16 +1726,6 @@ CREATE TABLE `ak_data_penjualan_resep` (
   `deleted` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-LOCK TABLES `ak_data_penjualan_resep` WRITE;
-/*!40000 ALTER TABLE `ak_data_penjualan_resep` DISABLE KEYS */;
-
-INSERT INTO `ak_data_penjualan_resep` (`id_penjualan_resep`, `id_penjualan`, `id_barang`, `id_user`, `nomor_resep`, `nm_pasien`, `nm_dokter`, `etiket`, `alamat_pasien`, `kontak_pasien`, `qty`, `biaya_resep`, `diskon`, `pembulatan`, `subtotal`, `deleted`)
-VALUES
-	('R18042600001','TRR18042600007',6,'USR00001',NULL,'Akasaka Ryuunosuke','Chitanda Eru',NULL,'Jl. K-On Blok A No.1',NULL,1,0.00,0,19.00,14800.00,0),
-	('R18042600002','TRR18042600007',5,'USR00001',NULL,'Akasaka Ryuunosuke','Chitanda Eru',NULL,'Jl. K-On Blok A No.1',NULL,1,0.00,0,23.00,15300.00,0);
-
-/*!40000 ALTER TABLE `ak_data_penjualan_resep` ENABLE KEYS */;
-UNLOCK TABLES;
 
 
 # Dump of table ak_data_penjualan_resep_detail
@@ -1741,16 +1743,6 @@ CREATE TABLE `ak_data_penjualan_resep_detail` (
   PRIMARY KEY (`id_penjualan_resep_detail`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-LOCK TABLES `ak_data_penjualan_resep_detail` WRITE;
-/*!40000 ALTER TABLE `ak_data_penjualan_resep_detail` DISABLE KEYS */;
-
-INSERT INTO `ak_data_penjualan_resep_detail` (`id_penjualan_resep_detail`, `id_penjualan`, `id_barang`, `id_barang_detail`, `qty`, `deleted`)
-VALUES
-	(1,'TRR18042600007',6,36,1,0),
-	(2,'TRR18042600007',5,39,1,0);
-
-/*!40000 ALTER TABLE `ak_data_penjualan_resep_detail` ENABLE KEYS */;
-UNLOCK TABLES;
 
 
 # Dump of table ak_data_pesanan
@@ -1906,156 +1898,10 @@ LOCK TABLES `ak_data_user` WRITE;
 
 INSERT INTO `ak_data_user` (`id_user`, `nm_user`, `login_user`, `pass_user`, `level_user`, `login_terakhir`, `created_date`, `deleted`)
 VALUES
-	('USR00001','Master','master','$2y$10$YNayymf6l5/1eYw5vKcfvOXngHH7fNEr9pSDFhCBKxRSpqj89jyYm',1,'2018-04-25','2018-01-30 00:44:40',0);
+	('USR00001','Master','master','$2y$10$v7dbkaEqU5AxDHUa.Xg3JO5j3O3R7oSsVbMeLzE5kDI/lBfoCPTRm',1,'2018-05-06','2018-01-30 00:44:40',0);
 
 /*!40000 ALTER TABLE `ak_data_user` ENABLE KEYS */;
 UNLOCK TABLES;
-
-DELIMITER ;;
-/*!50003 SET SESSION SQL_MODE="NO_AUTO_VALUE_ON_ZERO" */;;
-/*!50003 CREATE */ /*!50017 DEFINER=`root`@`localhost` */ /*!50003 TRIGGER `ak_trigger_data_users` BEFORE INSERT ON `ak_data_user` FOR EACH ROW BEGIN
-	INSERT INTO ak_sequence_data_user VALUES (NULL);
-	SET NEW.id_user = CONCAT('USR', LPAD(LAST_INSERT_ID(), 5, '0'));
-    END */;;
-DELIMITER ;
-/*!50003 SET SESSION SQL_MODE=@OLD_SQL_MODE */;
-
-
-# Dump of table ak_sequence_data_pembelian
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `ak_sequence_data_pembelian`;
-
-CREATE TABLE `ak_sequence_data_pembelian` (
-  `id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-LOCK TABLES `ak_sequence_data_pembelian` WRITE;
-/*!40000 ALTER TABLE `ak_sequence_data_pembelian` DISABLE KEYS */;
-
-INSERT INTO `ak_sequence_data_pembelian` (`id`)
-VALUES
-	(1),
-	(2),
-	(3),
-	(4),
-	(5),
-	(6),
-	(7),
-	(8),
-	(9),
-	(10),
-	(11),
-	(12),
-	(13);
-
-/*!40000 ALTER TABLE `ak_sequence_data_pembelian` ENABLE KEYS */;
-UNLOCK TABLES;
-
-
-# Dump of table ak_sequence_data_penjualan
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `ak_sequence_data_penjualan`;
-
-CREATE TABLE `ak_sequence_data_penjualan` (
-  `id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-LOCK TABLES `ak_sequence_data_penjualan` WRITE;
-/*!40000 ALTER TABLE `ak_sequence_data_penjualan` DISABLE KEYS */;
-
-INSERT INTO `ak_sequence_data_penjualan` (`id`)
-VALUES
-	(6),
-	(7),
-	(8),
-	(9),
-	(10),
-	(11),
-	(12),
-	(13),
-	(14),
-	(15),
-	(16);
-
-/*!40000 ALTER TABLE `ak_sequence_data_penjualan` ENABLE KEYS */;
-UNLOCK TABLES;
-
-
-# Dump of table ak_sequence_data_penjualan_bebas
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `ak_sequence_data_penjualan_bebas`;
-
-CREATE TABLE `ak_sequence_data_penjualan_bebas` (
-  `id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-LOCK TABLES `ak_sequence_data_penjualan_bebas` WRITE;
-/*!40000 ALTER TABLE `ak_sequence_data_penjualan_bebas` DISABLE KEYS */;
-
-INSERT INTO `ak_sequence_data_penjualan_bebas` (`id`)
-VALUES
-	(3),
-	(4),
-	(5),
-	(7),
-	(8),
-	(9),
-	(11),
-	(12),
-	(13),
-	(14),
-	(15),
-	(16),
-	(17),
-	(18),
-	(19);
-
-/*!40000 ALTER TABLE `ak_sequence_data_penjualan_bebas` ENABLE KEYS */;
-UNLOCK TABLES;
-
-
-# Dump of table ak_sequence_data_user
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `ak_sequence_data_user`;
-
-CREATE TABLE `ak_sequence_data_user` (
-  `id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-LOCK TABLES `ak_sequence_data_user` WRITE;
-/*!40000 ALTER TABLE `ak_sequence_data_user` DISABLE KEYS */;
-
-INSERT INTO `ak_sequence_data_user` (`id`)
-VALUES
-	(1),
-	(2),
-	(3),
-	(5),
-	(9),
-	(10);
-
-/*!40000 ALTER TABLE `ak_sequence_data_user` ENABLE KEYS */;
-UNLOCK TABLES;
-
-
-# Dump of table ak_view_report_penjualan_bebas
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `ak_view_report_penjualan_bebas`;
-
-CREATE TABLE `ak_view_report_penjualan_bebas` (
-  `Tanggal` datetime DEFAULT NULL,
-  `Nama Pasien` char(50) DEFAULT NULL,
-  `Nama Barang` char(45) DEFAULT NULL,
-  `Jumlah` int(11) DEFAULT NULL,
-  `Harga Jual` decimal(8,2) DEFAULT NULL,
-  `Total Harga` decimal(8,2) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 
 
 

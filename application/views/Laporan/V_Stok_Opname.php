@@ -94,18 +94,25 @@
 		$(document).ready(function(){
 			var dtTable = $('#dtTable').DataTable({
 				"processing": true,
-				/*"ajax": {
-					"url": "<?= base_url('stok/list_report_stok_limit') ?>",
+				initComplete : function () {
+    				dtTable.buttons().container().appendTo( $('#dtTable_wrapper .col-sm-6:eq(0)'));
+				},
+				"ajax": {
+					"url": "<?= base_url('stok/list_report_stok_opname') ?>",
 					"type": "POST"
-				},*/
-				"autoWidth": false,
+				},
+				//dom: 'Bfrtip',
+				buttons: [ 'print' ],
+				"autoWidth": true,
+				"responsive": true,
 				"info": true,
 				"ordering": true,
 				"paging": true,
-				"pageLength": 5,
-				"lengthChange": true,
+				"pageLength": 10,
+				"lengthChange": false,
 				"searching": true
 			});
+			$('#dtTable').DataTable().buttons().container().appendTo( '#dtTable_wrapper .col-sm-6:eq(0)' );
 			$("#register").submit(function(e) {
 			event.preventDefault();
 				var id_barang = $("#id_barang").val();

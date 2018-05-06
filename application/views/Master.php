@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>SISTEM APOTEK - <?= $Title ?></title>
+		<title>SISTEM RETAIL - <?= $Title ?></title>
 		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 		<link rel="stylesheet" href="<?= base_url('assets/bootstrap/css/bootstrap.min.css') ?>">
 		<link rel="stylesheet" href="<?= base_url('assets/bootstrap/css/daterangepicker.css') ?>">
@@ -91,7 +91,7 @@
 				<nav class="navbar navbar-static-top">
 					<div class="container-fluid">
 						<div class="navbar-header">
-							<a class="navbar-brand"><b>SISTEM</b> APOTEK</a>
+							<a class="navbar-brand"><b>SISTEM</b> RETAIL</a>
 							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
 								<i class="fa fa-bars"></i>
 							</button>
@@ -141,7 +141,6 @@
 											<li class="dropdown-submenu">
 												<a class="test" tabindex="-1" href="#">Laporan Stok <span class="fa fa-caret-right"></span></a>
 												<ul class="dropdown-menu">
-													<li><a tabindex="-1" href="<?= base_url('laporan/stok-limit') ?>">Limit</a></li>
 													<li><a tabindex="-1" href="<?= base_url('laporan/stok-inhand') ?>">Inhand</a></li>
 													<li><a tabindex="-1" href="<?= base_url('laporan/stok-opname') ?>">Opname</a></li>
 												</ul>
@@ -193,7 +192,7 @@
 				<div class="pull-right hidden-xs">
 					Page rendered in <strong>{elapsed_time}</strong> seconds.
 				</div>
-				<strong>Copyright &copy; <?php if(date('Y')!="2017") : echo "2017-".date('Y'); endif ?></strong> Coded by <a href="https://akasakapratama.web.id/">Gilang Pratama</a>. All rights reserved.
+				<strong>Copyright &copy; <?php if(date('Y')!="2017") : echo "2017-".date('Y'); endif ?></strong> Coded by <a href="https://akasakapratama.web.id/">PT. Fath Technology Solutions</a>. All rights reserved.
 			</footer>
 		</div>
 		<script>

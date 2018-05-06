@@ -22,7 +22,7 @@
 								<th>No.</th>
 								<th>Nomor Transaksi</th>
 								<th>PBF</th>
-								<th>Tanggal Jatuh Tempo</th>
+								<th>Jatuh Tempo</th>
 								<th>Total</th>
 								<th>Status</th>
 							</thead>
@@ -82,18 +82,25 @@
 		$(document).ready(function(){
 			var dtTable = $('#dtTable').DataTable({
 				"processing": true,
-				/*"ajax": {
+				initComplete : function () {
+    				dtTable.buttons().container().appendTo( $('#dtTable_wrapper .col-sm-6:eq(0)'));
+				},
+				"ajax": {
 					"url": "<?= base_url('hutang/list_report_hutang') ?>",
 					"type": "POST"
-				},*/
-				"autoWidth": false,
+				},
+				//dom: 'Bfrtip',
+				buttons: [ 'print' ],
+				"autoWidth": true,
+				"responsive": true,
 				"info": true,
 				"ordering": true,
 				"paging": true,
-				"pageLength": 5,
-				"lengthChange": true,
+				"pageLength": 10,
+				"lengthChange": false,
 				"searching": true
 			});
+			$('#dtTable').DataTable().buttons().container().appendTo( '#dtTable_wrapper .col-sm-6:eq(0)' );
 		});
 		$('#tgl_awal').inputmask('yyyy-mm-dd', { 'placeholder': 'yyyy-mm-dd' })
 	    $('#tgl_akhir').inputmask('yyyy-mm-dd', { 'placeholder': 'yyyy-mm-dd' })

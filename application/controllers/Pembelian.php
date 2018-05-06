@@ -4,6 +4,7 @@ class Pembelian extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->model('MPembelian');
+		$this->load->model('MLPembelian');
 		$isLogin = $this->session->userdata('isLogin');
 		if(!$isLogin) {
 			redirect('portal','refresh');
@@ -39,7 +40,7 @@ class Pembelian extends CI_Controller {
 			$row[] = $data->nm_pbf;
 			$row[] = $data->tanggal_pembelian;
 			$row[] = $data->tanggal_jatuh_tempo;
-			$row[] = $data->subtotal;
+			$row[] = "Rp. ".number_format($data->subtotal,2,",",".");
 
 			$datatb[] = $row;
 		}
@@ -60,8 +61,58 @@ class Pembelian extends CI_Controller {
 			$row[] = $nomor++;
 			$row[] = '<a id="getdata" data="'.$data->id_barang.'" style="cursor:pointer">'.$data->nm_barang.'</a>';
 			$row[] = $data->qty.' '.$data->nm_kemasan;
-			$row[] = $data->subtotal_barang;
+			$row[] = "Rp. ".number_format($data->subtotal_barang,2,",",".");
 
+			$datatb[] = $row;
+		}
+
+		$output = array(
+						"draw" => $this->input->post('draw'),
+						"data" => $datatb
+					);
+		echo json_encode($output);
+	}
+
+	public function list_report_barang_pabrik(){
+		$list = $this->MLPembelian->GetAll();
+		$datatb= array();
+		$nomor = 1;
+		foreach ($list as $data) {
+			$row = array();
+			$row[] = $nomor++;
+			$row[] = '<a id="getdata" data="'.$data->id_barang.'" style="cursor:pointer">'.$data->nm_barang.'</a>';
+			$row[] = $data->nm_pabrik;
+ 			$row[] = $data->qty;
+			$row[] = "Rp. ".number_format($data->subtotal_barang/$data->qty,2,",",".");
+			$row[] = "RP. ".number_format($data->subtotal_barang,2,",",".");
+			
+			$datatb[] = $row;
+		}
+
+		$output = array(
+						"draw" => $this->input->post('draw'),
+						"data" => $datatb
+					);
+		echo json_encode($output);
+	}
+
+	
+	public function list_report_surat_pesanan(){
+		$list = $this->MLPembelian->GetAllSurat();
+		$datatb= array();
+		$nomor = 1;
+		foreach ($list as $data) {
+			$row = array();
+			$row[] = $nomor++;
+			$row[] = $data->tanggal_pembuatan;
+			$row[] = $data->id_pesanan;
+			$row[] = $data->nm_barang;
+			$row[] = $data->nm_pabrik;
+			$row[] = $data->nm_pbf;
+ 			$row[] = $data->qty;
+			$row[] = $data->harga_dasar;
+			$row[] = $data->harga_dasar;
+			
 			$datatb[] = $row;
 		}
 

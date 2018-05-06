@@ -19,6 +19,29 @@ class Penjualan extends CI_Controller {
 		}
 	}
 
+	public function list_all_data() {
+		$list = $this->MPenjualan->GetAll();
+		$datatb= array();
+		$nomor = 1;
+		foreach ($list as $data) {
+			$row = array();
+			$row[] = $nomor++;
+			$row[] = '<a id="getdata" href="'.base_url('transaksi/pj-bebas/'.$data->id_penjualan).'" style="cursor:pointer">'.$data->id_penjualan.'</a>';
+			$row[] = $data->nm_user;
+			$row[] = $data->nm_pasien;
+			$row[] = $data->tanggal_penjualan;
+			$row[] = $data->grandtotal;
+
+			$datatb[] = $row;
+		}
+
+		$output = array(
+						"draw" => $this->input->post('draw'),
+						"data" => $datatb
+					);
+		echo json_encode($output);
+	}
+
 	public function list_detail_data($kode=NULL) {
 		$list = $this->MPenjualan->GetAllDetail($kode);
 		$datatb= array();
@@ -169,8 +192,8 @@ class Penjualan extends CI_Controller {
 		echo json_encode($data);
 	}
 
-	public function hapus_data() {
-		$res = $this->MPenjualan->DelData();
+	public function hapus_data($kode) {
+		$res = $this->MPenjualan->DelData($kode);
 		$data = array(
 						'status' => $res
 					);

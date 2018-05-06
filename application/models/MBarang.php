@@ -56,7 +56,19 @@ class MBarang extends CI_Model {
 			$id = "BRG".str_pad($hitung_data+1, 5, "0", STR_PAD_LEFT);
 			$data = array(
 							'id_barang' => $id,
-							'nm_barang' => $this->input->post('nm_barang')
+							'nm_barang' => $this->input->post('nm_barang'),
+							'id_jenis' => $this->input->post('id_jenis'),
+							'id_pabrik' => $this->input->post('id_pabrik'),
+							'golongan_obat' => $this->input->post('id_golongan'),
+							'id_kemasan' => $this->input->post('id_kemasan'),
+							'id_satuan' => $this->input->post('id_satuan'),
+							'isi_satuan' => $this->input->post('isi_satuan'),
+							'margin' => $this->input->post('margin'),
+							'harga_dasar' => $this->input->post('harga_dasar'),
+							'stok_maksimum' => $this->input->post('stok_maksimum'),
+							'stok_minimum' => $this->input->post('stok_minimum'),
+							'konsinyasi' => $this->input->post('konsinyasi'),
+							'formularium' => $this->input->post('formularium')
 						);
 			$this->db->insert($this->data_barang,$data);
 		} else {

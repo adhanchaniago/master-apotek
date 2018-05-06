@@ -248,7 +248,7 @@
 						id_barang : id_barang
 					},
 				success: function(data) {
-					$("#id_barang").val(data.id_barang);
+					$("#id_barang").val(data.id_barang).change();
 					$("#qty").val(data.qty);
 					$("#diskon").val(data.diskon);
 					$("#Hapus").removeAttr("disabled");

@@ -85,10 +85,10 @@
 		$(document).ready(function(){
 			var dtTable = $('#dtTable').DataTable({
 				"processing": true,
-				/*"ajax": {
+					"ajax": {
 					"url": "<?= base_url('pembelian/list_report_surat_pesanan') ?>",
 					"type": "POST"
-				},*/
+				},
 				"autoWidth": false,
 				"info": true,
 				"ordering": true,

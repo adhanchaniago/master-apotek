@@ -26,8 +26,8 @@
 									<th>Masuk</th>
 									<th>Keluar</th>
 									<th>Sisa</th>
-									<th>Harga Beli + PPN</th>
-									<th>Total</th>
+									<!-- <th>Harga Beli + PPN</th>
+									<th>Total</th> -->
 								</thead>
 								<tbody></tbody>
 							</table>
@@ -45,18 +45,25 @@
 		$(document).ready(function(){
 			var dtTable = $('#dtTable').DataTable({
 				"processing": true,
-				/*"ajax": {
+				initComplete : function () {
+    				dtTable.buttons().container().appendTo( $('#dtTable_wrapper .col-sm-6:eq(0)'));
+				},
+				"ajax": {
 					"url": "<?= base_url('stok/list_report_stok_limit') ?>",
 					"type": "POST"
-				},*/
-				"autoWidth": false,
+				},
+				//dom: 'Bfrtip',
+				buttons: [ 'print' ],
+				"autoWidth": true,
+				"responsive": true,
 				"info": true,
 				"ordering": true,
 				"paging": true,
-				"pageLength": 5,
-				"lengthChange": true,
+				"pageLength": 10,
+				"lengthChange": false,
 				"searching": true
 			});
+			$('#dtTable').DataTable().buttons().container().appendTo( '#dtTable_wrapper .col-sm-6:eq(0)' );
 		});
 		$('#tgl_awal').inputmask('yyyy-mm-dd', { 'placeholder': 'yyyy-mm-dd' })
 	    $('#tgl_akhir').inputmask('yyyy-mm-dd', { 'placeholder': 'yyyy-mm-dd' })

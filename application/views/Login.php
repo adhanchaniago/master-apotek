@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>SISTEM APOTEK - <?= $Title ?></title>
+		<title>SISTEM RETAIL - <?= $Title ?></title>
 		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 		<link rel="stylesheet" href="<?= base_url('assets/bootstrap/css/bootstrap.min.css') ?>">
 		<link rel="stylesheet" href="<?= base_url('assets/font-awesome/css/font-awesome.min.css') ?>">
@@ -60,7 +60,7 @@
 				<br />
 				<p class="login-box-msg">
 					&copy; 2017 - <?= date('Y') ?><br />
-					Developed with <i style="color:red" class="fa fa-heart"></i> by <a href="https://akasakapratama.web.id/">Akasaka Pratama</a>
+					Developed with <i style="color:red" class="fa fa-heart"></i> by <br /><a href="https://akasakapratama.web.id/">PT. Fath Technology Solutions</a>
 				</p>
 			</div>
 		</div>

@@ -4,6 +4,7 @@ class Laporan extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->model('MPenjualan');
+		$this->load->model('MLPembelian');
 		$isLogin = $this->session->userdata('isLogin');
 		if(!$isLogin) {
 			redirect('portal','refresh');
@@ -46,14 +47,14 @@ class Laporan extends CI_Controller {
 		$this->load->view('Master',$data);
 	}
 
-	public function stok_limit() {
+	/*public function stok_limit() {
 		$data['Title'] = "Stok Limit";
 		$data['Nav'] = "Laporan";
 		$data['Nama'] = $this->session->userdata('nama');
 		$data['Level'] = $this->session->userdata('level');
 		$data['Konten'] = 'Laporan/V_Stok_Limit';
 		$this->load->view('Master',$data);
-	}
+	}*/
 
 	public function stok_inhand() {
 		$data['Title'] = "Stok Inhand";

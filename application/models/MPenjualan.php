@@ -11,6 +11,19 @@ class MPenjualan extends CI_Model {
 	protected $data_penjualan_resep = "ak_data_penjualan_resep";
 	protected $data_penjualan_bebas_detail = "ak_data_penjualan_bebas_detail";
 	protected $data_penjualan_resep_detail = "ak_data_penjualan_resep_detail";
+	protected $data_user = "ak_data_user";
+
+	public function GetAll() {
+		$res = $this->db->where($this->data_penjualan.'.deleted',FALSE)
+						->where($this->data_penjualan.'.status',FALSE)
+						->join(
+								$this->data_user,
+								$this->data_user.'.id_user='.
+								$this->data_penjualan.'.id_user'
+							  )
+						->get($this->data_penjualan);
+		return $res->result();
+	}
 
 	public function GetAllDetail($kode) {
 		$res = $this->db->where($this->data_penjualan_bebas.'.deleted',FALSE)
@@ -56,6 +69,13 @@ class MPenjualan extends CI_Model {
 							  )
 						->get($this->data_penjualan_resep);
 		return $res->result();
+	}
+
+	public function GetSingle($kode) {
+		$res = $this->db->where('id_penjualan',$kode)
+						->where('id_barang',$this->input->post('id_barang'))
+						->get($this->data_penjualan_bebas);
+		return $res->row();
 	}
 
 	public function find_duplicate($kode) {
@@ -312,6 +332,7 @@ class MPenjualan extends CI_Model {
 			$data_1 = array(
 								'id_penjualan' => $id,
 								'id_user' => $this->session->userdata('kode'),
+								'nm_pasien' => $this->input->post('nm_pasien'),
 								'tanggal_penjualan' => date('Y-m-d H:i:s'),
 								'grandtotal' => $grandtotal,
 								'pembulatan' => $pembulatan,
@@ -340,6 +361,18 @@ class MPenjualan extends CI_Model {
 					 ->update($this->data_barang_stok_tersedia,$data_3);
 			return $kembalian;
 		endif;
+	}
+
+	public function DelData($kode) {
+		$data_1 = array (
+							'deleted' => TRUE
+						);
+		$this->db->where('id_penjualan',$kode)
+				 ->where('id_barang',$this->input->post('id_barang'))
+				 ->update($this->data_penjualan_bebas,$data_1);
+		$this->db->where('id_penjualan',$kode)
+				 ->where('id_barang',$this->input->post('id_barang'))
+				 ->update($this->data_penjualan_bebas_detail,$data_1);
 	}
 
 	private function pembulatan($uang) {

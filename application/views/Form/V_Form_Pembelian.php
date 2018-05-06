@@ -199,11 +199,11 @@
 				},
 				"autoWidth": false,
 				"info": true,
-				"ordering": true,
-				"paging": true,
+				"ordering": false,
+				"paging": false,
 				//"pageLength": 5,
-				"lengthChange": true,
-				"searching": true
+				"lengthChange": false,
+				"searching": false
 			});
 			$("#register").submit(function(e) {
 			event.preventDefault();
