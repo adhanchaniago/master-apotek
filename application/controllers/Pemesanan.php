@@ -26,7 +26,7 @@ class Pemesanan extends CI_Controller {
 		foreach ($list as $data) {
 			$row = array();
 			$row[] = $nomor++;
-			$row[] = '<a id="getdata" href="'.base_url('pemesanan/buat_data_pemesanan/'.$data->id_pesanan).'" style="cursor:pointer">'.$data->id_pesanan.'</a>';
+			$row[] = '<a id="getdata" href="'.base_url('transaksi/pemesanan/'.$data->id_pesanan).'" style="cursor:pointer">'.$data->id_pesanan.'</a>';
 			$row[] = $data->nm_pbf;
 			$row[] = $data->tanggal_pembuatan;
 			$row[] = $data->nm_user;
@@ -41,15 +41,6 @@ class Pemesanan extends CI_Controller {
 		echo json_encode($output);
 	}
 
-	public function buat_data_pemesanan() {
-		$data['Title'] = "Detail Pemesanan";
-		$data['Nav'] = "Transaksi";
-		$data['Nama'] = $this->session->userdata('nama');
-		$data['Level'] = $this->session->userdata('level');
-		$data['Konten'] = 'Form/V_Form_Pemesanan';
-		$this->load->view('Master',$data);
-	}
-
 	public function list_detail_data($kode=NULL) {
 		$list = $this->MPemesanan->GetAllDetail($kode);
 		$datatb= array();
@@ -58,7 +49,7 @@ class Pemesanan extends CI_Controller {
 			$row = array();
 			$row[] = $nomor++;
 			$row[] = '<a id="getdata" data="'.$data->id_barang.'" style="cursor:pointer">'.$data->nm_barang.'</a>';
-			$row[] = $data->qty;
+			$row[] = $data->qty/$data->isi_satuan.' '.$data->nm_kemasan;
 
 			$datatb[] = $row;
 		}
@@ -74,7 +65,32 @@ class Pemesanan extends CI_Controller {
 		$res = $this->MPemesanan->GetSingle($kode);
 		$data = array(
 						'id_barang' => $res->id_barang,
-						'qty' => $res->qty
+						'qty' => $res->qty/$res->isi_satuan
+					);
+		echo json_encode($data);
+	}
+
+	public function get_status($kode=NULL) {
+		$res = $this->MPemesanan->GetDetail($kode);
+		if($res->status==1) :
+			$data = array(
+							'status' => TRUE
+						);
+		else : 
+			$data = array(
+							'status' => FALSE
+						);
+		endif;
+		echo json_encode($data);
+	}
+
+	public function get_detail($kode=NULL) {
+		$res = $this->MPemesanan->GetDetail($kode);
+		$data = array(
+						// 'tanggal_jatuh_tempo' => $res->tanggal_jatuh_tempo,
+						// 'diskon' => $res->diskon,
+						'id_sp' => $res->id_sp,
+						'id_pbf' => $res->id_pbf
 					);
 		echo json_encode($data);
 	}
@@ -95,8 +111,8 @@ class Pemesanan extends CI_Controller {
 		echo json_encode($data);
 	}
 
-	public function hapus_data() {
-		$res = $this->MPemesanan->DelData();
+	public function hapus_data($kode=NULL) {
+		$res = $this->MPemesanan->DelData($kode);
 		$data = array(
 						'status' => $res
 					);
@@ -109,6 +125,40 @@ class Pemesanan extends CI_Controller {
 						'status' => $res
 					);
 		echo json_encode($data);
+	}
+
+	public function checkout($kode) {
+		$res = $this->MPemesanan->checkout($kode);
+		$data = array(
+						'url' => $res
+					);
+		echo json_encode($data);
+	}
+
+	public function list_report_surat_pesanan(){
+		$list = $this->MPemesanan->get_report_surat_pesanan();
+		$datatb= array();
+		$nomor = 1;
+		foreach ($list as $data) {
+			$row = array();
+			$row[] = $nomor++;
+			$row[] = $data->tanggal_pembuatan;
+			$row[] = $data->id_pesanan;
+			$row[] = $data->nm_barang;
+			$row[] = $data->nm_pabrik;
+			$row[] = $data->nm_pbf;
+ 			$row[] = $data->qty.' '.$data->nm_kemasan;
+			$row[] = "Rp. ".number_format($data->harga_dasar,2,",",".");
+			$row[] = "Rp. ".number_format($data->harga_dasar,2,",",".");
+			
+			$datatb[] = $row;
+		}
+
+		$output = array(
+						"draw" => $this->input->post('draw'),
+						"data" => $datatb
+					);
+		echo json_encode($output);
 	}
 
 }

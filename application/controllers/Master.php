@@ -83,6 +83,15 @@ class Master extends CI_Controller {
 		$this->load->view('Master',$data);
 	}
 
+	public function dokter() {
+		$data['Title'] = "Dokter";
+		$data['Nav'] = "Master Data";
+		$data['Nama'] = $this->session->userdata('nama');
+		$data['Level'] = $this->session->userdata('level');
+		$data['Konten'] = 'Master/V_Dokter';
+		$this->load->view('Master',$data);
+	}
+
 	public function karyawan() {
 		$data['Title'] = "Karyawan";
 		$data['Nav'] = "Master Data";

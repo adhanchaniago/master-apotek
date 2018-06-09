@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
-<?php if($Level=="Master" OR $Level=="Pemilik") : ?>
+<?php if($Level=="Master" OR $Level=="Pemilik" OR $Level="Apoteker") : ?>
 	<section class="content-header">
 		<h1><?= $Title ?></h1>
 		<ol class="breadcrumb">
@@ -10,7 +10,7 @@
 	</section>
 	<section class="content">
 		<div class="row">
-			<div class="col-lg-8">
+			<div class="col-lg-12">
 				<div class="box box-primary">
 					<div class="box-header with-border">
 						<i class="fa fa-wheelchair"></i>
@@ -20,11 +20,11 @@
 						<table id="dtTable" class="table table-striped table-bordered">
 							<thead>
 								<th>No.</th>
-								<th>Tanggal Surat</th>
-								<th>Nomor Surat</th>
-								<th>Nomor Faktur</th>
-								<th>Tanggal Kirim</th>
-								<th>Nama Barang</th>
+								<th>Tanggal</th>
+								<th>Kode Surat</th>
+								<th>Faktur</th>
+								<th>Kirim</th>
+								<th>Barang</th>
 								<th>Pabrik</th>
 								<th>PBF</th>
 								<th>Qty</th>
@@ -36,48 +36,6 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-4">
-			<div class="box box-primary">
-				<div class="box-header with-border">
-					<i class="fa fa-pencil"></i>
-					<h3 class="box-title">Form Filter <?= $Title ?></h3>
-				</div>
-				<!-- <form action="" method="POST" id="filter" role="form"> -->
-					<div class="box-body row">
-						<div class="col-lg-6">
-							<div class="form-group">
-								<label for="tgl_awal">Dari Tanggal</label>
-								<?= form_input('tgl_awal',null,array(
-																		'id' => 'tgl_awal',
-																		'class' => 'form-control',
-																		//'placeholder' => 'Tanggal Lahir',
-																		//'required' => 'true'
-																		"data-inputmask" => "'alias': 'yyyy-mm-dd",
-																		"data-mask" => "true",
-																		'required' => 'true'
-																	));
-								?>
-							</div>
-						</div>
-						<div class="col-lg-6">
-							<div class="form-group">
-								<label for="tgl_akhir">Sampai Tanggal</label>
-								<?= form_input('tgl_akhir',null,array(
-																		'id' => 'tgl_akhir',
-																		'class' => 'form-control',
-																		//'placeholder' => 'Tanggal Kunjungan',
-																		'required' => 'true'
-																	));
-								?>
-							</div>
-						</div>
-					</div>
-					<div class="box-footer">
-						<button type="button" id="filter" class="btn btn-block btn-primary">Filter</button>
-					</div>
-				<!-- </form> -->
-			</div>
-		</div>
 		</div>
 	</section>
 	<script src="<?= base_url('assets/jquery/jquery.inputmask.js') ?>"></script>
@@ -87,10 +45,10 @@
 		$(document).ready(function(){
 			var dtTable = $('#dtTable').DataTable({
 				"processing": true,
-				/*"ajax": {
+				"ajax": {
 					"url": "<?= base_url('penerimaan/list_report_penerimaan_barang') ?>",
 					"type": "POST"
-				},*/
+				},
 				"autoWidth": false,
 				"info": true,
 				"ordering": true,

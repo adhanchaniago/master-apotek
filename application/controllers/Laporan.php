@@ -20,6 +20,24 @@ class Laporan extends CI_Controller {
 		}
 	}
 
+	public function pemesanan() {
+		$data['Title'] = "Laporan Pemesanan";
+		$data['Nav'] = "Laporan";
+		$data['Nama'] = $this->session->userdata('nama');
+		$data['Level'] = $this->session->userdata('level');
+		$data['Konten'] = 'Laporan/V_Pemesanan';
+		$this->load->view('Master',$data);
+	}
+
+	public function Pembelian() {
+		$data['Title'] = "Laporan Pembelian";
+		$data['Nav'] = "Laporan";
+		$data['Nama'] = $this->session->userdata('nama');
+		$data['Level'] = $this->session->userdata('level');
+		$data['Konten'] = 'Laporan/V_Pembelian';
+		$this->load->view('Master',$data);
+	}
+
 	public function pembelian_barang_pabrik() {
 		$data['Title'] = "Pembelian Barang Pabrik";
 		$data['Nav'] = "Laporan";
@@ -29,23 +47,41 @@ class Laporan extends CI_Controller {
 		$this->load->view('Master',$data);
 	}
 
-	public function pembelian_surat_pesanan() {
-		$data['Title'] = "Penerimaan Barang";
+	public function pj_bebas() {
+		$data['Title'] = "PLaporan Penjualan Bebas";
 		$data['Nav'] = "Laporan";
 		$data['Nama'] = $this->session->userdata('nama');
 		$data['Level'] = $this->session->userdata('level');
-		$data['Konten'] = 'Laporan/V_Pembelian_Surat_Pesanan';
+		$data['Konten'] = 'Laporan/V_Penjualan_Bebas';
 		$this->load->view('Master',$data);
 	}
 
-	public function penerimaan_barang() {
-		$data['Title'] = "Penerimaan Barang";
+	public function pj_resep() {
+		$data['Title'] = "PLaporan Penjualan Resep";
 		$data['Nav'] = "Laporan";
 		$data['Nama'] = $this->session->userdata('nama');
 		$data['Level'] = $this->session->userdata('level');
-		$data['Konten'] = 'Laporan/V_Penerimaan_Barang';
+		$data['Konten'] = 'Laporan/V_Penjualan_Resep';
 		$this->load->view('Master',$data);
 	}
+
+	// public function pembelian_surat_pesanan() {
+	// 	$data['Title'] = "Penerimaan Barang";
+	// 	$data['Nav'] = "Laporan";
+	// 	$data['Nama'] = $this->session->userdata('nama');
+	// 	$data['Level'] = $this->session->userdata('level');
+	// 	$data['Konten'] = 'Laporan/V_Pembelian_Surat_Pesanan';
+	// 	$this->load->view('Master',$data);
+	// }
+
+	// public function penerimaan_barang() {
+	// 	$data['Title'] = "Penerimaan Barang";
+	// 	$data['Nav'] = "Laporan";
+	// 	$data['Nama'] = $this->session->userdata('nama');
+	// 	$data['Level'] = $this->session->userdata('level');
+	// 	$data['Konten'] = 'Laporan/V_Penerimaan_Barang';
+	// 	$this->load->view('Master',$data);
+	// }
 
 	/*public function stok_limit() {
 		$data['Title'] = "Stok Limit";
@@ -57,7 +93,7 @@ class Laporan extends CI_Controller {
 	}*/
 
 	public function stok_inhand() {
-		$data['Title'] = "Stok Inhand";
+		$data['Title'] = "Kartu Stok";
 		$data['Nav'] = "Laporan";
 		$data['Nama'] = $this->session->userdata('nama');
 		$data['Level'] = $this->session->userdata('level');
@@ -66,7 +102,7 @@ class Laporan extends CI_Controller {
 	}
 
 	public function stok_opname() {
-		$data['Title'] = "Stok Opname";
+		$data['Title'] = "Penyesuaian";
 		$data['Nav'] = "Laporan";
 		$data['Nama'] = $this->session->userdata('nama');
 		$data['Level'] = $this->session->userdata('level');

@@ -11,7 +11,7 @@
 			<div class="col-lg-8">
 				<div class="box box-primary">
 					<div class="box-header with-border">
-						<i class="fa fa-users"></i>
+						<i class="fa fa-bars"></i>
 						<h3 class="box-title">List <?= $Title ?></h3>
 					</div>
 					<div class="box-body">
@@ -19,7 +19,6 @@
 							<thead>
 								<th>No.</th>
 								<th>Nama</th>
-								<th>Username</th>
 								<th>Level</th>
 								<th>Tanggal Bergabung</th>
 								<th>Login Terakhir</th>
@@ -32,8 +31,16 @@
 			<div class="col-lg-4">
 				<div class="box box-primary">
 					<div class="box-header with-border">
-						<i class="fa fa-pencil"></i>
-						<h3 class="box-title">Form Pendaftaran <?= $Title ?></h3>
+						<span class="pull-left">
+							<i class="fa fa-pencil"></i>
+							<h3 class="box-title">
+								Form <?= $Title ?>
+							</h3>
+						</span>
+						<span class="pull-right">
+							<a onclick="reload()" class="btn btn-xs btn-primary"><i class="fa fa-refresh"></i></a>
+							<a href="<?= base_url() ?>" class="btn btn-xs btn-danger"><i class="fa fa-times"></i></a>
+						</span>
 					</div>
 					<form action="" method="POST" id="register" role="form">
 						<div class="box-body row">
@@ -92,7 +99,6 @@
 								<div class="form-group">
 									<label for="level_user">Level</label>
 									<select name="level_user" class="form-control" id="level_user" required>
-										<option value="">== Pilih Level ==</option>
 										<?php foreach($ListLv as $data) : ?>
 											<option value="<?= $data->id_level ?>"><?= $data->nm_level ?></option>
 										<?php endforeach ?>
@@ -145,6 +151,9 @@
 			</div>
 		</div>
 	</div>
+	<script src="<?= base_url('assets/jquery/jquery.inputmask.js') ?>"></script>
+	<script src="<?= base_url('assets/jquery/jquery.inputmask.date.extensions.js') ?>"></script>
+	<script src="<?= base_url('assets/jquery/jquery.inputmask.extensions.js') ?>"></script>
 	<script>
 		$(document).ready(function(){
 			var dtUser = $('#dtUser').DataTable({
@@ -277,5 +286,16 @@
 				}*/
 			});
 		});
+		function reload() {
+			$("#Hapus").attr("disabled","true");
+			$("#id_user").attr("disabled","true");
+			$("#login_user").removeAttr("disabled");
+			$("#pass_user").removeAttr("disabled");
+			$("#register")[0].reset();
+			$("#login_user").removeAttr("disabled");
+			$("#pass_user").removeAttr("disabled");
+			$("#nm_user").focus();
+		}
+		$("#level_user").select2();
 	</script>
 <?php endif ?>

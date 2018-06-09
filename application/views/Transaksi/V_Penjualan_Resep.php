@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
-<?php if($Level=="Master" OR $Level=="Pemilik") : ?>
+<?php if($Level=="Master" OR $Level=="Pemilik" OR $Level="Apoteker") : ?>
 	<section class="content-header">
 		<h1><?= $Title ?></h1>
 		<ol class="breadcrumb">
@@ -11,7 +11,7 @@
 			<div class="col-lg-8">
 				<div class="box box-primary">
 					<div class="box-header with-border">
-						<i class="fa fa-money"></i>
+						<i class="fa fa-bars"></i>
 						<h3 class="box-title">List Barang</h3>
 					</div>
 					<div class="box-body">
@@ -32,12 +32,32 @@
 			<div class="col-lg-4">
 				<div class="box box-primary">
 					<div class="box-header with-border">
-						<i class="fa fa-pencil"></i>
-						<h3 class="box-title">Form <?= $Title ?></h3>
+						<span class="pull-left">
+							<i class="fa fa-pencil"></i>
+							<h3 class="box-title">
+								Form <?= $Title ?>
+							</h3>
+						</span>
+						<span class="pull-right">
+							<a onclick="reload()" class="btn btn-xs btn-primary"><i class="fa fa-refresh"></i></a>
+							<a href="<?= base_url() ?>" class="btn btn-xs btn-danger">Keluar</a>
+						</span>
 					</div>
 					<form action="" method="POST" id="register" role="form">
 						<div class="box-body row">
-							<div class="col-lg-6">
+							<div class="col-lg-4">
+								<div class="form-group">
+									<label for="id_kwitansi">No Kwitansi</label>
+									<?= form_input('id_kwitansi',null,array(
+																			'id' => 'id_kwitansi',
+																			'class' => 'form-control',
+																			//'placeholder' => 'Nama Pasien',
+																			'required' => 'true'
+																		));
+									?>
+								</div>
+							</div>
+							<div class="col-lg-8">
 								<div class="form-group">
 									<label for="nm_pasien">Nama Pasien</label>
 									<?= form_input('nm_pasien',null,array(
@@ -61,7 +81,7 @@
 									?>
 								</div>
 							</div>
-							<div class="col-lg-12">
+							<div class="col-lg-6">
 								<div class="form-group">
 									<label for="alamat_pasien">Alamat</label>
 									<?= form_input('alamat_pasien',null,array(
@@ -73,13 +93,25 @@
 									?>
 								</div>
 							</div>
-							<div class="col-lg-12">
+							<div class="col-lg-4">
+								<div class="form-group">
+									<label for="etiket">Etiket</label>
+									<?= form_input('etiket',null,array(
+																			'id' => 'etiket',
+																			'class' => 'form-control',
+																			//'placeholder' => 'Nama Pasien',
+																			'required' => 'true'
+																		));
+									?>
+								</div>
+							</div>
+							<div class="col-lg-8">
 								<div class="form-group">
 									<label>Nama Barang</label>
 									<select name="barang" id="id_barang" class="form-control"></select>
 								</div>
 							</div>
-							<div class="col-lg-6">
+							<div class="col-lg-4">
 								<div class="form-group">
 									<label for="qty">Qty</label>
 									<?= form_input('qty',null,array(
@@ -91,14 +123,28 @@
 									?>
 								</div>
 							</div>
-							<div class="col-lg-6">
+							<div class="col-lg-4">
+								<div class="form-group">
+									<label for="jasa_dokter">Jasa Dokter</label>
+									<?= form_input('jasa_dokter',null,array(
+																			'id' => 'jasa_dokter',
+																			'class' => 'form-control',
+																			//'placeholder' => 'Nama Pasien',
+																			'required' => 'true',
+																			//'disabled' => 'true'
+																		));
+									?>
+								</div>
+							</div>
+							<div class="col-lg-4">
 								<div class="form-group">
 									<label for="diskon">Diskon (%)</label>
 									<?= form_input('diskon',null,array(
 																			'id' => 'diskon',
 																			'class' => 'form-control',
 																			//'placeholder' => 'Nama Pasien',
-																			'required' => 'true'
+																			'required' => 'true',
+																			'disabled' => 'true'
 																		));
 									?>
 								</div>
@@ -114,7 +160,7 @@
 								<div class="form-group pull-right	">
 									<button type="submit" class="btn btn-success"><i class="fa fa-plus"></i></button>
 									<button type="button" class="btn btn-warning"><i class="fa fa-unlock"></i></button>
-									<button type="button" id="Hapus" class="btn btn-danger"><i class="fa fa-minus"></i></button>
+									<button type="button" id="Hapus" class="btn btn-danger" disabled="true"><i class="fa fa-minus"></i></button>
 								</div>
 							</div>
 							<div class="col-lg-12" style="margin-top: 1.8%;">
@@ -145,9 +191,9 @@
 						<div class="modal-body row">
 							<div class="col-lg-12">
 								<div class="form-group">
-									<label for="bayar">Bayar</label>
-									<?= form_input('bayar',null,array(
-																			'id' => 'bayar',
+									<label for="mon_bayar">Bayar</label>
+									<?= form_input('mon_bayar',null,array(
+																			'id' => 'mon_bayar',
 																			'class' => 'form-control',
 																			//'disabled' => 'true'
 																			//'placeholder' => 'Nama Pasien',
@@ -173,27 +219,31 @@
 		$(document).ready(function(){
 			$.ajax({
 				type: "GET",
-				url: "<?= base_url('penjualan/get_nama_pasien_resep/'.$this->uri->segment(3)) ?>",
+				url: "<?= base_url('resep/get_nama_pasien/'.$this->uri->segment(3)) ?>",
 				success: function(data){
 					var opts = $.parseJSON(data);
+					$('#id_kwitansi').val(opts.id_kwitansi);
 					$('#nm_pasien').val(opts.nm_pasien);
 					$('#nm_dokter').val(opts.nm_dokter);
-					$('#alamat_pasien').val(opts.alamat_pasien);
+					$("#alamat_pasien").val(opts.alamat_pasien);
+					$("#nm_pasien").attr("disabled","true");
+					$("#nm_dokter").attr("disabled","true");
+					$("#alamat_pasien").attr("disabled","true");					
 				}
 			});
 			$.ajax({
 				type: "GET",
-				url: "<?= base_url('penjualan/get_subtotal_resep/'.$this->uri->segment(3)) ?>",
+				url: "<?= base_url('resep/get_subtotal/'.$this->uri->segment(3)) ?>",
 				success: function(data){
 					var opts = $.parseJSON(data);
 					$('#subtotal').text(opts.subtotal);
 				}
 			});
-			$("#nm_pasien").focus();
+			$("#id_kwitansi").focus();
 			var dtTable = $('#dtTable').DataTable({
 				"processing": true,
 				"ajax": {
-					"url": "<?= base_url('penjualan/list_detail_data_resep/'.$this->uri->segment(3)) ?>",
+					"url": "<?= base_url('resep/list_detail_data/'.$this->uri->segment(3)) ?>",
 					"type": "POST"
 				},
 				"autoWidth": false,
@@ -206,24 +256,30 @@
 			});
 			$("#register").submit(function(e) {
 			event.preventDefault();
+				var id_kwitansi = $('#id_kwitansi').val();
 				var nm_pasien = $("#nm_pasien").val();
 				var nm_dokter = $("#nm_dokter").val();
 				var alamat_pasien = $("#alamat_pasien").val();
+				var etiket = $("#etiket").val();
 				var id_barang = $("#id_barang").val();
 				var qty = $("#qty").val();
+				var jasa_dokter = $('#jasa_dokter').val();
 				var diskon = $("#diskon").val();
 				//var kasbon = $("#kasbon").val();
 				Pace.track(function(){
 					jQuery.ajax({
 						type: "POST",
-						url: "<?= base_url('penjualan/tambah_data_resep/'.$this->uri->segment(3)) ?>",
+						url: "<?= base_url('resep/tambah_data/'.$this->uri->segment(3)) ?>",
 						dataType: 'json',
 						data: {
+								id_kwitansi : id_kwitansi,
 								nm_pasien : nm_pasien,
 								nm_dokter : nm_dokter,
 								alamat_pasien : alamat_pasien,
+								etiket : etiket,
 								id_barang : id_barang,
 								qty : qty,
+								jasa_dokter : jasa_dokter,
 								diskon : diskon
 								//kasbon : kasbon
 							},
@@ -236,7 +292,7 @@
 								$("#alamat_pasien").attr("disabled","true");
 								$.ajax({
 									type: "GET",
-									url: "<?= base_url('penjualan/get_subtotal_resep/'.$this->uri->segment(3)) ?>",
+									url: "<?= base_url('resep/get_subtotal/'.$this->uri->segment(3)) ?>",
 									success: function(data){
 										var opts = $.parseJSON(data);
 										$('#subtotal').text(opts.subtotal);
@@ -263,7 +319,7 @@
 				success: function(data){
 					var opts = $.parseJSON(data);
 					$.each(opts, function(i, d) {
-						$('#id_barang').append('<option value="'+d.id_barang+'">'+d.nm_barang+'</option>');
+						$('#id_barang').append('<option value="'+d.id_barang+'">'+d.nm_barang+' sisa '+d.stok_tersedia+'</option>');
 					});
 				}
 			});
@@ -272,7 +328,7 @@
 			var id_barang = $(this).attr("data");
 			jQuery.ajax({
 				type: "POST",
-				url: "<?= base_url('penjualan/get_data_resep/'.$this->uri->segment(3)) ?>",
+				url: "<?= base_url('resep/get_data/'.$this->uri->segment(3)) ?>",
 				dataType: 'json',
 				data: {
 						id_barang : id_barang
@@ -281,6 +337,7 @@
 					$("#id_barang").val(data.id_barang);
 					$("#qty").val(data.qty);
 					$("#diskon").val(data.diskon);
+					$("#etiket").val(data.etiket);
 					$("#Hapus").removeAttr("disabled");
 					$("#nm_pasien").attr("disabled","true");
 				}
@@ -290,7 +347,7 @@
 			var id_barang = $("#id_barang").val();
 			jQuery.ajax({
 				type: "POST",
-				url: "<?= base_url('penjualan/hapus_data_resep/'.$this->uri->segment(3)) ?>",
+				url: "<?= base_url('resep/hapus_data/'.$this->uri->segment(3)) ?>",
 				dataType: 'json',
 				data: {
 						id_barang : id_barang
@@ -306,34 +363,58 @@
 			});
 		});
 		$(document).on('click','#pay',function() {
+			var id_kwitansi = $('#id_kwitansi').val();
 			var nm_pasien = $("#nm_pasien").val();
-			var nm_dokter = $("#nm_dokter").val();
-			var alamat_pasien = $("#alamat_pasien").val();
-			var bayar = $("#bayar").val();
+			var bayar = $("#mon_bayar").val();
+			var jasa_dokter = $('#jasa_dokter').val();
 			var check = $('#kasbon').is(':checked');
 			if(check) {
-				var kasbon = $("#kasbon").val();
-			} else {
 				var kasbon = 0;
+			} else {
+				var kasbon = 1;
 			}
 			Pace.track(function(){
 				jQuery.ajax({
 					type: "POST",
-					url: "<?= base_url('penjualan/simpan_semua_resep/'.$this->uri->segment(3)) ?>",
+					url: "<?= base_url('resep/simpan_semua/'.$this->uri->segment(3)) ?>",
 					dataType: 'json',
 					data: {
+							id_kwitansi : id_kwitansi,
 							nm_pasien : nm_pasien,
-							nm_dokter : nm_dokter,
-							alamat_pasien : alamat_pasien,
 							bayar : bayar,
+							jasa_dokter : jasa_dokter,
 							kasbon : kasbon
 						},
 					success: function(data) {
-						alert(data.kembalian)
+						alert(data.kembalian);
+						location.reload();
 					}
 				});
 			});
 		});
+		function reload() {
+			$("#dtTable").DataTable().ajax.reload();
+			$("#Hapus").attr("disabled","true");
+			$("#id_pbf").attr("disabled","true");
+			//$("#tanggal_jatuh_tempo").attr("readonly","true");
+			//$("#diskon").attr("readonly","true");
+			$("#id_barang").focus();
+			$("#id_barang").find('option').remove().end();
+			$.ajax({
+				type: "GET",
+				url: "<?= base_url('barang/get_option') ?>",
+				success: function(data){
+					var opts = $.parseJSON(data);
+					$.each(opts, function(i, d) {
+						$('#id_barang').append('<option value="'+d.id_barang+'">'+d.nm_barang+' sisa '+d.stok_tersedia+'</option>');
+					});
+				}
+			});
+			$("#etiket").val("");
+			$("#qty").val("");
+			$("#diskon").val("");
+			$(document).ajaxStart(function() { Pace.restart(); });
+		}
 		$("#id_barang").select2();
 		//$('#tgl_lahir_pasien').inputmask('yyyy-mm-dd', { 'placeholder': 'yyyy-mm-dd' })
 		//$('#tanggal_kunjungan_pasien').inputmask('yyyy-mm-dd', { 'placeholder': 'yyyy-mm-dd' })

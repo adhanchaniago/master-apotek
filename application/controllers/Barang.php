@@ -4,6 +4,7 @@ class Barang extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->model('MBarang');
+		$this->load->model('MLaporan');
 		$isLogin = $this->session->userdata('isLogin');
 		if(!$isLogin) {
 			redirect('portal','refresh');
@@ -53,7 +54,7 @@ class Barang extends CI_Controller {
 						'id_kemasan' => $res->id_kemasan,
 						'id_satuan' => $res->id_satuan,
 						'isi_satuan' => $res->isi_satuan,
-						'margin' => $res->margin,
+						'margin' => explode(",",$res->margin),
 						'harga_dasar' => $res->harga_dasar,
 						'id_pabrik' => $res->id_pabrik,
 						'stok_maksimum' => $res->stok_maksimum,
@@ -83,6 +84,31 @@ class Barang extends CI_Controller {
 						'status' => $res
 					);
 		echo json_encode($data);
+	}
+
+	public function data_barang_expired(){
+		$list = $this->MLaporan->get_data_barang_expired();
+		$datatb = array();
+		foreach ($list as $data) {
+			$start_date = date('Y-m-d');
+			$s = $data->kadaluarsa;
+			$selisih = strtotime($s) - strtotime($start_date);
+			$hari = $selisih/(60*60*24);
+                //60 detik * 60 menit * 24 jam = 1 hari
+			$row = array();
+			$row[] = $data->nm_barang;
+			$row[] = $data->batch;
+			$row[] = $data->kadaluarsa;
+			$row[] = $hari." Hari";
+
+			$datatb[] = $row;
+		}
+
+		$output = array(
+						"draw" => $this->input->post('draw'),
+						"data" => $datatb
+					);
+		echo json_encode($output);
 	}
 
 }

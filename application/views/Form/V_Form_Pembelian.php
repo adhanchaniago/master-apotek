@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
-<?php if($Level=="Master" OR $Level=="Pemilik") : ?>
+<?php if($Level=="Master" OR $Level=="Pemilik" OR $Level="Apoteker") : ?>
 	<section class="content-header">
 		<h1><?= $Title ?></h1>
 		<ol class="breadcrumb">
@@ -51,7 +51,7 @@
 						<div class="box-body row">
 							<div class="col-lg-12">
 								<div class="form-group">
-									<label>PBF</label>
+									<label>Supplier</label>
 									<select name="id_pbf" id="id_pbf" class="form-control"></select>
 								</div>
 							</div>
@@ -147,6 +147,8 @@
 								<div class="form-group pull-right">
 									<button type="submit" id="submit" class="btn btn-xs btn-success"><i class="fa fa-plus"></i></button>
 									<button type="button" id="Hapus" class="btn btn-xs btn-danger" disabled="true"><i class="fa fa-minus"></i></button>
+									<button type="button" id="Unlock" class="btn btn-xs btn-warning" data-toggle="modal" data-target="#C_Unlock"><i class="fa fa-unlock"></i></button>
+									<button type="button" id="Lock" class="btn btn-xs btn-primary" disabled="true"><i class="fa fa-lock"></i></button>
 								</div>
 							</div>
 						</div>
@@ -162,6 +164,35 @@
 				</div>
 			</div>
 		</div>
+		<div id="C_Unlock" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content modal-sm">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Masukan master password</h4>
+					</div>
+					<form action="" method="POST" id="verif" role="form">
+						<div class="modal-body">
+							<div class="form-group">
+								<label for="verif_pass_user">Password</label>
+								<?= form_password('verif_pass_user',null,array(
+																				'id' => 'verif_pass_user',
+																				'class' => 'form-control',
+																				//'placeholder' => 'Password',
+																				'required' => 'true',
+																				'autocomplete' => 'new-password'
+																			));
+								?>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-primary">Submit</button>
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
 	</section>
 	<script src="<?= base_url('assets/jquery/jquery.inputmask.js') ?>"></script>
 	<script src="<?= base_url('assets/jquery/jquery.inputmask.date.extensions.js') ?>"></script>
@@ -169,23 +200,35 @@
 	<script>
 		$(document).ready(function(){
 			var kode = "<?= $this->uri->segment(3) ?>";
+			$.ajax({
+				type: "GET",
+				url: "<?= base_url('pbf/get_option') ?>",
+				success: function(data){
+					var opts = $.parseJSON(data);
+					$.each(opts, function(i, d) {
+						$('#id_pbf').append('<option value="'+d.id_pbf+'">'+d.nm_pbf+'</option>');
+					});
+				}
+			});
 			if(kode!="") {
+				$("#tanggal_jatuh_tempo").focus();
 				$("#id_pbf").attr("disabled","true");
-				$("#tanggal_jatuh_tempo").attr("disabled","true");
-				$("#diskon").attr("disabled","true");
+				//$("#tanggal_jatuh_tempo").attr("disabled","true");
+				//$("#diskon").attr("disabled","true");
 				$("#id_barang").attr("disabled","true");
-				$("#qty").attr("disabled","true");
-				$("#batch").attr("disabled","true");
-				$("#kadaluarsa").attr("disabled","true");
-				$("#subtotal").attr("disabled","true");
-				$("#konsinyasi").attr("disabled","true");
-				$("#submit").attr("disabled","true");
-				$("#Simpan").attr("disabled","true");
+				//$("#qty").attr("disabled","true");
+				//$("#batch").attr("disabled","true");
+				//$("#kadaluarsa").attr("disabled","true");
+				//$("#subtotal").attr("disabled","true");
+				//$("#konsinyasi").attr("disabled","true");
+				//$("#submit").attr("disabled","true");
+				//$("#Simpan").attr("disabled","true");
 				$.ajax({
-					type: "POST",
+					type: "GET",
 					url: "<?= base_url('pembelian/get_detail/'.$this->uri->segment(3)) ?>",
 					success: function(data){
 						var val = $.parseJSON(data);
+						$("#id_pbf").val(val.id_pbf).change();
 						$("#tanggal_jatuh_tempo").val(val.tanggal_jatuh_tempo);
 						$("#diskon").val(val.diskon);
 					}
@@ -261,16 +304,6 @@
 					});
 				}
 			});
-			$.ajax({
-				type: "GET",
-				url: "<?= base_url('pbf/get_option') ?>",
-				success: function(data){
-					var opts = $.parseJSON(data);
-					$.each(opts, function(i, d) {
-						$('#id_pbf').append('<option value="'+d.id_pbf+'">'+d.nm_pbf+'</option>');
-					});
-				}
-			});
 		});
 		$(document).on('click','#getdata',function() {
 			var id_barang = $(this).attr("data");
@@ -282,6 +315,7 @@
 						id_barang : id_barang
 					},
 				success: function(data) {
+					$("#tanggal_jatuh_tempo").focus();
 					$("#id_barang").val(data.id_barang).change();
 					$("#qty").val(data.qty);
 					$("#batch").val(data.batch);
@@ -377,7 +411,56 @@
 			$("#subtotal").val("");
 			$(document).ajaxStart(function() { Pace.restart(); });
 		}
+		$("#verif").submit(function(e) {
+		event.preventDefault();
+			var verif_pass_user = $("#verif_pass_user").val();
+			Pace.track(function(){
+				jQuery.ajax({
+					type: "POST",
+					url: "<?= base_url('user/unlock/') ?>",
+					dataType: 'json',
+					data: {verif_pass_user:verif_pass_user},
+					success: function(data) {
+						if(data.status) {
+							$("#id_pbf").removeAttr("disabled");
+							$("#tanggal_jatuh_tempo").removeAttr("disabled");
+							$("#diskon").removeAttr("disabled");
+							$("#id_barang").removeAttr("disabled");
+							$("#qty").removeAttr("disabled");
+							$("#batch").removeAttr("disabled");
+							$("#kadaluarsa").removeAttr("disabled");
+							$("#subtotal").removeAttr("disabled");
+							$("#konsinyasi").removeAttr("disabled");
+							$("#submit").removeAttr("disabled");
+							$("#Simpan").removeAttr("disabled");
+							$("#Lock").removeAttr("disabled");
+							$("#Unlock").attr("disabled","true");
+							$('#C_Unlock').modal('hide');
+							$(document).ajaxStart(function() { Pace.restart(); });
+						} else {
+							alert('Peringatan! password lama anda tidak sesuai!');
+						}
+					}
+				});
+			});
+		})
+		$(document).on('click','#Lock',function() {
+			$("#id_pbf").attr("disabled","true");
+			$("#tanggal_jatuh_tempo").attr("disabled","true");
+			$("#diskon").attr("disabled","true");
+			$("#id_barang").attr("disabled","true");
+			$("#qty").attr("disabled","true");
+			$("#batch").attr("disabled","true");
+			$("#kadaluarsa").attr("disabled","true");
+			$("#subtotal").attr("disabled","true");
+			$("#konsinyasi").attr("disabled","true");
+			$("#submit").attr("disabled","true");
+			$("#Simpan").attr("disabled","true");
+			$("#Unlock").removeAttr("disabled");
+			$("#Lock").attr("disabled","true");
+		});
 		$("#id_barang").select2();
+		$("#id_pbf").select2();
 		$('#tanggal_jatuh_tempo').inputmask('yyyy-mm-dd', { 'placeholder': 'yyyy-mm-dd' })
 		$('#kadaluarsa').inputmask('yyyy-mm-dd', { 'placeholder': 'yyyy-mm-dd' })
 	</script>

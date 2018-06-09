@@ -55,21 +55,66 @@ class Transaksi extends CI_Controller {
 		$this->load->view('Master',$data);
 	}
 
-	public function retur_obat() {
-		$data['Title'] = "Retur Obat";
+	public function retur_penjualan_bebas() {
+		$data['Title'] = "Retur Penjualan Bebas";
 		$data['Nav'] = "Transaksi";
 		$data['Nama'] = $this->session->userdata('nama');
 		$data['Level'] = $this->session->userdata('level');
-		$data['Konten'] = 'Transaksi/V_Retur_Obat';
+		$data['Konten'] = 'Transaksi/V_Retur_Penjualan_Bebas';
 		$this->load->view('Master',$data);
 	}
 
-	public function penyesuaian_stok() {
+	public function retur_penjualan_resep() {
+		$data['Title'] = "Retur Penjualan Resep";
+		$data['Nav'] = "Transaksi";
+		$data['Nama'] = $this->session->userdata('nama');
+		$data['Level'] = $this->session->userdata('level');
+		$data['Konten'] = 'Transaksi/V_Retur_Penjualan_Resep';
+		$this->load->view('Master',$data);
+	}
+
+	public function retur_pembelian() {
+		$data['Title'] = "Retur Pembelian";
+		$data['Nav'] = "Transaksi";
+		$data['Nama'] = $this->session->userdata('nama');
+		$data['Level'] = $this->session->userdata('level');
+		$data['Konten'] = 'Transaksi/V_Retur_Pembelian';
+		$this->load->view('Master',$data);
+	}
+
+	public function penyesuaian() {
 		$data['Title'] = "Penyesuaian Stok";
 		$data['Nav'] = "Transaksi";
 		$data['Nama'] = $this->session->userdata('nama');
 		$data['Level'] = $this->session->userdata('level');
 		$data['Konten'] = 'Transaksi/V_Penyesuaian_Stok';
+		$this->load->view('Master',$data);
+	}
+
+	public function pelunasan_hutang() {
+		$data['Title'] = "Pelunasan Hutang";
+		$data['Nav'] = "Transaksi";
+		$data['Nama'] = $this->session->userdata('nama');
+		$data['Level'] = $this->session->userdata('level');
+		$data['Konten'] = 'Transaksi/V_Pelunasan_Hutang';
+		$this->load->view('Master',$data);
+	}
+
+	public function pelunasan_piutang_bebas() {
+		$data['Title'] = "Pelunasan Piutang Penjualan Bebas";
+		$data['Nav'] = "Transaksi";
+		$data['Nama'] = $this->session->userdata('nama');
+		$data['Level'] = $this->session->userdata('level');
+		$data['Konten'] = 'Transaksi/V_Pelunasan_Piutang_Bebas';
+		$this->load->view('Master',$data);
+	}
+
+	public function pelunasan_piutang_resep() {
+		$data['Title'] = "Pelunasan Piutang Penjualan Resep";
+		$data['Nav'] = "Transaksi";
+		$data['Nama'] = $this->session->userdata('nama');
+		$data['Level'] = $this->session->userdata('level');
+		$data['Konten'] = 'Transaksi/V_Pelunasan_Piutang_Resep';
 		$this->load->view('Master',$data);
 	}
 

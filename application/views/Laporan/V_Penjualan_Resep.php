@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
-<?php if($Level=="Master" OR $Level=="Pemilik") : ?>
+<?php if($Level=="Master" OR $Level=="Pemilik" OR $Level="Apoteker") : ?>
 	<div class="container">
 		<section class="content-header">
 			<h1><?= $Title ?></h1>
@@ -22,9 +22,10 @@
 								<thead>
 									<th>No.</th>
 									<th>Kode</th>
-									<th>Kasir/Apoteker</th>
-									<th>Nama Pasien</th>
-									<th>Tanggal Penjualan</th>
+									<th>Kasir</th>
+									<th>Pasien</th>
+									<th>Dokter</th>
+									<th>Tanggal</th>
 									<th>Grandtotal</th>
 								</thead>
 								<tbody></tbody>
@@ -39,10 +40,10 @@
 		$(document).ready(function(){
 			var dtTable = $('#dtTable').DataTable({
 				"processing": true,
-				"ajax": {
-					"url": "<?= base_url('penjualan/list_all_data') ?>",
-					"type": "POST"
-				},
+				// "ajax": {
+				// 	"url": "<?= base_url('penjualan/list_all_data') ?>",
+				// 	"type": "POST"
+				// },
 				"autoWidth": false,
 				"info": true,
 				"ordering": true,

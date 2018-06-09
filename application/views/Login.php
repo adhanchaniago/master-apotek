@@ -60,7 +60,7 @@
 				<br />
 				<p class="login-box-msg">
 					&copy; 2017 - <?= date('Y') ?><br />
-					Developed with <i style="color:red" class="fa fa-heart"></i> by <br /><a href="https://akasakapratama.web.id/">PT. Fath Technology Solutions</a>
+					Developed with <i style="color:red" class="fa fa-heart"></i> by <a href="https://akasakapratama.web.id/">Gilang Pratama</a>
 				</p>
 			</div>
 		</div>

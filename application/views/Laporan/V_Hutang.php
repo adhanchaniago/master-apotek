@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
-<?php if($Level=="Master" OR $Level=="Pemilik") : ?>
+<?php if($Level=="Master" OR $Level=="Pemilik" OR $Level="Apoteker") : ?>
 	<section class="content-header">
 		<h1><?= $Title ?></h1>
 		<ol class="breadcrumb">

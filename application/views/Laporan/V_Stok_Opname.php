@@ -1,92 +1,39 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
-<?php if($Level=="Master" OR $Level=="Pemilik") : ?>
-	<section class="content-header">
-		<h1><?= $Title ?></h1>
-		<ol class="breadcrumb">
-			<li><a href="<?= base_url('dashboard') ?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-			<li> <?= $Nav ?></li>
-			<li class="active"> <?= $Title ?></li>
-		</ol>
-	</section>
-	<section class="content">
-		<div class="row">
-			<div class="col-lg-8">
-				<div class="box box-primary">
-					<div class="box-header with-border">
-						<i class="fa fa-wheelchair"></i>
-						<h3 class="box-title">List <?= $Title ?></h3>
-					</div>
-					<div class="box-body">
-						<table id="dtTable" class="table table-striped table-bordered">
-							<thead>
-								<th>No.</th>
-								<th>Nama Barang</th>
-								<th>Sisa</th>
-								<th>Fisik</th>
-								<th>Penyesuaian</th>
-							</thead>
-							<tbody></tbody>
-						</table>
+<?php if($Level=="Master" OR $Level=="Pemilik" OR $Level="Apoteker") : ?>
+	<div class="container" style="width: 80%">
+		<section class="content-header">
+			<h1><?= $Title ?></h1>
+			<ol class="breadcrumb">
+				<li><a href="<?= base_url('dashboard') ?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+				<li> <?= $Nav ?></li>
+				<li class="active"> <?= $Title ?></li>
+			</ol>
+		</section>
+		<section class="content">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="box box-primary">
+						<div class="box-header with-border">
+							<i class="fa fa-wheelchair"></i>
+							<h3 class="box-title">List <?= $Title ?></h3>
+						</div>
+						<div class="box-body">
+							<table id="dtTable" class="table table-striped table-bordered">
+								<thead>
+									<th>No.</th>
+									<th>Nama Barang</th>
+									<th>Sisa</th>
+									<th>Fisik</th>
+									<th>Penyesuaian</th>
+								</thead>
+								<tbody></tbody>
+							</table>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-4">
-				<div class="box box-primary">
-					<div class="box-header with-border">
-						<i class="fa fa-pencil"></i>
-						<h3 class="box-title">Form Fisik <?= $Title ?></h3>
-					</div>
-					<form action="" method="POST" id="register" role="form">
-						<div class="box-body row">
-							<div class="col-lg-6">
-								<div class="form-group">
-									<label for="id_barang">Kode Barang</label>
-									<?= form_input('id_barang',null,array(
-																			'id' => 'id_barang',
-																			'class' => 'form-control',
-																			//'placeholder' => 'Tanggal Lahir',
-																			//'required' => 'true'
-																			//"data-inputmask" => "'alias': 'yyyy-mm-dd",
-																			//"data-mask" => "true",
-																			'disabled' => 'true'
-																		));
-									?>
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div class="form-group">
-									<label for="nm_barang">Nama Barang</label>
-									<?= form_input('nm_barang',null,array(
-																			'id' => 'nm_barang',
-																			'class' => 'form-control',
-																			//'placeholder' => 'Tanggal Kunjungan',
-																			//'required' => 'true',
-																			'disabled' => 'true'
-																		));
-									?>
-								</div>
-							</div>
-							<div class="col-lg-12">
-								<div class="form-group">
-									<label for="stok_fisik">Stok Fisik</label>
-									<?= form_input('stok_fisik',null,array(
-																			'id' => 'stok_fisik',
-																			'class' => 'form-control',
-																			//'placeholder' => 'Tanggal Kunjungan',
-																			//'required' => 'true',
-																			'disabled' => 'true'
-																		));
-									?>
-								</div>
-							</div>
-						</div>
-						<div class="box-footer">
-							<button type="submit" id="Sesuaikan" class="btn btn-block btn-primary" disabled="true">Sesuaikan</button>
-						</div>
-					</form>
-			</div>
-		</div>
-	</section>
+		</section>
+	</div>
 	<script src="<?= base_url('assets/jquery/jquery.inputmask.js') ?>"></script>
 	<script src="<?= base_url('assets/jquery/jquery.inputmask.date.extensions.js') ?>"></script>
 	<script src="<?= base_url('assets/jquery/jquery.inputmask.extensions.js') ?>"></script>

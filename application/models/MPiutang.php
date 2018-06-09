@@ -7,6 +7,7 @@ class MPiutang extends CI_Model{
 
 	public function GetAll(){
 		$res = $this->db->where($this->data_penjualan.'.deleted',FALSE)
+						->where("status",FALSE)
 						->get($this->data_penjualan);
 		return $res->result();
 	}

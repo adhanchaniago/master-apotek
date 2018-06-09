@@ -11,7 +11,7 @@
 			<div class="col-lg-8">
 				<div class="box box-primary">
 					<div class="box-header with-border">
-						<i class="fa fa-wheelchair"></i>
+						<i class="fa fa-bars"></i>
 						<h3 class="box-title">List <?= $Title ?></h3>
 					</div>
 					<div class="box-body">
@@ -30,8 +30,16 @@
 			<div class="col-lg-4">
 				<div class="box box-primary">
 					<div class="box-header with-border">
-						<i class="fa fa-pencil"></i>
-						<h3 class="box-title">Form <?= $Title ?></h3>
+						<span class="pull-left">
+							<i class="fa fa-pencil"></i>
+							<h3 class="box-title">
+								Form <?= $Title ?>
+							</h3>
+						</span>
+						<span class="pull-right">
+							<a onclick="reload()" class="btn btn-xs btn-primary"><i class="fa fa-refresh"></i></a>
+							<a href="<?= base_url() ?>" class="btn btn-xs btn-danger"><i class="fa fa-times"></i></a>
+						</span>
 					</div>
 					<form action="" method="POST" id="register" role="form">
 						<div class="box-body row">
@@ -62,9 +70,9 @@
 							</div>
 							<div class="col-lg-12">
 								<div class="form-group">
-									<label for="presentase_margin">Presentase Margin (%)</label>
-									<?= form_input('presentase_margin',null,array(
-																			'id' => 'presentase_margin',
+									<label for="persentase_margin">Presentase Margin (%)</label>
+									<?= form_input('persentase_margin',null,array(
+																			'id' => 'persentase_margin',
 																			'class' => 'form-control',
 																			//'placeholder' => 'Nama Pasien',
 																			'required' => 'true'
@@ -93,10 +101,10 @@
 		$(document).ready(function(){
 			var dtTable = $('#dtTable').DataTable({
 				"processing": true,
-				/*"ajax": {
+				"ajax": {
 					"url": "<?= base_url('margin/list_all_data') ?>",
 					"type": "POST"
-				},*/
+				},
 				"autoWidth": false,
 				"info": true,
 				"ordering": true,
@@ -109,7 +117,7 @@
 			event.preventDefault();
 				var id_margin = $("#id_margin").val();
 				var nm_margin = $("#nm_margin").val();
-				var presentase_margin = $("#presentase_margin").val();
+				var persentase_margin = $("#persentase_margin").val();
 				Pace.track(function(){
 					jQuery.ajax({
 						type: "POST",
@@ -118,7 +126,7 @@
 						data: {
 								id_margin : id_margin,
 								nm_margin : nm_margin,
-								presentase_margin : presentase_margin
+								persentase_margin : persentase_margin
 							},
 						success: function(data) {
 							$("#dtTable").DataTable().ajax.reload();
@@ -144,8 +152,9 @@
 				success: function(data) {
 					$("#id_margin").val(data.id_margin);
 					$("#nm_margin").val(data.nm_margin);
+					$("#persentase_margin").val(data.persentase_margin);
 					$("#Hapus").removeAttr("disabled");
-					$("#id_margin").removeAttr("disabled");
+					//$("#id_margin").removeAttr("disabled");
 				}
 			});
 		});
@@ -168,6 +177,12 @@
 				}
 			});
 		});
+		function reload() {
+			$("#Hapus").attr("disabled","true");
+			$("#id_margin").attr("disabled","true");
+			$("#register")[0].reset();
+			$("#nm_margin").focus();
+		}
 		//$('#tgl_lahir_pasien').inputmask('yyyy-mm-dd', { 'placeholder': 'yyyy-mm-dd' })
 	    //$('#tanggal_kunjungan_pasien').inputmask('yyyy-mm-dd', { 'placeholder': 'yyyy-mm-dd' })
 	</script>

@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
-<?php if($Level=="Master" OR $Level=="Pemilik") : ?>
+<?php if($Level=="Master" OR $Level=="Pemilik" OR $Level="Apoteker") : ?>
 	<section class="content-header">
 		<h1><?= $Title ?></h1>
 		<ol class="breadcrumb">
@@ -11,16 +11,8 @@
 			<div class="col-lg-8">
 				<div class="box box-primary">
 					<div class="box-header with-border">
-						<span class="pull-left">
-							<i class="fa fa-wheelchair"></i>
-							<h3 class="box-title">
-								List <?= $Title ?>
-							</h3>
-						</span>
-						<span class="pull-right">
-							<a href="<?= base_url('master/barang') ?>" class="btn btn-xs btn-primary"><i class="fa fa-refresh"></i></a>
-							<a href="<?= base_url() ?>" class="btn btn-xs btn-danger"><i class="fa fa-times"></i></a>
-						</span>
+						<i class="fa fa-bars"></i>
+						<h3 class="box-title">List <?= $Title ?></h3>
 					</div>
 					<div class="box-body">
 						<table id="dtTable" class="table table-striped table-bordered">
@@ -49,6 +41,7 @@
 						</span>
 						<span class="pull-right">
 							<a onclick="reload()" class="btn btn-xs btn-primary"><i class="fa fa-refresh"></i></a>
+							<a href="<?= base_url() ?>" class="btn btn-xs btn-danger"><i class="fa fa-times"></i></a>
 						</span>
 					</div>
 					<form action="" method="POST" id="register" role="form">
@@ -81,9 +74,7 @@
 							<div class="col-lg-12">
 								<div class="form-group">
 									<label for="id_jenis">Jenis</label>
-									<select name="id_jenis" id="id_jenis" class="form-control">
-										<option value="JEN00000">== Pilih Jenis Obat ==</option>
-									</select>
+									<select name="id_jenis" id="id_jenis" class="form-control"></select>
 								</div>
 							</div>
 							<div class="col-lg-6">
@@ -98,17 +89,13 @@
 							<div class="col-lg-6">
 								<div class="form-group">
 									<label for="id_kemasan">Kemasan</label>
-									<select name="id_kemasan" id="id_kemasan" class="form-control">
-										<option value="KEM00000">== Pilih Kemasan Obat ==</option>
-									</select>
+									<select name="id_kemasan" id="id_kemasan" class="form-control"></select>
 								</div>
 							</div>
 							<div class="col-lg-6">
 								<div class="form-group">
 									<label for="id_satuan">Satuan</label>
-									<select name="id_satuan" id="id_satuan" class="form-control">
-										<option value="SAT0000">== Pilih Satuan Obat ==</option>
-									</select>
+									<select name="id_satuan" id="id_satuan" class="form-control"></select>
 								</div>
 							</div>
 							<div class="col-lg-6">
@@ -123,13 +110,21 @@
 									?>
 								</div>
 							</div>
-							<div class="col-lg-6">
-								<div class="form-group">
-									<label for="id_margin">Margin</label>
-									<select id="id_margin" class="form-control" multiple="multiple" data-placeholder="== Pilih Margin ==" style="width: 100%;"></select>
+							<?php if($Level=="Master" OR $Level=="Pemilik") : ?>
+								<div class="col-lg-6">
+									<div class="form-group">
+										<label for="id_margin">Margin (%)</label>
+										<?= form_input('id_margin',null,array(
+																				'id' => 'id_margin',
+																				'class' => 'form-control',
+																				//'placeholder' => 'Nama Pasien',
+																				'required' => 'true'
+																			));
+										?>
+									</div>
 								</div>
-							</div>
-							<div class="col-lg-6">
+							<?php endif; ?>
+							<div class="<?php if($Level=='Master' OR $Level=='Pemilik') : echo 'col-lg-6'; else : echo 'col-lg-12'; endif; ?>">
 								<div class="form-group">
 									<label for="harga_dasar">Harga Dasar (+PPN)</label>
 									<?= form_input('harga_dasar',null,array(
@@ -144,9 +139,7 @@
 							<div class="col-lg-12">
 								<div class="form-group">
 									<label for="id_pabrik">Pabrik</label>
-									<select name="id_pabrik" id="id_pabrik" class="form-control">
-										<option value="PAB00000">== Pilih Pabrik ==</option>
-									</select>
+									<select name="id_pabrik" id="id_pabrik" class="form-control"></select>
 								</div>
 							</div>
 							<div class="col-lg-6">
@@ -216,7 +209,7 @@
 				"info": true,
 				"ordering": true,
 				"paging": true,
-				"pageLength": 5,
+				//"pageLength": 5,
 				"lengthChange": true,
 				"searching": true
 			});
@@ -229,7 +222,7 @@
 				var id_kemasan = $("#id_kemasan").val();
 				var id_satuan = $("#id_satuan").val();
 				var isi_satuan = $("#isi_satuan").val();
-				var margin = $("#margin").val();
+				var margin = $("#id_margin").val();
 				var harga_dasar = $("#harga_dasar").val();
 				var id_pabrik = $("#id_pabrik").val();
 				var stok_maksimum = $("#stok_maksimum").val();
@@ -308,16 +301,16 @@
 					});
 				}
 			});
-			/*$.ajax({
+			$.ajax({
 				type: "GET",
 				url: "<?= base_url('margin/get_option') ?>",
 				success: function(data){
 					var opts = $.parseJSON(data);
 					$.each(opts, function(i, d) {
-						$('#id_margin').append('<option value="'+d.id_margin+'">'+d.nm_margin+'</option>');
+						$('#id_margin').append('<option value="'+d.persentase_margin+'">'+d.nm_margin+'</option>');
 					});
 				}
-			});*/
+			});
 		});
 		function reload() {
 			$("#Hapus").attr("disabled","true");
@@ -342,7 +335,7 @@
 					$("#id_kemasan").val(data.id_kemasan).change();
 					$("#id_satuan").val(data.id_satuan).change();
 					$("#isi_satuan").val(data.isi_satuan);
-					$("#margin").val(data.margin).change();
+					$("#id_margin").val(data.margin).change();
 					$("#harga_dasar").val(data.harga_dasar);
 					$("#id_pabrik").val(data.id_pabrik).change();
 					$("#stok_maksimum").val(data.stok_maksimum);
@@ -354,7 +347,7 @@
 						$('#formularium').prop('checked', true);
 					}
 					$("#Hapus").removeAttr("disabled");
-					$("#id_barang").removeAttr("disabled");
+					//$("#id_barang").removeAttr("disabled");
 				}
 			});
 		});
@@ -381,7 +374,7 @@
 		$("#id_golongan").select2();
 		$("#id_kemasan").select2();
 		$("#id_satuan").select2();
-		$("#id_margin").select2();
+		// $("#id_margin").select2();
 		$("#id_pabrik").select2();
 		//$('#tgl_lahir_pasien').inputmask('yyyy-mm-dd', { 'placeholder': 'yyyy-mm-dd' })
 		//$('#tanggal_kunjungan_pasien').inputmask('yyyy-mm-dd', { 'placeholder': 'yyyy-mm-dd' })

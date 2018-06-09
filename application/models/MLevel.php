@@ -5,6 +5,7 @@ class MLevel extends CI_Model {
 
 	public function GetAll() {
 		$res = $this->db->where('deleted',FALSE)
+						->where('id_level!=',1)
 						->get($this->data_level);
 		return $res->result();
 	}

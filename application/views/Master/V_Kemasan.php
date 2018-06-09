@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
-<?php if($Level=="Master" OR $Level=="Pemilik") : ?>
+<?php if($Level=="Master" OR $Level=="Pemilik" OR $Level="Apoteker") : ?>
 	<section class="content-header">
 		<h1><?= $Title ?></h1>
 		<ol class="breadcrumb">
@@ -11,7 +11,7 @@
 			<div class="col-lg-8">
 				<div class="box box-primary">
 					<div class="box-header with-border">
-						<i class="fa fa-wheelchair"></i>
+						<i class="fa fa-bars"></i>
 						<h3 class="box-title">List <?= $Title ?></h3>
 					</div>
 					<div class="box-body">
@@ -29,8 +29,16 @@
 			<div class="col-lg-4">
 				<div class="box box-primary">
 					<div class="box-header with-border">
-						<i class="fa fa-pencil"></i>
-						<h3 class="box-title">Form <?= $Title ?></h3>
+						<span class="pull-left">
+							<i class="fa fa-pencil"></i>
+							<h3 class="box-title">
+								Form <?= $Title ?>
+							</h3>
+						</span>
+						<span class="pull-right">
+							<a onclick="reload()" class="btn btn-xs btn-primary"><i class="fa fa-refresh"></i></a>
+							<a href="<?= base_url() ?>" class="btn btn-xs btn-danger"><i class="fa fa-times"></i></a>
+						</span>
 					</div>
 					<form action="" method="POST" id="register" role="form">
 						<div class="box-body row">
@@ -130,7 +138,7 @@
 					$("#id_kemasan").val(data.id_kemasan);
 					$("#nm_kemasan").val(data.nm_kemasan);
 					$("#Hapus").removeAttr("disabled");
-					$("#id_kemasan").removeAttr("disabled");
+					//$("#id_kemasan").removeAttr("disabled");
 				}
 			});
 		});
@@ -153,6 +161,12 @@
 				}
 			});
 		});
+		function reload() {
+			$("#Hapus").attr("disabled","true");
+			$("#id_kemasan").attr("disabled","true");
+			$("#register")[0].reset();
+			$("#nm_kemasan").focus();
+		}
 		//$('#tgl_lahir_pasien').inputmask('yyyy-mm-dd', { 'placeholder': 'yyyy-mm-dd' })
 	    //$('#tanggal_kunjungan_pasien').inputmask('yyyy-mm-dd', { 'placeholder': 'yyyy-mm-dd' })
 	</script>

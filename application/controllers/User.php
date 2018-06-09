@@ -11,19 +11,24 @@ class User extends CI_Controller {
 		}
 	}
 
+	public function index() {
+		$data['Title'] = "Data User";
+		$data['Nav'] = "User";
+		$data['Nama'] = $this->session->userdata('nama');
+		$data['Level'] = $this->session->userdata('level');
+		$data['ListLv'] = $this->MLevel->GetAll();
+		$data['Konten'] = "Administrator/User/V_User";
+		$this->load->view('Master',$data);
+	}
+
 	public function list_data_user() {
-		if($this->session->userdata('level')=="Master" OR $this->session->userdata('level')=="Web Administrator") :
-			$list = $this->MUser->GetAll();
-		else :
-			$list = $this->MUser->GetUser($this->session->userdata('kode'));
-		endif;
+		$list = $this->MUser->GetAll();
 		$datatb = array();
 		$nomor = 1;
 		foreach ($list as $data) {
 			$row = array();
 			$row[] = $nomor++;
 			$row[] = '<a id="getdata" user="'.$data->id_user.'" style="cursor:pointer">'.$data->nm_user.'</a>';
-			$row[] = $data->login_user;
 			$row[] = $data->nm_level;
 			$row[] = $data->created_date;
 			$row[] = $data->login_terakhir;
@@ -76,6 +81,14 @@ class User extends CI_Controller {
 
 	public function verif_user() {
 		$res = $this->MUser->verif_user();
+		$data = array(
+						'status' => $res
+					);
+		echo json_encode($data);
+	}
+
+	public function unlock() {
+		$res = $this->MUser->unlock();
 		$data = array(
 						'status' => $res
 					);

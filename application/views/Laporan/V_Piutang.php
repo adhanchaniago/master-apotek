@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
-<?php if($Level=="Master" OR $Level=="Pemilik") : ?>
+<?php if($Level=="Master" OR $Level=="Pemilik" OR $Level="Kasir") : ?>
 	<section class="content-header">
 		<h1><?= $Title ?></h1>
 		<ol class="breadcrumb">
@@ -21,7 +21,7 @@
 							<thead>
 								<th>No.</th>
 								<th>Tanggal</th>
-								<th>Nomor TR</th>
+								<th>Kode</th>
 								<th>Nama Pasien</th>
 								<th>Pelunasan</th>
 								<th>Total</th>

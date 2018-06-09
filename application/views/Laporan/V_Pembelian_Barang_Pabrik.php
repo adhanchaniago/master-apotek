@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
-<?php if($Level=="Master" OR $Level=="Pemilik") : ?>
+<?php if($Level=="Master" OR $Level=="Pemilik" OR $Level="Apoteker") : ?>
 	<section class="content-header">
 		<h1><?= $Title ?></h1>
 		<ol class="breadcrumb">
@@ -20,11 +20,9 @@
 						<table id="dtTable" class="table table-striped table-bordered">
 							<thead>
 								<th>No.</th>
-								<th>Nama Barang</th>
-								<th>Nama Pabrik</th>
+								<th>Barang</th>
+								<th>Pabrik</th>
 								<th>Jumlah</th>
-								<th>Harga Beli + PPN</th>
-								<th>Grandtotal</th>
 							</thead>
 							<tbody></tbody>
 						</table>
