@@ -75,7 +75,15 @@
 							<div class="col-sm-3 col-xs-6">
 								<div class="description-block border-right">
 									<span class="description-percentage text-green"><i class="fa fa-money"></i></span>
-									<h5 class="description-header"><?= "Rp. ".number_format($Pendapatan-$Pengeluaran,2,",",".") ?></h5>
+									<h5 class="description-header">
+										<?php 
+											if($Pendapatan-$Pengeluaran>0) {
+												echo "Rp. ".number_format($Pendapatan-$Pengeluaran,2,",",".");
+											} else {
+												echo "Rp. 0,00";
+											}
+										?>
+									</h5>
 									<span class="description-text">TOTAL KEUNTUNGAN</span>
 								</div>
 							</div>
@@ -162,7 +170,7 @@
 			var dtStok = $('#dtStok').DataTable({
 				"processing": true,
 				"ajax": {
-					"url": "<?php echo site_url('stok/data_stok_tersedia/')?>",
+					"url": "<?php echo site_url('laporan/stok/data_stok_tersedia/')?>",
 					"type": "POST"
 				},
 				"autoWidth": true,
@@ -176,7 +184,7 @@
 			var dtExpire = $('#dtExpire').DataTable({
 				"processing": true,
 				"ajax": {
-					"url": "<?php echo site_url('barang/data_barang_expired/')?>",
+					"url": "<?php echo site_url('laporan/barang/data_barang_expired/')?>",
 					"type": "POST"
 				},
 				"autoWidth": true,
@@ -190,7 +198,7 @@
 			var dtHutang = $('#dtHutang').DataTable({
 				"processing": true,
 				"ajax": {
-					"url": "<?php echo site_url('pembelian/data_jatuh_tempo/')?>",
+					"url": "<?php echo site_url('laporan/pembelian/data_jatuh_tempo/')?>",
 					"type": "POST"
 				},
 				"autoWidth": true,
@@ -207,50 +215,50 @@
 			var salesChartCanvas = $('#salesChart').get(0).getContext('2d');
 			var salesChart       = new Chart(salesChartCanvas);
 			var salesChartData = {
-									labels  : [
-												'Januari', 
-												'Februari', 
-												'Maret', 
-												'April', 
-												'Mei', 
-												'Juni', 
-												'Juli', 
-												'Agustus', 
-												'September', 
-												'Oktober', 
-												'November', 
-												'Desember'
-											  ],
-									datasets: [
-												{
-													label               : 'Digital Goods',
-													fillColor           : 'rgba(60,141,188,0.9)',
-													strokeColor         : 'rgba(60,141,188,0.8)',
-													pointColor          : '#3b8bba',
-													pointStrokeColor    : 'rgba(60,141,188,1)',
-													pointHighlightFill  : '#fff',
-													pointHighlightStroke: 'rgba(60,141,188,1)',
-													data                : [
-																			<?php 
-																				foreach($Statistik as $b) : 
-																					echo $b->Jan.',';
-																					echo $b->Feb.',';
-																					echo $b->Mar.',';
-																					echo $b->Apr.',';
-																					echo $b->May.',';
-																					echo $b->Jun.',';
-																					echo $b->Jul.',';
-																					echo $b->Aug.',';
-																					echo $b->Sep.',';
-																					echo $b->Okt.',';
-																					echo $b->Nov.',';
-																					echo $b->Dec.',';
-																				endforeach;
-																			?>
-																		  ]
-												}
-											  ]
-								 };
+				labels  : [
+					'Januari', 
+					'Februari', 
+					'Maret', 
+					'April', 
+					'Mei', 
+					'Juni', 
+					'Juli', 
+					'Agustus', 
+					'September', 
+					'Oktober', 
+					'November', 
+					'Desember'
+				],
+				datasets: [
+					{
+						label               : 'Digital Goods',
+						fillColor           : 'rgba(60,141,188,0.9)',
+						strokeColor         : 'rgba(60,141,188,0.8)',
+						pointColor          : '#3b8bba',
+						pointStrokeColor    : 'rgba(60,141,188,1)',
+						pointHighlightFill  : '#fff',
+						pointHighlightStroke: 'rgba(60,141,188,1)',
+						data                : [
+							<?php 
+								foreach($Statistik as $b) : 
+									echo $b->Jan.',';
+									echo $b->Feb.',';
+									echo $b->Mar.',';
+									echo $b->Apr.',';
+									echo $b->May.',';
+									echo $b->Jun.',';
+									echo $b->Jul.',';
+									echo $b->Aug.',';
+									echo $b->Sep.',';
+									echo $b->Okt.',';
+									echo $b->Nov.',';
+									echo $b->Dec.',';
+								endforeach;
+							?>
+						]
+					}
+				]
+			 };
 			var salesChartOptions = {
 				// Boolean - If we should show the scale at all
 				showScale               : true,
