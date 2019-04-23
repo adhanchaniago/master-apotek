@@ -1,0 +1,6 @@
+ERROR - 2019-03-09 10:23:01 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) /usr/local/var/www/master-apotek/system/database/drivers/mysqli/mysqli_driver.php 201
+ERROR - 2019-03-09 10:23:01 --> Unable to connect to the database
+ERROR - 2019-03-09 10:23:04 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) /usr/local/var/www/master-apotek/system/database/drivers/mysqli/mysqli_driver.php 201
+ERROR - 2019-03-09 10:23:04 --> Unable to connect to the database
+ERROR - 2019-03-09 10:23:07 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) /usr/local/var/www/master-apotek/system/database/drivers/mysqli/mysqli_driver.php 201
+ERROR - 2019-03-09 10:23:07 --> Unable to connect to the database

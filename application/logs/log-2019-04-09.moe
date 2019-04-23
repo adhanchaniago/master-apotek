@@ -1,0 +1,2 @@
+ERROR - 2019-04-09 12:48:22 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) /Users/gilangpratama/Sites/master-apotek/system/database/drivers/mysqli/mysqli_driver.php 201
+ERROR - 2019-04-09 12:48:22 --> Unable to connect to the database
